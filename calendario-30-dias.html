@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendario Viral · 30 días · 22 oct–20 nov 2026 · Ecosistema Luis Flores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0F;--surface:#13131C;--surface2:#1A1A26;--line:#26263A;--line2:#32324a;--text:#EDEDF2;--muted:#9A9AB0;--muted2:#6f6f85;
+--personal:#1D78FF;--nova:#00D4FF;--smilbot:#F59E0B;--li:#61a8e8;--ig:#e26aa4;--tt:#8be0d8;--fb:#7d94e0;--warn:#ff6b6b;--ok:#34d399;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1100px 500px at 15% -10%,rgba(29,120,255,.10),transparent 60%),radial-gradient(1100px 500px at 85% 0%,rgba(0,212,255,.07),transparent 60%),var(--bg);color:var(--text);font-family:'Poppins',sans-serif;font-size:15px;line-height:1.6;min-height:100vh}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px 100px}
+header.hero{padding:48px 0 28px;border-bottom:1px solid var(--line)}
+.eyebrow{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.liveDot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(52,211,153,.18);flex:none}
+h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.1;letter-spacing:-.01em}
+h1 .g{background:linear-gradient(90deg,var(--personal),var(--nova) 55%,var(--smilbot));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);margin-top:14px;max-width:700px;font-size:14.5px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.stat b{display:block;font-family:'Montserrat';font-weight:800;font-size:22px;line-height:1}
+.stat span{display:block;color:var(--muted);font-size:11.5px;margin-top:5px;text-transform:uppercase;letter-spacing:.06em}
+.progress-row{display:flex;align-items:center;gap:12px;margin-top:18px}
+.progress-track{flex:1;height:8px;border-radius:999px;background:var(--surface2);overflow:hidden}
+.progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--personal),var(--nova));width:0%;transition:width .4s}
+.progress-label{font-size:12.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}.dot.p{background:var(--personal)}.dot.n{background:var(--nova)}.dot.s{background:var(--smilbot)}
+.filterbar{position:sticky;top:0;z-index:50;background:rgba(10,10,15,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:12px 0 10px;border-bottom:1px solid var(--line)}
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.search{flex:1;min-width:160px;display:flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.search input{background:none;border:none;outline:none;color:var(--text);font-family:'Poppins';font-size:13px;width:100%}
+.search input::placeholder{color:var(--muted2)}
+.chip{cursor:pointer;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:12.5px;font-family:'Poppins';transition:.15s;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.chip:hover{border-color:var(--line2)}.chip .n{opacity:.6;font-size:11px}
+.chip.on{color:var(--text);border-color:var(--text);background:var(--surface2)}
+.chip.on[data-b="personal"]{border-color:var(--personal);color:var(--personal)}
+.chip.on[data-b="nova"]{border-color:var(--nova);color:var(--nova)}
+.chip.on[data-b="smilbot"]{border-color:var(--smilbot);color:var(--smilbot)}
+.chip.on[data-n="li"]{border-color:var(--li);color:var(--li)}.chip.on[data-n="ig"]{border-color:var(--ig);color:var(--ig)}
+.chip.on[data-n="tt"]{border-color:var(--tt);color:var(--tt)}.chip.on[data-n="fb"]{border-color:var(--fb);color:var(--fb)}
+.sep{width:1px;align-self:stretch;background:var(--line);margin:2px}
+.daynav{display:flex;gap:6px;margin-top:10px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}.daynav::-webkit-scrollbar{display:none}
+.daypill{flex:none;font-size:11.5px;font-weight:600;color:var(--muted);padding:6px 10px;border-radius:8px;border:1px solid transparent;cursor:pointer;text-align:center;line-height:1.25}
+.daypill small{display:block;font-weight:500;font-size:10px;opacity:.7;min-height:12px}
+.daypill.today{color:var(--ok);border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.08)}.daypill:hover{background:var(--surface)}
+.block{margin-top:44px}
+h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px}
+h2 span{color:var(--muted);font-weight:600;font-size:13.5px;margin-left:8px}
+h3.sub{font-family:'Montserrat';font-weight:800;font-size:14.5px;margin:24px 0 10px;text-transform:uppercase;letter-spacing:.06em}
+.subtext{color:var(--muted);font-size:14px;margin-top:8px;max-width:720px}
+.day{margin-top:30px;scroll-margin-top:190px}
+.dayhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;padding-bottom:9px;border-bottom:1px dashed var(--line)}
+.dayhead h3{font-family:'Montserrat';font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.06em}
+.dayhead .date{color:var(--muted);font-size:12.5px}
+.today-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--ok);color:#04140d}
+.daycount{margin-left:auto;color:var(--muted2);font-size:12px}
+.card{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:var(--radius);overflow:hidden;transition:opacity .2s}
+.card[data-brand="personal"]{border-left-color:var(--personal)}.card[data-brand="nova"]{border-left-color:var(--nova)}.card[data-brand="smilbot"]{border-left-color:var(--smilbot)}
+.card.hide{display:none}.card.done{opacity:.5}.card.done .hook{text-decoration:line-through;text-decoration-color:var(--muted2)}
+.chead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:14px 16px 0;font-size:12.5px;color:var(--muted)}
+.chkwrap{display:flex;align-items:center}
+.net{font-weight:700;padding:3px 10px;border-radius:6px;background:var(--surface2)}
+.net.li{color:var(--li)}.net.ig{color:var(--ig)}.net.tt{color:var(--tt)}.net.fb{color:var(--fb)}
+.vformat{font-weight:600;padding:3px 10px;border-radius:6px;background:var(--surface2);color:var(--text);border:1px solid var(--line)}
+.acct{color:var(--text)}.chead .t{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--muted2)}
+.hook{font-family:'Montserrat';font-weight:800;font-size:16.5px;line-height:1.35;padding:10px 16px 4px}
+.why{padding:0 16px 12px;font-size:13px;color:var(--muted)}.why b{color:var(--text)}
+details{border-top:1px solid var(--line)}
+summary{cursor:pointer;padding:11px 16px;font-size:13px;font-weight:600;color:var(--muted);list-style:none;display:flex;align-items:center;gap:8px;user-select:none}
+summary:hover{color:var(--text)}summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-weight:800;font-size:15px;width:14px}details[open] summary::before{content:"–"}
+.cbody{padding:0 16px 18px;display:grid;gap:14px}
+.sec h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.sec p,.sec li{font-size:14px}.sec ul{padding-left:18px;display:grid;gap:5px}
+.caption{white-space:pre-line;background:var(--surface2);border-radius:8px;padding:12px 14px;font-size:13.8px}
+.promptbox{position:relative;background:#0E1520;border:1px solid #1e3050;border-radius:8px;padding:12px 14px;padding-top:36px}
+.promptbox pre{white-space:pre-wrap;font-family:'Poppins';font-size:13.3px;color:#cfe0f5;line-height:1.55}
+.copybtn{position:absolute;top:8px;right:8px;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:6px;border:1px solid #2a4a75;background:#12203a;color:#8fb8ea;cursor:pointer;font-family:'Poppins'}
+.copybtn.copied{background:#0f3d2a;border-color:#1f6b48;color:#7bf0be}
+.cta-line{font-size:14px;font-weight:600}
+.card[data-brand="personal"] .cta-line{color:var(--personal)}.card[data-brand="nova"] .cta-line{color:var(--nova)}.card[data-brand="smilbot"] .cta-line{color:var(--smilbot)}
+input[type=checkbox]{accent-color:var(--ok);width:17px;height:17px;cursor:pointer}
+.empty{margin-top:24px;padding:28px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);font-size:14px}
+.todo{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.45);color:#fbbf24;border-radius:8px;padding:10px 12px;font-size:13px;font-weight:600}
+.todotag{font-size:11px;font-weight:700;color:#1a1100;background:#F59E0B;border-radius:6px;padding:2px 8px}
+.daynote{font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.rowbtn{margin-top:8px}.copybtn.inline{position:static}.notep{margin-top:8px;color:var(--muted);font-size:13px}
+.weekh{margin-top:42px;font-size:16px}.weektheme{margin:0 0 4px}
+.tablewrap{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em}
+.note{margin-top:16px;padding:15px 17px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:13.5px;color:var(--muted)}
+.note b{color:var(--text)}.alert{border-left:3px solid var(--warn)}.alert b{color:var(--warn)}
+.kitcard{margin-top:16px}.kitcard h3.sub{margin-top:0;display:flex;align-items:center;gap:8px}.swatch{width:12px;height:12px;border-radius:3px}
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;line-height:1.8}footer b{color:var(--text)}
+.backtop{position:fixed;right:18px;bottom:18px;background:var(--surface2);border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:10px 14px;font-size:12.5px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;z-index:60}.backtop.show{opacity:1;pointer-events:auto}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.chead .t{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow"><span class="liveDot"></span>30 días · jueves 22 octubre – viernes 20 noviembre 2026 · web lista</div>
+  <h1>Calendario Viral · <span class="g">30 días de contenido con tu web lista</span></h1>
+  <p class="lead">Cada pieza lleva texto listo, guion de grabación y prompt de imagen autónomo. Las cifras de Smilbot salen de smilbot.com; lo que aún necesita un dato o caso real tuyo está marcado como “completar”.</p>
+  <div class="stats" id="stats"></div>
+  <div class="progress-row"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><div class="progress-label" id="progressLabel">0 publicadas</div></div>
+  <div class="legend">
+    <span class="pill"><span class="dot p"></span>Personal · soyluisfloresoficial.es · IG @soyluisflores_ · TT @soyluisfloresoficial · WA +34 631 65 49 19</span>
+    <span class="pill"><span class="dot n"></span>Nova Funnels · novafunnels.es · IG @nova_funnels · WA +34 631 65 49 19</span>
+    <span class="pill"><span class="dot s"></span>Smilbot · smilbot.com · IG @agenciasmilbot · WA +34 675 25 87 58</span>
+  </div>
+</header>
+<nav class="filterbar"><div class="filters" id="filters">
+  <div class="search"><span>🔎</span><input id="searchInput" type="text" placeholder="Buscar por hook, formato o cuenta…"></div>
+  <button class="chip on" data-f="reset">Todo</button><span class="sep"></span>
+  <button class="chip on" data-f="brand" data-b="personal">Personal <span class="n" data-count="brand-personal"></span></button>
+  <button class="chip on" data-f="brand" data-b="nova">Nova Funnels <span class="n" data-count="brand-nova"></span></button>
+  <button class="chip on" data-f="brand" data-b="smilbot">Smilbot <span class="n" data-count="brand-smilbot"></span></button><span class="sep"></span>
+  <button class="chip on" data-f="net" data-n="ig">Instagram <span class="n" data-count="net-ig"></span></button>
+  <button class="chip on" data-f="net" data-n="tt">TikTok <span class="n" data-count="net-tt"></span></button>
+  <button class="chip on" data-f="net" data-n="li">LinkedIn <span class="n" data-count="net-li"></span></button>
+  <button class="chip on" data-f="net" data-n="fb">Facebook <span class="n" data-count="net-fb"></span></button><span class="sep"></span>
+  <button class="chip" id="hideDoneChip">Ocultar publicadas</button>
+  <button class="chip" id="todoChip">Solo por completar</button>
+</div><div class="daynav" id="daynav"></div></nav>
+
+<section class="block">
+  <h2>1 · Reglas por red <span>(investigación jul 2026 · reconfirma antes de publicar)</span></h2>
+  <div class="note alert"><b>⚠️ En LinkedIn ya NO se puede:</b> 1) CTAs tipo “Comenta X y te escribo” (engagement bait, penalizado). 2) Link en el cuerpo o en el primer comentario (penalizado; en Facebook sí funciona). 3) Encuestas (engagement ~0,07%). Además, los hashtags ya no ayudan en LinkedIn y el contenido que suena a plantilla de IA recibe menos alcance. Por eso los posts de LinkedIn de este calendario van sin hashtags, sin enlace y con una pregunta abierta real.</div>
+  <div class="tablewrap"><table>
+    <tr><th>Red</th><th>Qué premia</th><th>Formatos que mejor funcionan</th><th>Cadencia aquí</th></tr>
+    <tr><td><b>TikTok</b></td><td>Completion rate y watch time; comentarios y compartidos &gt; likes; contenido crudo con móvil.</td><td>Humor “clientes vs realidad”, mitos vs realidad, antes/después, behind the scenes, responder comentarios, comparativas (funciona como buscador).</td><td>~6/sem</td></tr>
+    <tr><td><b>Instagram</b></td><td>Sends (DM) y saves; reels con más alcance en no seguidores; penaliza reposts con marca de agua.</td><td>Carrusel guardable, reel “cómo hacer X en 30 s”, antes/después, demo y sistema propio.</td><td>~5/sem</td></tr>
+    <tr><td><b>LinkedIn</b></td><td>Dwell time y comentarios; carruseles PDF con 2-3x dwell time; perfil personal rinde más que página.</td><td>Carrusel PDF con datos, lección profesional, opinión contraria argumentada.</td><td>3-4/sem (nunca 2 en &lt;12 h)</td></tr>
+    <tr><td><b>Facebook</b></td><td>Reels con mucho más alcance que fotos; el enlace en el primer comentario sí funciona.</td><td>Reel reutilizado nativo (sin marca de agua), pregunta abierta, caso con números.</td><td>~3-4/sem</td></tr>
+  </table></div>
+  <p class="subtext">Cuentas: LinkedIn y TikTok de Nova y Smilbot se publican desde tu perfil personal (marcado “perfil personal · contenido …”); Instagram y Facebook usan la cuenta de cada marca.</p>
+</section>
+
+<section class="block">
+  <h2>2 · Kits de marca <span>ya incluidos en cada prompt</span></h2>
+  <p class="subtext">Cada prompt es autónomo (lleva el kit dentro). Aquí están los bloques base por si creas piezas fuera del calendario.</p>
+  <div id="kits"></div>
+</section>
+
+<section class="block">
+  <h2>3 · Calendario <span id="h2count"></span></h2>
+  <div id="weeks"></div>
+  <div class="empty" id="emptyState" style="display:none">No hay piezas que coincidan con estos filtros.</div>
+</section>
+
+<footer>
+  <p><b>Datos de Smilbot:</b> −68% no-shows, +47% citas confirmadas, 60% de consultas fuera de horario, desde 199 €/mes, garantía de 30 días y los casos de clínicas son los que aparecen en smilbot.com (datos internos/autodeclarados): confirma permiso de cada clínica antes de nombrarla. Las piezas marcadas “completar” necesitan un dato o caso real tuyo.</p>
+  <p style="margin-top:8px">El check de cada pieza se guarda en este navegador (localStorage). Verifica precios de herramientas el día que publiques.</p>
+</footer>
+</div>
+<button class="backtop" id="backtop">↑ arriba</button>
+<script>
+/* ============ KITS DE MARCA (alineados con los brand kits reales) ============ */
+const BRANDS = {
+  personal: { label:'Marca personal', color:'#1D78FF',
+    kit:`MARCA: marca personal "Luis Flores" (soyluisfloresoficial.es) — IA aplicada a negocios para España y LATAM. Estética editorial oscura, minimalista, tipografía protagonista. Fondo negro #0A0A0F con textura de ruido muy sutil. Acento ÚNICO azul eléctrico #1D78FF (máx. 1-2 elementos). Texto secundario gris claro #C9C9D4. Titulares en Montserrat Bold/ExtraBold, blanco puro. Iconografía minimalista de línea fina. Firma pequeña "@soyluisflores_" en una esquina.`,
+    prohibited:`PROHIBIDO: degradados morados, iconos 3D genéricos, clip art, fotos de stock con gente sonriendo, robots humanoides, cerebros brillantes, marcas de agua.` },
+  nova: { label:'Nova Funnels', color:'#00D4FF',
+    kit:`MARCA: "Nova Funnels" (novafunnels.es) — agencia de IA, automatización y funnels para negocios de España y LATAM. Estética digital/tech, diagramática, tipo esquema limpio. Fondo azul-negro profundo #0D0D1A. Color primario azul #1D78FF y acento cian brillante #00D4FF (flechas, nodos, datos clave; el cian solo en 1-2 elementos). Texto blanco azulado #F0F4FF. Titulares en Space Grotesk Bold u Outfit ExtraBold. Elementos: flujos, embudos, nodos conectados, cronómetros, mockups de dashboard. Firma pequeña "novafunnels.es".`,
+    prohibited:`PROHIBIDO: degradados morados, fotos de stock, logotipos reales de software (usar solo etiquetas de texto genéricas), clip art, marcas de agua.` },
+  smilbot: { label:'Smilbot', color:'#F59E0B',
+    kit:`MARCA: "Smilbot" (smilbot.com) — agente de IA por WhatsApp para clínicas dentales en España. Audiencia: dueños y directores de clínica (B2B, no pacientes). Estética profesional-clínica con tecnología, esquemática, sanitaria-premium. Fondo negro #0A0A0F. Color principal azul #2563EB (burbujas de chat, elementos tecnológicos). Ámbar #F59E0B SOLO para cifras de dinero o el dato clave (máx. 1-2 elementos). Verde esmeralda #10B981 solo para checks de éxito. Titulares en Poppins SemiBold, blanco. Elementos: burbujas de WhatsApp estilizadas, sillones dentales en línea fina, calendarios, smartphones minimalistas, relojes. Firma pequeña "smilbot.com".`,
+    prohibited:`PROHIBIDO: dientes dañados o procedimientos invasivos, dientes gigantes caricaturescos, muelas con cara, fotos de stock de dentistas sonriendo, robots, degradados morados, marcas de agua.` }
+};
+function buildPrompt(brandKey, aspect, scene, textOverlay){
+  const b = BRANDS[brandKey];
+  let out = `Crea una imagen ${aspect}.\n\n${b.kit}\n\nESCENA: ${scene}`;
+  if (textOverlay) out += `\n\nTEXTO EN LA IMAGEN (respetar exactamente): ${textOverlay}`;
+  return out + `\n\n${b.prohibited}`;
+}
+
+/* ============ HELPERS DE DATOS ============ */
+const NET_LABEL = {li:'LinkedIn', ig:'Instagram', tt:'TikTok', fb:'Facebook'};
+const ACCT = {
+  personal:{ig:'@soyluisflores_', tt:'@soyluisfloresoficial', li:'perfil personal (Luis C. Flores)'},
+  nova:{ig:'@nova_funnels', tt:'perfil personal · contenido Nova Funnels', li:'perfil personal · contenido Nova Funnels', fb:'Nova Funnels (página)'},
+  smilbot:{ig:'@agenciasmilbot', tt:'perfil personal · contenido Smilbot', li:'perfil personal · contenido Smilbot', fb:'Smilbot (página)'}
+};
+const TAGS = {
+  personal:'#IAaplicada #automatizacion #emprendimientodigital #negociosdigitales #EmprendedoresLatam',
+  nova:'#AutomatizacionIA #AgentesIA #FunnelDeVentas #MarketingDigital #NovaFunnels',
+  smilbot:'#DentistasEspaña #ClinicaDental #MarketingDental #GestionClinica #SmilbotIA'
+};
+function P(id, day, brand, net, format, kind, time, hook, why, caption, steps, scene, textOverlay, cta, x){
+  x = x || {};
+  let caption2 = caption;
+  if (net==='ig' && caption) caption2 += `\n\n${TAGS[brand]}`;
+  if (net==='tt' && caption) caption2 += `\n\n${TAGS[brand].split(' ').slice(0,4).join(' ')}`;
+  let aspect = null;
+  if (scene){
+    if (x.aspect) aspect = x.aspect;
+    else if (kind==='carousel') aspect = `vertical 4:5 (1080x1350 px), plantilla de carrusel de ${x.sl||7} slides con diseño consistente (describe el slide 1 y el sistema común)`;
+    else if (kind==='pdf') aspect = `cuadrada 1:1 (1080x1080 px), documento carrusel de ${x.sl||7} slides para LinkedIn`;
+    else if (kind==='post') aspect = `cuadrada 1:1 (1080x1080 px) para publicación`;
+    else aspect = `vertical 9:16 (1080x1920 px) para portada de ${net==='tt'?'video de TikTok':'reel'}`;
+  }
+  return {id, day:'d'+day, brand, net, format, kind, time, hook: hook.replace(/^"|"$/g,''), why, caption: caption2,
+    steps, aspect, scene, textOverlay, cta, note:x.note, todo:x.todo, dur:x.dur, slides:x.sl, account: ACCT[brand][net]};
+}
+
+/* ============ DÍAS: 30 días desde el 22 oct 2026 ============ */
+const DOW = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+const MES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const START = new Date(2026,9,22);
+const NOTES = {1:'Lanzamiento de la web',10:'Halloween',11:'Todos los Santos (festivo)',23:'Viernes 13',30:'Cierre de los 30 días'};
+const DAYS = Array.from({length:30},(_,i)=>{
+  const d = new Date(START); d.setDate(START.getDate()+i);
+  const iso = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  return {key:'d'+(i+1), n:i+1, date:iso, label:`${DOW[d.getDay()]} ${d.getDate()}`, short:`${DOW[d.getDay()].slice(0,3)} ${d.getDate()}`, month:MES[d.getMonth()], note:NOTES[i+1]||''};
+});
+const WEEKS = [
+  {from:1,to:7,  title:'Semana 1 · 22–28 oct', theme:'Lanzamiento y autoridad: la web ya está lista, ahora hay dónde llevar a la gente.'},
+  {from:8,to:14, title:'Semana 2 · 29 oct–4 nov', theme:'Dolor y números: cifras de pérdida (no-shows, fuera de horario) y errores comunes.'},
+  {from:15,to:21,title:'Semana 3 · 5–11 nov', theme:'Prueba y demo: casos reales, demos sin cortes y comparativas.'},
+  {from:22,to:28,title:'Semana 4 · 12–18 nov', theme:'Conversión: proceso, garantía y diagnóstico de 30 minutos.'},
+  {from:29,to:30,title:'Cierre · 19–20 nov', theme:'Resumen, aprendizajes y siguiente paso.'}
+];
+/* Posts 1-40 (días 1-15) · P(id, día, marca, red, formato, tipo, hora, hook, por qué, caption, pasos, escena, texto, cta, extras) */
+const POSTS_A = [
+/* ===== D1 · Jue 22 oct · LANZAMIENTO ===== */
+P('c01',1,'personal','li','Reflexión de lanzamiento','post','09:00',
+`"Mi web ya está online. Y no la hice para que la vea la gente. La hice para que el resto de lo que publico tenga adónde llevar."`,
+`Un lanzamiento contado como criterio (no como anuncio) es lo que mejor funciona en perfil personal: dwell time alto y cero engagement bait.`,
+`Mi web ya está online.
+
+No la hice para que "quede bonita". La hice por una razón mucho más práctica: las redes son alquiler. El algoritmo cambia, el alcance baja, y de un día para otro tu contenido deja de verlo quien antes lo veía.
+
+La web es lo único que es tuyo.
+
+Por eso llevaba tiempo con una regla: no empujar más contenido hasta tener un sitio al que llevar a quien llega. Un post que despierta interés y no tiene dónde aterrizar es interés desperdiciado.
+
+Ahora el recorrido está completo: contenido → web → conversación.
+
+Lo construyo en público estos 30 días, con las tres marcas: mi marca personal, Nova Funnels y Smilbot.
+
+El enlace está en la sección destacada de mi perfil.
+
+Y como siempre: fe primero. Lo demás se ordena después.
+
+¿Tú ya tienes un sitio propio al que llevar a quien te descubre en redes, o sigues dependiendo solo de una plataforma?`,
+[],``,``,`Pregunta abierta genuina. Enlace solo en destacados/perfil (no en el post).`,
+{note:`Sin hashtags y sin enlace en el cuerpo (penalizados en LinkedIn). Responde todos los comentarios en la primera hora.`}),
+
+P('c02',1,'personal','ig','Reel tour de la web','reel','13:00',
+`"Mi web ya está lista. Te la enseño en 30 segundos."`,
+`El screen recording corto y sin cortes genera confianza; el lanzamiento queda como "producto real", no como promesa.`,
+`Mi web ya está lista 🔑
+
+En 30 segundos: qué hay, para quién es y por dónde empezar.
+
+Si trabajas con un negocio y quieres que la IA te quite trabajo repetitivo (sin perder el trato con tus clientes), échale un vistazo.
+
+El enlace está en mi bio 👆
+
+Fe primero.`,
+[`0-3s — a cámara: "Ya está. Mi web está lista."`,`3-25s — screen recording de la web: hero, servicios y dónde reservar una llamada. Sin cortes.`,`25-30s — "Enlace en mi bio. Dime qué te parece."`],
+`Un portátil minimalista de línea fina con una ventana de navegador abierta y la barra de direcciones destacada en azul eléctrico. Mucho espacio negativo.`,
+`titular: "Mi web ya está lista" · pie pequeño: "soyluisfloresoficial.es"`,
+`Enlace en bio + pregunta: "¿qué te parece?" (comentarios)`,{dur:'30s'}),
+
+P('c03',1,'personal','tt','Tour rápido','video','19:30',
+`"Tardé semanas en hacer esta web. Te la enseño en 20 segundos."`,
+`Los videos de proceso crudo (grabados con móvil) retienen más que los que parecen anuncio.`,
+`Esta es mi web nueva. 20 segundos de tour: qué hay y por dónde empezar. Enlace en mi perfil.`,
+[`0-3s — "Tardé semanas en esto. 20 segundos."`,`3-17s — scroll por la web con texto en pantalla de cada sección.`,`17-22s — "¿Qué le añadirías? Comenta."`],
+`Vista cenital de un escritorio con un portátil mostrando una web oscura con acentos azules. Luz natural.`,
+`texto: "Mi web nueva · tour de 20s"`,`"¿Qué añadirías? Comenta"`,{dur:'20s'}),
+
+P('c04',1,'smilbot','fb','Calculadora de impacto','post','11:00',
+`"¿Cuánto te cuesta no responder a tiempo? Una clínica de 3 sillones con 20 citas perdidas al mes pierde unos 2.400 €."`,
+`Facebook premia el post que se entiende en 5 segundos y deja a la persona pensando en su propio caso; aquí además el enlace en el primer comentario sí funciona.`,
+`¿Cuánto te cuesta no responder a tiempo?
+
+Un ejemplo con los valores por defecto de nuestra calculadora:
+· 3 sillones
+· 20 citas perdidas al mes
+· 120 € por paciente
+
+= unos 2.400 € al mes que no entran.
+
+Si recuperas 15 de esas citas, son 1.800 € más cada mes. Pon tus propios números en la calculadora (enlace en el primer comentario 👇) y mira cuánto le toca a tu clínica.
+
+Escríbenos por WhatsApp al +34 675 25 87 58 si quieres que lo repasemos juntos.`,
+[],`Calculadora esquemática: tres iconos de sillón dental en línea fina, una cifra grande "2.400 €" en ámbar y una flecha hacia un calendario con huecos.`,
+`titular: "¿Cuánto te cuesta no responder a tiempo?" · cifra: "2.400 €/mes"`,
+`Enlace a smilbot.com (calculadora) en el primer comentario + WhatsApp +34 675 25 87 58`,
+{note:`Valores por defecto de la calculadora de smilbot.com. Son un ejemplo, no una promesa: dilo así si te preguntan.`}),
+
+/* ===== D2 · Vie 23 ===== */
+P('c05',2,'smilbot','li','Opinión contraria','post','09:00',
+`"El 60% de los pacientes escribe fuera de horario. Tu recepción está cerrada."`,
+`Un dato incómodo + opinión argumentada es el formato que más comentarios genera entre directores de clínica.`,
+`El 60% de los pacientes escribe fuera de horario.
+
+Y la recepción de casi todas las clínicas está cerrada a esa hora.
+
+Entre el 35 y el 45% de las consultas de pacientes nuevos llegan por la tarde-noche o el fin de semana. Es decir: justo los que aún no tienen clínica son los que escriben cuando nadie contesta.
+
+Lo que pasa después es previsible. El paciente escribe a tres clínicas. Contesta primero la que está disponible. Y la primera que contesta suele quedarse con la cita.
+
+Yo no creo que la solución sea alargar horarios ni hacer guardias de WhatsApp. Creo que la respuesta inicial (la duda, el precio orientativo, el hueco disponible) no necesita a una persona. Lo que de verdad necesita a una persona es lo clínico.
+
+Es lo que construimos con Smilbot: respuesta en menos de 90 segundos, 24/7, y paso a una persona cuando hace falta.
+
+¿Alguna vez habéis medido cuántos mensajes llegan a vuestra clínica fuera de horario?`,
+[],``,``,`Pregunta abierta. Sin hashtags ni enlace.`,
+{note:`Cifras de smilbot.com (60% fuera de horario; 35-45% de consultas nuevas). Si te las piden, son datos internos, no un estudio externo.`}),
+
+P('c06',2,'smilbot','ig','Carrusel de datos','carousel','13:00',
+`"Cuánto cuesta un no-show: 3 cifras que casi ninguna clínica mira"`,
+`Carrusel de pérdida con números concretos: es el más guardable y el que más se comparte por DM entre socios de clínica.`,
+`Sin confirmación automática, entre el 20 y el 35% de las citas acaban en no-show.
+
+3 cifras para que hagas tu propia cuenta:
+1. 20-35% de no-shows sin recordatorio automático.
+2. ~120 € por paciente nuevo que no llega a entrar.
+3. 4 horas de espera media de respuesta en muchas clínicas.
+
+La solución más barata es una: recordatorio 24 h y 2 h antes, con confirmación o reagendado en un clic.
+
+Guárdalo y haz la cuenta de tu clínica 🦷
+Más en smilbot.com (enlace en bio).`,
+[`Slide 1 — "Cuánto cuesta un no-show"`,`Slide 2 — 20-35% sin confirmación automática`,`Slide 3 — ~120 € por paciente perdido`,`Slide 4 — 4 h de espera media de respuesta`,`Slide 5 — la solución: recordatorios 24 h y 2 h antes`,`Slide 6 — CTA: "Guárdalo y haz tu cuenta"`],
+`Fondo negro azulado. Una cifra enorme por slide en ámbar (20-35%, 120 €, 4 h) con un calendario o reloj de línea fina de apoyo. Titulares Poppins SemiBold blanco.`,
+`Slide 1: "Cuánto cuesta un no-show"`,`"Guárdalo" + enlace en bio`,{sl:6}),
+
+P('c07',2,'nova','tt','3 señales','video','13:00',
+`"3 señales de que tu negocio ya necesita automatizar (la 2 la tienes hoy)."`,
+`"3 señales/errores" es uno de los ganchos que la propia plataforma recomienda; genera comentarios de gente reconociéndose.`,
+`3 señales de que tu negocio ya necesita automatizar. Si te suena la 2, tienes dinero esperando.`,
+[`0-3s — "3 señales de que ya necesitas automatizar" con los 3 numerados.`,`3-18s — 1) respondes lo mismo todos los días, 2) los leads esperan horas por una respuesta, 3) nadie sabe cuántos se pierden.`,`18-25s — "¿Cuál es la tuya? Comenta el número."`],
+`Tres etiquetas numeradas de línea fina, la 2 resaltada en cian #00D4FF sobre fondo azul-negro #0D0D1A.`,
+`titular: "3 señales de que ya necesitas automatizar"`,`"Comenta el número que te suene"`,{dur:'25s'}),
+
+/* ===== D3 · Sáb 24 ===== */
+P('c08',3,'personal','tt','Behind the scenes','video','13:00',
+`"Sábado, 11:00. Así preparo el contenido de 3 webs sin editar nada."`,
+`El detrás de cámaras crudo retiene más que el contenido pulido, y humaniza al fundador.`,
+`Sábado en mi mesa de trabajo: preparando contenido para mis tres proyectos. Sin guion, sin edición.`,
+[`0-8s — plano de la mesa real: "Sábado. 3 marcas. Así lo preparo."`,`8-25s — mostrar el documento del calendario y cómo bajas cada pieza a guion.`,`25-35s — "¿Qué parte te enseño la próxima vez? Comenta."`],
+`Escritorio visto desde arriba, portátil, taza, móvil; luz natural de sábado. Estilo cámara en mano, imperfecto a propósito.`,
+`texto pequeño: "Sábado · 3 marcas · sin editar"`,`"¿Qué parte te enseño? Comenta"`,{dur:'35s'}),
+
+P('c09',3,'nova','ig','Reel "cómo hacer X en 30 segundos"','reel','18:00',
+`"Cómo hacer que un lead reciba respuesta en 30 segundos (sin programar)."`,
+`El tutorial ultrarrápido es de los formatos más guardables y demuestra capacidad sin venderla.`,
+`Cómo hacer que un lead reciba respuesta en 30 segundos, sin programar.
+
+1. Un formulario que dispara el flujo.
+2. Una respuesta automática por WhatsApp.
+3. El lead cae en tu CRM con su origen.
+
+Guárdalo si hoy contestas a mano 👇`,
+[`0-3s — cronómetro 0:30 en pantalla: "Esto se monta en 30 segundos"`,`3-25s — screen recording acelerado del flujo (formulario → WhatsApp → CRM).`,`25-30s — prueba en vivo: entra un lead, llega la respuesta.`],
+`Diagrama de flujo en línea fina: nodo Formulario → nodo WhatsApp → nodo CRM, flechas en cian, cronómetro "0:30" arriba a la derecha.`,
+`titular: "Lead respondido en 30 segundos"`,`"Guárdalo" + DM "FLUJO"`,{dur:'30s'}),
+
+/* ===== D4 · Dom 25 ===== */
+P('c10',4,'personal','ig','Reflexión semanal · Fe primero','post','19:00',
+`"Domingo. Antes de abrir el portátil, una pregunta: ¿esto que voy a hacer esta semana, me acerca a lo que de verdad importa?"`,
+`El domingo es el día de la reflexión: un post sobrio con la voz de marca (fe + criterio) tiene saves y comentarios sin necesidad de vender.`,
+`Domingo. Antes de abrir el portátil, una pregunta:
+
+¿Lo que voy a hacer esta semana me acerca a lo que de verdad importa, o solo me mantiene ocupado?
+
+Estar ocupado y avanzar no son lo mismo. Yo lo aprendí por las malas, y por eso empiezo cada semana igual: oración, tres prioridades escritas y nada más.
+
+Fe primero. Dios es mi guía en cada paso, y lo demás se ordena después.
+
+¿Cuál es tu prioridad número 1 esta semana? Escríbela en los comentarios 👇`,
+[],`Cita tipográfica en Montserrat Black blanco sobre fondo negro azulado con textura de ruido: "Ocupado ≠ avanzando", una sola palabra ("avanzando") en azul eléctrico. Mucho espacio negativo.`,
+`titular: "Ocupado ≠ avanzando" · firma pequeña: "@soyluisflores_"`,`Pregunta abierta: "¿Tu prioridad número 1 esta semana?"`,
+{note:`Es una voz personal: ajusta la frase de fe a como tú lo vives.`,aspect:`vertical 4:5 (1080x1350 px) para post de Instagram`}),
+
+/* ===== D5 · Lun 26 ===== */
+P('c11',5,'personal','li','Opinión contraria','post','09:00',
+`"Una web sin proceso detrás es un folleto caro."`,
+`Opinión contraria argumentada: desafía el "tener web" como meta y conecta con cómo trabajas.`,
+`Una web sin proceso detrás es un folleto caro.
+
+He visto negocios con webs preciosas y cero conversaciones. No fallaba el diseño. Fallaba lo que pasaba DESPUÉS de que alguien escribía: nadie respondía, nadie hacía seguimiento, nadie sabía de dónde venía cada contacto.
+
+La web es la fachada. El proceso es el negocio.
+
+Antes de invertir en otra web, mira tres cosas:
+· ¿Quién responde, y en cuánto tiempo?
+· ¿Qué pasa con quien no compra hoy?
+· ¿Sabes de dónde viene cada contacto?
+
+Si no puedes contestar las tres, el problema no es la web.
+
+¿Tú qué cambiarías primero: la web o lo que pasa después del primer mensaje?`,
+[],``,``,`Pregunta abierta, sin hashtags ni enlace.`),
+
+P('c12',5,'nova','ig','Carrusel checklist','carousel','13:00',
+`"¿Tu web convierte? Checklist de 7 puntos para saberlo en 5 minutos"`,
+`El checklist autodiagnóstico es de los carruseles más guardados y capta justo a quien tiene una web que no vende.`,
+`¿Tu web convierte? Revisa estos 7 puntos en 5 minutos:
+
+1. Se entiende qué haces en 5 segundos.
+2. Hay un solo CTA principal.
+3. El formulario pide solo lo imprescindible.
+4. Respondes en minutos, no en horas.
+5. Sabes de dónde viene cada lead.
+6. Hay prueba social real.
+7. Funciona en móvil sin zoom.
+
+Si fallas en 3 o más, hay dinero escapándose 💸
+Guárdalo y revísalo con tu web delante 🔖`,
+[`Slide 1 — portada con el hook`,`Slides 2-8 — un punto por slide con una casilla`,`Slide 9 — "Si fallas 3 o más → escríbenos"`],
+`Checklist esquemática: casillas de línea fina sin marcar y una pregunta corta en blanco por slide; en el último, un check cian. Fondo #0D0D1A.`,
+`Slide 1: "¿Tu web convierte? 7 puntos"`,`"Guárdalo" + DM "WEB"`,{sl:9}),
+
+P('c13',5,'personal','tt','Mito vs realidad','video','20:00',
+`"Mito: con una web bonita llegan clientes. Realidad: la web es el principio, no el final."`,
+`Mitos vs realidad es de los formatos más virales en cuentas de negocio; abre una serie semanal que construye audiencia recurrente.`,
+`Mito: con una web bonita llegan clientes. Realidad: sin proceso detrás, es un folleto.`,
+[`0-3s — "MITO ❌: con web bonita llegan clientes"`,`3-18s — screen recording: qué pasa cuando alguien escribe (respuesta, seguimiento, origen).`,`18-25s — "Web + proceso. ¿Qué mito desmonto la semana que viene? Comenta."`],
+`"MITO" tachado en blanco con línea azul eléctrico arriba; "REALIDAD" en azul eléctrico debajo; fondo #0A0A0F.`,
+`línea inferior: "Web + proceso"`,`"¿Qué mito desmonto? Comenta" (serie "Mitos de la IA")`,{dur:'25s'}),
+
+/* ===== D6 · Mar 27 ===== */
+P('c14',6,'smilbot','ig','Demo real en pantalla','reel','13:00',
+`"23:47. Un paciente escribe a tu clínica. Respuesta en menos de 90 segundos."`,
+`En dental el video reduce el miedo y la confianza pesa más que el precio; la demo sin cortes es la prueba más fuerte.`,
+`23:47. Un paciente con dolor escribe a tu clínica.
+
+Lo que ves es la respuesta de Smilbot: en menos de 90 segundos, sin cortes, con huecos reales de agenda.
+
+Tu equipo descansa. Tu clínica sigue atendiendo.
+
+¿Quieres verlo con los casos de tu clínica? Reserva tu diagnóstico de 30 minutos (enlace en bio) o escríbenos por WhatsApp: +34 675 25 87 58.`,
+[`0-3s — móvil real, 23:47, entra: "Hola, tengo mucho dolor en una muela, ¿atendéis mañana?"`,`3-25s — screen recording SIN CORTES de la respuesta, con huecos de agenda (difumina datos).`,`25-35s — voz en off: "Respuesta en menos de 90 segundos. Diagnóstico gratis en la bio."`],
+`Noche: luna creciente en línea blanca, un móvil minimalista con una burbuja de WhatsApp azul #2563EB y un reloj "23:47" en ámbar.`,
+`titular: "¿Quién contesta a las 23:47?" · pie: "smilbot.com"`,`Reservar diagnóstico (bio) + WhatsApp +34 675 25 87 58`,{dur:'35s'}),
+
+P('c15',6,'nova','tt','Comparativa de herramientas','video','13:30',
+`"Chatbot de reglas vs agente de IA: cuál necesita tu negocio (y cuál es humo)."`,
+`TikTok funciona como buscador: las comparativas capturan a quien está decidiendo.`,
+`Chatbot de reglas vs agente de IA: diferencias reales y cuál te conviene según tu negocio.`,
+[`0-3s — "¿Chatbot o agente de IA?" con las dos opciones en pantalla.`,`3-18s — diferencia: el de reglas sigue un guion; el agente entiende, decide y pasa a una persona cuando hace falta.`,`18-25s — regla simple de cuándo usar cada uno + CTA.`],
+`Dos tarjetas de línea fina lado a lado ("Reglas" / "Agente"), cada una con 3 checks en cian. Fondo #0D0D1A.`,
+`titular: "¿Chatbot o agente de IA?"`,`"Guárdalo antes de contratar" + DM "AGENTE"`,{dur:'25s'}),
+
+P('c16',6,'nova','fb','Pregunta abierta','post','19:00',
+`"¿Qué parte de tu negocio responde sola hoy, sin que tú toques nada?"`,
+`La pregunta abierta funciona en Facebook cuando hay comunidad; genera comentarios con casos reales para futuros contenidos.`,
+`¿Qué parte de tu negocio responde sola hoy, sin que tú toques nada?
+
+Contesta con una palabra: presupuestos, citas, seguimiento, facturas, consultas, ninguna.
+
+Leemos todas las respuestas y publicamos la parte más repetida.`,
+[],``,``,`Pregunta abierta → responder cada comentario con una sugerencia concreta`),
+
+/* ===== D7 · Mié 28 ===== */
+P('c17',7,'nova','li','Carrusel PDF educativo','pdf','09:00',
+`"Los 5 pasos de un embudo que automatizaría primero en cualquier negocio de servicios"`,
+`Carrusel PDF = 2-3x dwell time; posiciona a Nova como quien sabe por dónde empezar.`,
+`Si hoy tuviera que montar un embudo para un negocio de servicios, empezaría por estos 5 pasos. En este orden.
+
+La mayoría empieza por el final (la herramienta) y por eso automatiza el caos.
+
+En el documento: qué hace cada paso, qué herramienta encaja y qué métrica mirar.
+
+Si quieres aplicarlo a tu negocio, mi bandeja de mensajes está abierta.`,
+[`Slide 1 — portada con el hook`,`Slides 2-6 — un paso por slide: captación → respuesta inmediata → cualificación → seguimiento → cierre.`,`Slide 7 — métrica clave de cada paso.`,`Slide 8 — cierre: "Nova Funnels · novafunnels.es"`],
+`Fondo blanco limpio (formato lectura B2B), titulares Space Grotesk Bold #0D0D1A, cifras en azul #1D78FF y detalles en cian #00D4FF. Diagrama de embudo de línea fina.`,
+`Slide 1: "5 pasos para automatizar primero"`,`Mensaje directo (sin engagement bait)`,{sl:8}),
+
+P('c18',7,'personal','ig','Carrusel guardable','carousel','13:00',
+`"5 automatizaciones que montaría primero en cualquier negocio (ordenadas por impacto)"`,
+`El carrusel educativo con orden de prioridad es el más guardable: los saves son la señal #1 de IG.`,
+`5 automatizaciones que montaría primero en cualquier negocio, ordenadas por impacto:
+
+1. Respuesta inmediata a nuevos contactos.
+2. Recordatorios de citas y reuniones.
+3. Seguimiento automático a quien no contestó.
+4. Registro de cada contacto en un CRM.
+5. Reporte semanal sin tocar una hoja de cálculo.
+
+La primera resuelve el 80% del problema de casi todos.
+
+Guárdalo y dime cuál montarías tú ⚡`,
+[`Slide 1 — portada con el hook`,`Slides 2-6 — una automatización por slide con impacto y herramienta orientativa.`,`Slide 7 — CTA: "Guárdalo"`],
+`Fondo #0A0A0F con textura sutil, número enorme (1-5) en azul semitransparente y nombre en Montserrat Bold blanco, línea de uso en gris.`,
+`Slide 1: "5 automatizaciones que montaría primero"`,`"Guárdalo" + pregunta abierta`,{sl:7}),
+
+P('c19',7,'personal','tt','Responder comentario en video','video','20:00',
+`"Me preguntaron: ¿automatizar no quita el trato humano? Respuesta corta."`,
+`Responder comentarios en video es de los formatos con más viralidad demostrada en TikTok de negocio.`,
+`Respondiendo a un comentario: ¿automatizar quita el trato humano? Depende de qué automatices.`,
+[`0-4s — comentario en pantalla y leído en voz alta.`,`4-22s — la regla: automatiza lo repetitivo (respuestas, recordatorios) y deja a las personas lo que requiere criterio.`,`22-28s — "Sigue comentando y respondo."`],
+`Captura estilizada de un comentario flotando sobre fondo negro azulado con una flecha fina hacia el espacio de respuesta.`,
+`titular: "Respondiendo tu comentario"`,`"Comenta tu duda y la respondo"`,{dur:'28s'}),
+
+P('c20',7,'smilbot','fb','Reel reutilizado con caso','reel','19:00',
+`"De 22% a 7% de no-shows en 60 días: así lo hizo una clínica de Málaga."`,
+`Los reels tienen 5-10x más alcance que las fotos en Facebook y los casos con números funcionan en comunidades de negocio local; aquí el enlace en el primer comentario sí funciona.`,
+`De 22% a 7% de no-shows en 60 días.
+
+Es el resultado que nos cuenta Smile Group (Málaga) tras activar recordatorios automáticos por WhatsApp (24 h y 2 h antes), con confirmación o reagendado en un clic.
+
+Cada no-show evitado es un sillón ocupado y una hora que se factura.
+
+Reserva tu diagnóstico de 30 minutos (enlace en el primer comentario 👇) o escríbenos por WhatsApp: +34 675 25 87 58.`,
+[`Clip corto de 25 s: antes/después con las dos cifras en pantalla.`,`Texto: "22% → 7% de no-shows en 60 días (Smile Group, Málaga)".`,`Cierre con el CTA al diagnóstico.`],
+`Dos columnas: izquierda calendario con huecos y "22%"; derecha el mismo calendario lleno con checks y "7%" en ámbar; flecha fina entre ambas.`,
+`titular: "22% → 7% de no-shows en 60 días"`,`Enlace al diagnóstico en el primer comentario + WhatsApp`,
+{dur:'25s',todo:`Confirma que Smile Group (Málaga) te autoriza a citarlo por nombre y que la cifra sigue vigente.`}),
+
+/* ===== D8 · Jue 29 ===== */
+P('c21',8,'smilbot','ig','Carrusel checklist','carousel','13:00',
+`"Recordatorios 24 h y 2 h antes: el combo que reduce no-shows (y cómo configurarlo)"`,
+`Carrusel práctico y guardable: da valor real a un director de clínica antes de venderle nada.`,
+`El combo que más reduce no-shows:
+
+⏰ Recordatorio 24 horas antes → confirma o reagenda.
+⏰ Recordatorio 2 horas antes → evita el olvido.
+✅ Con un clic, sin llamar.
+
+Y un tercer paso: si cancela, el hueco pasa a la lista de espera.
+
+Guárdalo y revisa qué tiene hoy tu clínica 📅`,
+[`Slide 1 — portada`,`Slide 2 — el problema: no-shows sin recordatorio`,`Slide 3 — recordatorio 24 h`,`Slide 4 — recordatorio 2 h`,`Slide 5 — hueco a lista de espera`,`Slide 6 — CTA`],
+`Una línea de tiempo esquemática con dos relojes (24 h, 2 h), burbujas de WhatsApp en azul #2563EB y un check ámbar al final.`,
+`Slide 1: "El combo anti no-shows"`,`"Guárdalo" + diagnóstico en bio`,{sl:6}),
+
+P('c22',8,'nova','tt','Timelapse de construcción','video','13:00',
+`"Monto un agente de WhatsApp en 10 minutos. Cronómetro en pantalla."`,
+`El timelapse de construcción demuestra capacidad real sin necesidad de explicarla.`,
+`Monto un agente de WhatsApp para un negocio en 10 minutos, con cronómetro. Sin cortes ocultos.`,
+[`0-3s — cronómetro 10:00 visible.`,`3-30s — captura acelerada: conectar número, definir 5 respuestas, regla de escalado a persona.`,`30-40s — prueba en vivo a velocidad normal.`],
+`Diagrama de flujo animado en línea fina: nodo Mensaje → nodo Agente → nodo Persona, cronómetro "10:00" en cian.`,
+`titular: "Agente de WhatsApp. 10 minutos."`,`DM "AGENTE" → WhatsApp +34 631 65 49 19`,{dur:'40s'}),
+
+P('c23',8,'personal','tt','Humor profesional','video','20:00',
+`"Lo que pide el cliente: 'quiero IA'. Lo que de verdad necesita: contestar un WhatsApp a tiempo."`,
+`"Clientes vs realidad" es el formato que más se viraliza en cuentas de negocio en TikTok.`,
+`Lo que pide el cliente: "quiero IA". Lo que de verdad necesita: contestar un WhatsApp a tiempo.`,
+[`Escena 1 — el cliente pide algo sofisticado.`,`Escena 2 — corte seco a la solución simple.`,`Cierre a cámara con media sonrisa.`],
+`Dos paneles: arriba un icono complejo de muchos nodos; abajo una sola casilla marcada.`,
+`paneles: "Lo que pide" / "Lo que necesita"`,`Sin CTA forzado — el humor vende por sí solo`,{dur:'22s'}),
+
+/* ===== D9 · Vie 30 ===== */
+P('c24',9,'smilbot','li','Carrusel PDF con datos','pdf','09:00',
+`"Recepción 100% manual: 1.800 €/mes. ¿Y cuántas citas se te escapan por el camino?"`,
+`Carrusel PDF con una comparación de costes real: es el formato que un director de clínica enseña a su socio.`,
+`Una recepción tradicional cuesta de media unos 1.800 € al mes.
+
+Y aun así, en muchas clínicas se pierden ~14 citas al mes por respuestas tardías o mensajes sin contestar.
+
+No es culpa del equipo. Es de la carga: nadie puede contestar 24/7.
+
+En este documento comparamos, con las cifras de nuestra calculadora, el coste de un modelo 100% manual frente a uno con respuesta automática y personas centradas en lo clínico (desde 199 €/mes).
+
+Los números salen de la calculadora de smilbot.com; pon los tuyos y mira cómo sale tu clínica.
+
+Si diriges una clínica y quieres revisarlo juntos, mi mensaje directo está abierto.`,
+[`Slide 1 — "1.800 € de recepción… y 14 citas perdidas"`,`Slide 2 — de dónde salen las citas perdidas`,`Slides 3-4 — comparativa de coste mensual`,`Slide 5 — ahorro estimado (valores por defecto de la calculadora)`,`Slide 6 — qué sigue haciendo tu recepción`,`Slide 7 — cierre: smilbot.com`],
+`Fondo blanco limpio, titulares Poppins SemiBold negro azulado, cifras en azul #2563EB y el dato económico clave en ámbar #F59E0B. Gráfico de barras comparativo simple.`,
+`Slide 1: "1.800 € de recepción. 14 citas perdidas."`,`Mensaje directo, sin engagement bait`,
+{sl:7,note:`Cifras de smilbot.com (calculadora). Presenta el ahorro como estimación, no como garantía.`}),
+
+P('c25',9,'nova','ig','Reel antes/después de flujo','reel','13:00',
+`"Antes: 'lo miro luego'. Después: respuesta inmediata."`,
+`El antes/después de un proceso es de los formatos con más viralidad demostrada en IG.`,
+`Antes: "lo miro luego" → el lead se enfría.
+Después: respuesta inmediata, lead en el CRM y seguimiento automático.
+
+No cambia el negocio. Cambia lo que pasa en los primeros 5 minutos.
+
+DM "FLUJO" y te lo montamos sobre tu caso ⚙️`,
+[`Split screen: bandeja de entrada llena (antes) / flujo automático funcionando (después).`,`Texto breve en cada lado.`,`Cierre con el CTA.`],
+`Split: izquierda mensajes sin leer dispersos en línea fina gris; derecha un flujo ordenado con checks en cian.`,
+`titular: "Lo miro luego → Respuesta inmediata"`,`DM "FLUJO"`,{dur:'25s'}),
+
+P('c26',9,'personal','tt','Humor profesional','video','20:00',
+`"Lo que se cree que hace un consultor de IA vs lo que hace la mitad del día."`,
+`Segunda entrega del formato #1 de viralidad en TikTok de negocio.`,
+`Lo que se cree que hace un consultor de IA vs lo que realmente hace.`,
+[`Escena 1 — "entrenando modelos".`,`Escena 2 — videollamada explicando el mismo proceso por tercera vez.`,`Cierre sin explicar el chiste.`],
+`Dos paneles: arriba una red neuronal simplificada; abajo una burbuja de conversación con signo de interrogación.`,
+`paneles: "Lo que se cree" / "Lo que pasa"`,`Sin CTA forzado`,{dur:'22s'}),
+
+/* ===== D10 · Sáb 31 · HALLOWEEN ===== */
+P('c27',10,'smilbot','ig','Reel Halloween','reel','18:00',
+`"3 cosas que dan miedo de verdad en una clínica dental (y no son los dentistas)."`,
+`Halloween permite un tono más ligero sin perder la voz profesional: el hook del susto + dato funciona muy bien.`,
+`3 cosas que dan miedo de verdad en una clínica dental 🎃
+
+1. Una agenda con huecos que ya no se rellenan.
+2. Un WhatsApp a las 23:47 que nadie contesta.
+3. Un paciente que no confirma… y no aparece.
+
+Los tres tienen solución. Y ninguna da tanto miedo como no tenerla.
+
+Diagnóstico de 30 minutos en la bio 🦷`,
+[`0-3s — "3 cosas que dan miedo en una clínica" con calabaza minimalista en línea fina.`,`3-25s — cada susto 6-7 s con texto en pantalla.`,`25-35s — "Los tres tienen solución. Bio."`],
+`Fondo negro azulado con una calabaza de línea fina ámbar cuya "cara" es un icono de sillón dental. Sin dientes caricaturescos.`,
+`titular: "3 cosas que dan miedo en una clínica"`,`Diagnóstico en bio + WhatsApp +34 675 25 87 58`,{dur:'35s'}),
+
+P('c28',10,'smilbot','tt','Reel Halloween (cross-post)','video','20:00',
+`"Lo más terrorífico de una clínica dental: un WhatsApp sin contestar a las 23:47."`,
+`Reutilizar el concepto en TikTok desde tu perfil amplía el alcance sin producir nada nuevo.`,
+`Lo más terrorífico de una clínica dental: un WhatsApp sin contestar a las 23:47 🎃`,
+[`0-3s — susto: pantalla negra y entra un mensaje.`,`3-18s — consecuencia: el paciente escribe a otra clínica.`,`18-25s — "Tiene solución. Smilbot. Bio."`],
+`Pantalla de móvil oscura con una burbuja de WhatsApp iluminada y un reloj "23:47" en ámbar.`,
+`texto: "23:47 · sin respuesta"`,`Enlace en bio`,{dur:'25s'}),
+
+/* ===== D11 · Dom 1 nov (festivo) ===== */
+P('c29',11,'nova','fb','Pregunta abierta de puente','post','11:00',
+`"Puente de Todos los Santos: ¿tu negocio atiende mientras tú descansas?"`,
+`Los festivos concentran consultas sin respuesta: es el momento perfecto para una pregunta que lo hace visible.`,
+`Puente de Todos los Santos 🍂
+
+¿Tu negocio atiende mientras tú descansas, o los mensajes esperan al martes?
+
+Cuéntanos qué tienes montado: respuesta automática, un equipo de guardia, ninguna.`,
+[],``,``,`Pregunta abierta → responder cada comentario`),
+
+/* ===== D12 · Lun 2 ===== */
+P('c30',12,'personal','li','Lección profesional','post','09:00',
+`"El orden importa: primero el proceso, luego la herramienta, luego la automatización."`,
+`Una lección de criterio (no anécdota) con estructura clara tiene un dwell time alto y esquiva el contenido genérico.`,
+`El orden importa. Casi siempre.
+
+Proceso → Herramienta → Automatización.
+
+Casi todo el mundo lo hace al revés. Compra la herramienta, intenta automatizar y descubre que su proceso no estaba claro. Resultado: una automatización que falla más rápido y más barato.
+
+Lo que hago con cada negocio, antes de abrir ninguna herramienta:
+
+1. Dibujo el proceso actual, paso a paso.
+2. Marco dónde se pierde tiempo o dinero.
+3. Elijo la herramienta que encaja con ESO.
+4. Automatizo un solo tramo. Mido. Y recién entonces el siguiente.
+
+Es menos vistoso que "montar un robot". Pero es lo que sobrevive pasado el primer mes.
+
+¿Hay algún paso que tú te saltarías, o lo haces en otro orden?`,
+[],``,``,`Pregunta abierta, sin hashtags ni enlace`),
+
+P('c31',12,'smilbot','ig','Prueba social con número','carousel','13:00',
+`"De 41% a 67% de conversión en primera visita: lo que cambió en una clínica de Bilbao"`,
+`Caso con números concretos: es la prueba social más persuasiva para un B2B.`,
+`De 41% a 67% de conversión en primera visita.
+
+Es lo que nos cuenta la Clínica Vázquez (Bilbao) tras responder a cada consulta en menos de 90 segundos y confirmar cada cita automáticamente.
+
+Lo que cambió:
+✅ Respuesta inmediata, también fuera de horario.
+✅ Recordatorios 24 h y 2 h antes.
+✅ El equipo se centra en el paciente que ya está en la silla.
+
+Guarda este caso 🦷 Diagnóstico de 30 minutos en bio.`,
+[`Slide 1 — "41% → 67%"`,`Slide 2 — el punto de partida`,`Slide 3 — qué se cambió`,`Slide 4 — el resultado`,`Slide 5 — CTA`],
+`Fondo negro azulado con dos cifras grandes: "41%" en gris y "67%" en ámbar #F59E0B, flecha fina entre ambas.`,
+`Slide 1: "41% → 67% de conversión"`,`"Guárdalo" + diagnóstico en bio`,
+{sl:5,todo:`Confirma permiso de Clínica Vázquez (Bilbao) para citarla y que las cifras sigan vigentes.`}),
+
+P('c32',12,'nova','tt','3 errores','video','20:00',
+`"3 errores al conectar WhatsApp con tu CRM (el 3 te hace perder leads sin que lo sepas)."`,
+`"3 errores" es un gancho recomendado por la plataforma, con muchos comentarios.`,
+`3 errores al conectar WhatsApp con tu CRM. El 3 te hace perder leads sin darte cuenta.`,
+[`0-3s — "3 errores al conectar WhatsApp con tu CRM"`,`3-18s — 1) no guardar el origen del lead, 2) mensajes sin plantilla de seguimiento, 3) no avisar a una persona cuando el agente no sabe.`,`18-25s — "¿Cuál cometes? Comenta."`],
+`Tres etiquetas numeradas, la 3 con contorno cian grueso, sobre fondo #0D0D1A.`,
+`titular: "3 errores WhatsApp + CRM"`,`"Comenta el número"`,{dur:'25s'}),
+
+/* ===== D13 · Mar 3 ===== */
+P('c33',13,'nova','ig','Reel "cómo hacer X en 30 segundos"','reel','18:00',
+`"Cómo pasar los leads de Instagram a tu CRM en 30 segundos."`,
+`Tutorial rápido y accionable: guardable, y capta a quien ya usa IG para vender.`,
+`Cómo pasar los leads de Instagram a tu CRM en 30 segundos:
+
+1. El DM dispara el flujo.
+2. Se guarda nombre, origen y mensaje.
+3. El seguimiento sale solo.
+
+Guárdalo si hoy copias y pegas a mano 📲`,
+[`0-3s — cronómetro 0:30.`,`3-25s — screen recording del flujo.`,`25-30s — resultado en el CRM.`],
+`Un móvil minimalista de línea fina con una burbuja de IG conectada por una flecha cian a una tabla CRM. Fondo #0D0D1A.`,
+`titular: "Instagram → CRM en 30 s"`,`"Guárdalo" + DM "CRM"`,{dur:'30s'}),
+
+P('c34',13,'personal','tt','Mito vs realidad','video','20:00',
+`"Mito: la IA te quita el trato humano. Realidad: te lo devuelve."`,
+`Segunda entrega de la serie semanal: la continuidad construye audiencia recurrente.`,
+`Mito: la IA te quita el trato humano. Realidad: te quita lo repetitivo para que lo humano sea de verdad humano.`,
+[`0-3s — "MITO ❌"`,`3-18s — ejemplo: el equipo deja de teclear respuestas y atiende al paciente/cliente.`,`18-25s — "¿Qué mito toca la próxima semana? Comenta."`],
+`Plantilla de la serie: "MITO" tachado en azul eléctrico arriba, "REALIDAD" debajo; fondo #0A0A0F.`,
+`línea inferior: "IA + trato humano"`,`"¿Qué mito toca? Comenta"`,{dur:'25s'}),
+
+/* ===== D14 · Mié 4 ===== */
+P('c35',14,'smilbot','li','Opinión contraria','post','09:00',
+`"Más marketing no arregla una recepción saturada."`,
+`Opinión contraria argumentada en dental: reencuadra el problema (respuesta, no captación).`,
+`Más marketing no arregla una recepción saturada.
+
+Trabajo con clínicas y veo el mismo patrón: invierten en publicidad para traer más pacientes, y los pierden en el primer mensaje. En muchas clínicas la espera media de respuesta supera las 4 horas.
+
+Pagas por el paciente dos veces: una en el anuncio, otra cuando se lo lleva la clínica que contestó antes.
+
+Antes de subir el presupuesto, mide dos cosas: cuánto tardas en responder y cuántos mensajes se quedan sin contestar.
+
+Si eso falla, no hay anuncio que lo compense.
+
+¿Habéis medido alguna vez vuestro tiempo real de respuesta?`,
+[],``,``,`Pregunta abierta, sin hashtags ni enlace`),
+
+P('c36',14,'personal','ig','Reel de sistema propio','reel','13:00',
+`"Cómo preparo el contenido de 3 marcas sin vivir pegado al móvil."`,
+`Un sistema reproducible y documentado es de los formatos con más tracción para el nicho personal.`,
+`Cómo preparo el contenido de 3 marcas sin vivir pegado al móvil:
+
+1. Un solo documento con el calendario.
+2. Grabo en bloque, no pieza a pieza.
+3. Programo todo el mismo día.
+4. Reviso métricas una vez por semana.
+
+El truco no es la IA. Es el sistema.
+
+Guárdalo si gestionas más de una marca 🔑`,
+[`Mostrar el documento del calendario.`,`Screen recording acelerado de la programación.`,`Cierre con el panel de métricas.`],
+`Tres columnas de texto (una por marca, sin logos) convergiendo en un icono de calendario azul eléctrico.`,
+`titular: "3 marcas. 1 sistema."`,`"Guárdalo"`,{dur:'30s'}),
+
+P('c37',14,'nova','tt','Comparativa de herramientas','video','13:30',
+`"Make, n8n o Zapier: cuál elegir según el tipo de negocio (verifica precios el día que publiques)."`,
+`Las comparativas capturan búsqueda activa en TikTok.`,
+`Make vs n8n vs Zapier: cuál te conviene según tu tipo de negocio.`,
+[`0-3s — las 3 opciones en pantalla.`,`3-20s — curva de aprendizaje, precio de entrada, integraciones.`,`20-28s — recomendación por tamaño de negocio.`],
+`Tres tarjetas de línea fina con etiquetas de texto genéricas, nodos de conexión en cian. Fondo #0D0D1A.`,
+`titular: "¿Cuál te conviene?"`,`"Guárdalo" + DM "AUTOMATIZA"`,{dur:'28s',note:`Verifica los precios actuales de cada plan antes de grabar: cambian.`}),
+
+P('c38',14,'nova','fb','Caso de un proyecto','post','11:00',
+`"Qué automatizamos primero en un negocio de servicios (y por qué)."`,
+`Los casos concretos generan más confianza que las promesas genéricas.`,
+`Qué automatizamos primero en un negocio de servicios: [COMPLETA CON UN CASO REAL: tipo de negocio + tarea + horas ahorradas/mes].
+
+Lo que nunca automatizamos primero: lo que el cliente no tiene claro a mano.
+
+Link al caso completo en el primer comentario 👇`,
+[],`Una cifra grande ("[X] h/mes") en cian sobre fondo #0D0D1A con un diagrama de flujo simple debajo.`,
+`titular: "[Tarea] automatizada · [X] h/mes"`,`Enlace en el primer comentario + WhatsApp +34 631 65 49 19`,
+{todo:`Sustituye los corchetes por un caso REAL con cifras reales. No publiques sin completar.`}),
+
+/* ===== D15 · Jue 5 ===== */
+P('c39',15,'smilbot','ig','Reel antes/después de recepción','reel','13:00',
+`"Recepción antes y después: de teclear respuestas a atender al paciente."`,
+`El antes/después con proceso muestra el cambio sin tener que explicarlo.`,
+`Recepción antes: 100 mensajes repetidos a mano.
+Recepción después: el equipo libera entre 4 y 6 horas al día y se centra en el paciente que ya está en la clínica.
+
+Nada de esto sustituye a tu equipo. Le quita lo repetitivo.
+
+Diagnóstico de 30 minutos en la bio 🦷`,
+[`Split screen: bandeja saturada / agenda ordenada.`,`Texto: "4-6 h liberadas al día".`,`Cierre con el CTA.`],
+`Split: izquierda burbujas de chat apiladas en línea fina gris; derecha un calendario ordenado con checks azules y un dato ámbar.`,
+`titular: "Antes / Después de la recepción"`,`Diagnóstico en bio`,{dur:'25s'}),
+
+P('c40',15,'personal','tt','Humor profesional','video','20:00',
+`"Cuando el cliente dice: 'tú hazlo con IA, que es rápido'."`,
+`Tercera entrega del formato de humor profesional: mantiene frescura con ángulos nuevos.`,
+`Cuando el cliente dice "tú hazlo con IA, que es rápido".`,
+[`Escena 1 — la petición.`,`Escena 2 — todo lo que hay detrás.`,`Cierre sin explicar el chiste.`],
+`Dos paneles: "Lo que parece" (un botón) / "Lo que es" (diagrama de flujo con muchos pasos).`,
+`paneles: "Lo que parece" / "Lo que es"`,`Sin CTA forzado`,{dur:'22s'}),
+];
+
+/* Posts 41-79 (días 15-30) */
+const POSTS_B = [
+P('c41',15,'smilbot','fb','Pregunta frecuente','post','19:00',
+`"¿Y si el paciente quiere hablar con una persona? Esto es lo que pasa."`,
+`Responder la objeción más común de un director de clínica genera comentarios y confianza.`,
+`¿Y si el paciente quiere hablar con una persona?
+
+Es la duda número 1 de las clínicas. La respuesta: Smilbot escala a tu equipo en cuanto la consulta es clínica o urgente, con el contexto de la conversación y con prioridad.
+
+Lo repetitivo (horarios, citas, recordatorios) lo resuelve el agente. Lo que requiere criterio, lo resuelve una persona.
+
+Más detalle en smilbot.com (enlace en el primer comentario 👇).`,
+[],``,``,`Enlace en el primer comentario + WhatsApp +34 675 25 87 58`),
+
+/* ===== D16 · Vie 6 ===== */
+P('c42',16,'nova','li','Opinión contraria','post','09:00',
+`"Automatizar mal sale más caro que no automatizar."`,
+`Opinión argumentada que desafía el "automatiza todo" y aporta criterio.`,
+`Automatizar mal sale más caro que no automatizar.
+
+Un proceso manual mal hecho tiene un coste visible: horas. Un proceso automático mal hecho tiene un coste invisible: errores que se repiten a escala, sin que nadie los vea.
+
+Tres señales de que estás automatizando algo que aún no entiendes:
+· No sabes explicar el proceso en una página.
+· No hay nadie responsable de revisarlo.
+· No sabes qué pasa cuando falla.
+
+Antes de automatizar, simplifica. Después, automatiza. Y deja siempre a una persona que supervise.
+
+¿Cuál de las tres has visto más en proyectos que conoces?`,
+[],``,``,`Pregunta abierta, sin hashtags ni enlace`),
+
+P('c43',16,'nova','ig','Carrusel educativo','carousel','13:00',
+`"7 automatizaciones para negocios de servicios que se pagan solas en semanas"`,
+`Carrusel de lista guardable con foco en negocio de servicios.`,
+`7 automatizaciones para negocios de servicios:
+
+1. Respuesta inmediata a leads.
+2. Recordatorios de citas.
+3. Seguimiento a presupuestos no respondidos.
+4. Solicitud de reseñas tras el servicio.
+5. Reactivación de clientes inactivos.
+6. Alta automática en CRM.
+7. Reporte semanal.
+
+Guárdalo y empieza por la 1 y la 2 ⚙️`,
+[`Slide 1 — portada`,`Slides 2-8 — una automatización por slide con impacto`,`Slide 9 — CTA`],
+`Lista numerada de línea fina sobre fondo #0D0D1A con iconos de automatización en cian.`,
+`Slide 1: "7 automatizaciones que se pagan solas"`,`"Guárdalo" + DM "AUTOMATIZA"`,{sl:9}),
+
+P('c44',16,'nova','tt','Comparativa de herramientas','video','13:30',
+`"CRM gratis vs de pago: cuál necesita de verdad tu negocio."`,
+`Comparativa de decisión: captura búsqueda activa.`,
+`CRM gratis vs de pago: cuál necesita tu negocio.`,
+[`0-3s — "¿Pagar por un CRM?"`,`3-18s — límites reales: contactos, automatizaciones, soporte.`,`18-25s — regla simple.`],
+`Dos tarjetas ("Gratis" / "De pago") con checks en cian.`,
+`titular: "¿Cuándo pagar por un CRM?"`,`"Guárdalo antes de decidir"`,{dur:'25s'}),
+
+/* ===== D17 · Sáb 7 ===== */
+P('c45',17,'personal','tt','Behind the scenes','video','13:00',
+`"Sábado: así preparo una llamada de diagnóstico."`,
+`El proceso real y sin editar retiene más.`,
+`Así preparo una llamada de diagnóstico un sábado, sin guion.`,
+[`0-8s — mesa real.`,`8-25s — qué reviso antes de hablar con un negocio.`,`25-35s — "¿Qué quieres ver? Comenta."`],
+`Escritorio cenital con portátil, libreta y café; luz natural.`,
+`texto: "Sábado · preparando un diagnóstico"`,`"¿Qué quieres ver? Comenta"`,{dur:'35s'}),
+
+P('c46',17,'personal','ig','Reel "cómo hacer X en 30 segundos"','reel','18:00',
+`"Cómo pedirle a la IA el guion de un reel en 30 segundos (sin que suene a IA)."`,
+`Tutorial rápido y útil para el público de emprendedores.`,
+`Cómo pedirle a la IA el guion de un reel en 30 segundos:
+
+1. Dale tu voz: pega 3 frases tuyas reales.
+2. Dile para quién es y qué quieres que haga.
+3. Pídele 3 versiones del gancho.
+4. Elige y reescribe a tu manera.
+
+Guárdalo ⚡`,
+[`0-3s — cronómetro.`,`3-25s — screen recording del prompt.`,`25-30s — resultado y retoque.`],
+`Pantalla de móvil minimalista con un prompt y un cronómetro 0:30 en azul eléctrico.`,
+`titular: "Guion de reel en 30 s"`,`"Guárdalo"`,{dur:'30s'}),
+
+/* ===== D18 · Dom 8 ===== */
+P('c47',18,'smilbot','fb','Pregunta abierta','post','11:00',
+`"¿Qué hace tu clínica cuando llega un WhatsApp a las 22:00?"`,
+`La pregunta hace visible un hueco que todos tienen.`,
+`¿Qué hace tu clínica cuando llega un WhatsApp a las 22:00?
+
+· Se contesta al día siguiente
+· Contesta alguien del equipo
+· Responde un sistema automático
+
+Cuéntanoslo en los comentarios.`,
+[],``,``,`Pregunta abierta → responder cada comentario`),
+
+/* ===== D19 · Lun 9 ===== */
+P('c48',19,'personal','li','Carrusel PDF de criterio','pdf','09:00',
+`"Los 4 pasos que sigo antes de automatizar nada (y por qué casi nadie los sigue)"`,
+`Carrusel PDF = 2-3x dwell time; refuerza la lección de la semana 2.`,
+`Antes de automatizar nada sigo 4 pasos. Casi nadie los sigue.
+
+1. Dibujar el proceso.
+2. Marcar dónde se pierde tiempo o dinero.
+3. Elegir la herramienta que encaja.
+4. Automatizar un tramo, medir y repetir.
+
+En el documento: qué pregunto en cada paso y qué señales miro.
+
+Si quieres aplicarlo a tu negocio, mi mensaje directo está abierto.`,
+[`Slide 1 — portada`,`Slides 2-5 — un paso por slide`,`Slide 6 — error más común`,`Slide 7 — cierre`],
+`Fondo blanco limpio con titulares Montserrat Bold negro azulado y cifras en azul #1D78FF.`,
+`Slide 1: "4 pasos antes de automatizar"`,`Mensaje directo`,{sl:7}),
+
+P('c49',19,'smilbot','ig','Carrusel educativo','carousel','13:00',
+`"Los 5 mensajes que más recibe una clínica (y cómo responderlos en menos de 90 segundos)"`,
+`Carrusel útil y guardable para el equipo de recepción.`,
+`Los 5 mensajes que más recibe una clínica:
+
+1. "¿Cuánto cuesta una limpieza/ortodoncia?"
+2. "¿Tenéis hueco esta semana?"
+3. "Tengo dolor, ¿puedo ir hoy?"
+4. "¿Aceptáis mi seguro?"
+5. "Necesito cambiar mi cita."
+
+Con una buena respuesta base resuelves 4 de 5 sin tocar el teclado. Guárdalo 🦷`,
+[`Slide 1 — portada`,`Slides 2-6 — un mensaje por slide con cómo responder`,`Slide 7 — CTA`],
+`Burbujas de WhatsApp estilizadas en azul #2563EB con el mensaje en cada slide; icono de reloj en ámbar.`,
+`Slide 1: "Los 5 mensajes que más recibe una clínica"`,`"Guárdalo" + diagnóstico en bio`,{sl:7}),
+
+P('c50',19,'personal','tt','Mito vs realidad','video','20:00',
+`"Mito: automatizar es caro. Realidad: lo caro es lo que no automatizas."`,
+`Tercera entrega de la serie semanal de mitos.`,
+`Mito: automatizar es caro. Realidad: lo caro es seguir haciendo a mano lo repetitivo.`,
+[`0-3s — "MITO ❌"`,`3-18s — comparar coste mensual de lo manual vs lo automático con un ejemplo.`,`18-25s — "¿Qué mito toca ahora? Comenta."`],
+`Plantilla de la serie: "MITO" tachado y "REALIDAD" en azul eléctrico.`,
+`línea inferior: "Lo caro es no automatizar"`,`"¿Qué mito toca? Comenta"`,{dur:'25s'}),
+
+/* ===== D20 · Mar 10 ===== */
+P('c51',20,'nova','ig','Reel comparativo','reel','13:00',
+`"Agente de IA vs persona: ¿quién gana en tiempo de respuesta?"`,
+`Un duelo visual genera sends y comentarios.`,
+`Agente de IA vs persona respondiendo un mensaje.
+
+· Agente: menos de 90 segundos.
+· Persona: depende de si está.
+
+No compiten. Se complementan: el agente responde, la persona decide.
+
+DM "AGENTE" y lo vemos sobre tu caso 🤖`,
+[`Cronómetro dual en pantalla.`,`Mismo mensaje enviado a ambos.`,`Resultado y cierre.`],
+`Dos cronómetros de línea fina lado a lado, uno detenido en 0:42 en cian y otro corriendo.`,
+`titular: "Agente vs persona"`,`DM "AGENTE"`,{dur:'25s'}),
+
+P('c52',20,'smilbot','tt','Demo de panel (cross-post)','video','19:30',
+`"Así ve una clínica sus conversaciones, citas y no-shows en un solo panel."`,
+`Mostrar el panel real transmite producto, no promesa.`,
+`Así ve una clínica sus conversaciones, citas y no-shows en un solo panel.`,
+[`0-3s — "Esto es lo que ve tu clínica".`,`3-20s — recorrido del panel (con datos anonimizados).`,`20-28s — CTA a diagnóstico.`],
+`Una interfaz de panel esquemática en línea fina sobre fondo negro azulado con tres indicadores (azul y uno en ámbar).`,
+`titular: "Tu clínica en un solo panel"`,`Enlace en bio`,{dur:'28s',todo:`Graba el panel con datos ficticios o anonimizados.`}),
+
+P('c53',20,'nova','fb','Consejo útil','post','11:00',
+`"3 preguntas que debes hacer antes de contratar a una agencia de IA."`,
+`Contenido útil que posiciona sin vender.`,
+`3 preguntas antes de contratar una agencia de IA:
+
+1. ¿Qué proceso mío vais a automatizar primero y por qué?
+2. ¿Qué pasa cuando el sistema falla?
+3. ¿Quién lo revisa el segundo mes?
+
+Si no te las saben contestar, sigue buscando.`,
+[],``,``,`Comparte con quien esté evaluando agencias`),
+
+/* ===== D21 · Mié 11 ===== */
+P('c54',21,'smilbot','li','Caso con números','post','09:00',
+`"34 implantes calificados en el primer mes. Lo que cambió en una clínica de Barcelona."`,
+`Los casos concretos son lo más persuasivo en B2B.`,
+`34 implantes calificados en el primer mes.
+
+Es lo que nos cuenta DentalPro (Barcelona): la clínica ya recibía consultas por WhatsApp y web, pero no filtraba cuáles eran realmente tratamientos de alto valor.
+
+Lo que cambió: se responde en menos de 90 segundos, se pregunta lo mínimo necesario y se pasa a una persona con el contexto.
+
+Cada consulta de implante es un tratamiento de alto valor. Perder una por lentitud es caro.
+
+Si quieres ver cómo se aplicaría en tu clínica, mi mensaje directo está abierto.`,
+[],``,``,`Mensaje directo, sin hashtags ni enlace`,
+{todo:`Confirma permiso de DentalPro (Barcelona) y que la cifra sigue vigente.`}),
+
+P('c55',21,'personal','ig','Carrusel de pilares','carousel','13:00',
+`"Qué publicar si tienes un negocio de servicios: 5 pilares de contenido"`,
+`Marco simple y guardable que ordena el contenido de cualquier negocio.`,
+`Qué publicar si tienes un negocio de servicios: 5 pilares
+
+1. Educa: explica algo que tu cliente no sabe.
+2. Demuestra: enseña cómo trabajas.
+3. Prueba: casos reales con números.
+4. Humaniza: el equipo y el proceso.
+5. Invita: una sola acción clara.
+
+Guárdalo y revisa cuál te falta 🎯`,
+[`Slide 1 — portada`,`Slides 2-6 — un pilar por slide`,`Slide 7 — CTA`],
+`Cinco bloques de línea fina numerados sobre #0A0A0F, número en azul eléctrico.`,
+`Slide 1: "5 pilares de contenido"`,`"Guárdalo"`,{sl:7}),
+
+P('c56',21,'smilbot','fb','Reel reutilizado con caso','reel','19:00',
+`"18 pacientes reactivados con una sola campaña."`,
+`Un caso con número en reel nativo se comparte entre propietarios de clínica.`,
+`18 pacientes reactivados con una sola campaña.
+
+Es lo que nos cuenta Oral Center (Valencia): una lista de pacientes inactivos, un mensaje personalizado por WhatsApp y el agente gestionando las respuestas.
+
+Reactivar cuesta mucho menos que captar. Enlace al diagnóstico en el primer comentario 👇`,
+[`Clip de 25 s con el dato en pantalla.`,`Texto: "18 pacientes reactivados (Oral Center, Valencia)".`,`Cierre con CTA.`],
+`Una lista de contactos de línea fina con 18 checks en azul y la cifra "18" en ámbar.`,
+`titular: "18 pacientes reactivados"`,`Enlace en el primer comentario + WhatsApp`,
+{dur:'25s',todo:`Confirma permiso de Oral Center (Valencia) y cifra vigente.`}),
+
+P('c57',21,'nova','tt','Lo que nadie te cuenta','video','20:00',
+`"Lo que nadie te cuenta antes de automatizar tu negocio."`,
+`Gancho recomendado por la plataforma; posiciona con honestidad.`,
+`Lo que nadie te cuenta antes de automatizar: el trabajo no desaparece, cambia de sitio.`,
+[`0-3s — "Esto no te lo cuentan".`,`3-18s — de responder a supervisar.`,`18-25s — "Por eso revisamos cada mes."`],
+`Una flecha fina que se dobla entre dos nodos cian.`,
+`titular: "Lo que nadie te cuenta"`,`DM "AUTOMATIZA"`,{dur:'25s'}),
+
+/* ===== D22 · Jue 12 ===== */
+P('c58',22,'smilbot','ig','Demo en directo','reel','13:00',
+`"Calculo en directo cuánto pierde una clínica de 3 sillones."`,
+`La demo de la calculadora convierte un dato en acción.`,
+`Calculo en directo cuánto pierde una clínica de 3 sillones con 20 citas perdidas al mes.
+
+Valores por defecto: 2.400 € al mes. Pon los tuyos en la calculadora (enlace en bio) 📊
+
+Diagnóstico de 30 minutos gratis.`,
+[`0-3s — "¿Cuánto pierde tu clínica?"`,`3-25s — screen recording de la calculadora.`,`25-35s — resultado y CTA.`],
+`Una calculadora esquemática con tres campos y una cifra grande "2.400 €" en ámbar.`,
+`titular: "¿Cuánto pierde tu clínica?"`,`Calculadora + diagnóstico en bio`,{dur:'35s'}),
+
+P('c59',22,'personal','tt','Responder comentario en video','video','20:00',
+`"¿Por dónde empiezo a usar IA en mi negocio? Respuesta corta."`,
+`Responder comentarios mantiene la conversación abierta.`,
+`Respondiendo: ¿por dónde empiezo con IA en mi negocio? Por lo repetitivo.`,
+[`0-4s — comentario en pantalla.`,`4-22s — empieza por lo que haces todos los días igual.`,`22-28s — "Sigue comentando."`],
+`Captura estilizada de un comentario con una flecha hacia la respuesta.`,
+`titular: "Respondiendo tu comentario"`,`"Comenta tu duda"`,{dur:'28s'}),
+
+/* ===== D23 · Vie 13 ===== */
+P('c60',23,'nova','li','Carrusel PDF educativo','pdf','09:00',
+`"Qué mide un embudo que sí vende (y qué métricas son vanidad)"`,
+`Carrusel PDF con criterio de métricas: dwell time alto.`,
+`Un embudo que vende se mide con pocas cosas. Casi todas las demás son vanidad.
+
+En el documento: las 4 métricas que miro en cada embudo y las que ignoro.
+
+Si quieres revisar el tuyo, mi mensaje directo está abierto.`,
+[`Slide 1 — portada`,`Slides 2-5 — una métrica por slide`,`Slide 6 — métricas vanidad`,`Slide 7 — cierre`],
+`Fondo blanco con gráficos de línea fina; cifras en azul #1D78FF y cian #00D4FF.`,
+`Slide 1: "Qué mide un embudo que vende"`,`Mensaje directo`,{sl:7}),
+
+P('c61',23,'nova','ig','Carrusel de mitos','carousel','13:00',
+`"Viernes 13: 5 mitos de la automatización que te cuestan dinero"`,
+`Un guiño al calendario hace el carrusel más compartible.`,
+`Viernes 13: 5 mitos de la automatización que te cuestan dinero.
+
+1. "Necesito programar."
+2. "Es solo para empresas grandes."
+3. "Quita el trato humano."
+4. "Se monta una vez y ya."
+5. "Cuanto más, mejor."
+
+Guárdalo ⚙️`,
+[`Slide 1 — portada`,`Slides 2-6 — un mito por slide`,`Slide 7 — CTA`],
+`Cinco tarjetas con un "X" en línea fina sobre #0D0D1A y un check cian al final.`,
+`Slide 1: "5 mitos de la automatización"`,`"Guárdalo"`,{sl:7}),
+
+P('c62',23,'nova','tt','Error común','video','20:00',
+`"Viernes 13: el error de automatización que más miedo da."`,
+`El gancho temático aumenta la retención.`,
+`Viernes 13: el error de automatización que más miedo da — que falle y nadie se entere.`,
+[`0-3s — "El error que más miedo da".`,`3-18s — automatización sin alertas ni revisión.`,`18-25s — "Siempre alerta + supervisión."`],
+`Un nodo con una alerta en cian sobre fondo oscuro.`,
+`titular: "El error que da miedo"`,`DM "AUTOMATIZA"`,{dur:'25s'}),
+
+/* ===== D24 · Sáb 14 ===== */
+P('c63',24,'personal','tt','Humor profesional','video','13:00',
+`"Mi agenda un lunes vs cómo la imagina el cliente."`,
+`Humor autoconsciente: el formato más viral para negocios.`,
+`Mi agenda un lunes vs cómo la imagina el cliente.`,
+[`Escena 1 — agenda soñada.`,`Escena 2 — agenda real.`,`Cierre sin explicar el chiste.`],
+`Dos calendarios: uno ordenado, otro caótico.`,
+`paneles: "Como se imagina" / "Como es"`,`Sin CTA forzado`,{dur:'20s'}),
+
+/* ===== D25 · Dom 15 ===== */
+P('c64',25,'smilbot','fb','Dato semanal','post','11:00',
+`"Entre el 35 y el 45% de las consultas de pacientes nuevos llegan fuera de horario."`,
+`Un dato claro se comparte y genera comentarios de reconocimiento.`,
+`Entre el 35 y el 45% de las consultas de pacientes nuevos llegan fuera de horario.
+
+Si tu recepción cierra a las 18:00, estás dejando fuera casi la mitad de los pacientes potenciales.
+
+¿Qué haces tú con ese 35-45%?`,
+[],`Una gráfica circular de línea fina con un tramo de 35-45% resaltado en ámbar y un reloj al lado.`,
+`titular: "35-45% llegan fuera de horario"`,`Pregunta abierta`),
+
+/* ===== D26 · Lun 16 ===== */
+P('c65',26,'personal','li','Opinión contraria','post','09:00',
+`"La IA no vende por ti. Amplifica lo que ya vendes."`,
+`Opinión contraria que reencuadra el hype.`,
+`La IA no vende por ti. Amplifica lo que ya vendes.
+
+Si tu oferta está clara y tu proceso funciona, la IA lo multiplica. Si no, multiplica la confusión.
+
+Antes de comprar nada, revisa tres cosas:
+· ¿Mi oferta se entiende en una frase?
+· ¿Sé cuánto tarda mi cliente en decidir?
+· ¿Sé dónde se me caen los contactos?
+
+Con esas tres respondidas, la IA es un acelerador. Sin ellas, un gasto.
+
+¿Cuál de las tres te falta a ti hoy?`,
+[],``,``,`Pregunta abierta, sin hashtags ni enlace`),
+
+P('c66',26,'nova','ig','Reel de proceso','reel','13:00',
+`"Cómo preparo un diagnóstico de 30 minutos antes de proponer nada."`,
+`El proceso real genera confianza.`,
+`Cómo preparo un diagnóstico de 30 minutos:
+
+1. Qué hace el negocio hoy.
+2. Dónde pierde tiempo o clientes.
+3. Qué automatizaría primero.
+
+Nada de propuestas a ciegas. DM "DIAGNÓSTICO" 🔍`,
+[`Mostrar la plantilla de diagnóstico.`,`Pasar por las 3 preguntas.`,`Cierre con CTA.`],
+`Una hoja de diagnóstico de línea fina con tres secciones y un check cian.`,
+`titular: "Diagnóstico de 30 minutos"`,`DM "DIAGNÓSTICO"`,{dur:'30s'}),
+
+P('c67',26,'personal','tt','Rutina','video','20:00',
+`"Cómo uso la IA cada mañana (3 usos reales, no teoría)."`,
+`Un proceso real y documentado.`,
+`Cómo uso la IA cada mañana: 3 usos reales.`,
+[`0-3s — "3 usos reales".`,`3-22s — resumen de agenda, borradores y priorización.`,`22-28s — "¿Cuál usas tú? Comenta."`],
+`Un móvil con tres tarjetas numeradas en azul eléctrico.`,
+`titular: "3 usos reales de IA cada mañana"`,`"Comenta cuál usas"`,{dur:'28s'}),
+
+/* ===== D27 · Mar 17 ===== */
+P('c68',27,'smilbot','ig','Carrusel de oferta','carousel','13:00',
+`"Diagnóstico de 30 minutos, activación en 72 horas y garantía de 30 días: cómo funciona"`,
+`Un carrusel claro de proceso reduce la fricción para dar el siguiente paso.`,
+`Cómo funciona empezar con Smilbot:
+
+1. Diagnóstico de 30 minutos, sin compromiso.
+2. Activación en 72 horas.
+3. 30 días de garantía: si no ves resultados, te devolvemos el 100%.
+
+Desde 199 €/mes, sin permanencia y sin coste por mensaje.
+
+Reserva tu diagnóstico (bio) o escribe por WhatsApp: +34 675 25 87 58 🦷`,
+[`Slide 1 — portada`,`Slide 2 — diagnóstico`,`Slide 3 — activación`,`Slide 4 — garantía`,`Slide 5 — precio`,`Slide 6 — CTA`],
+`Una línea de tiempo de 3 pasos con relojes, check ámbar y fondo negro azulado.`,
+`Slide 1: "Cómo empezar con Smilbot"`,`Reservar diagnóstico (bio) + WhatsApp`,{sl:6,note:`Revisa que garantía, precio y condiciones sigan vigentes en smilbot.com antes de publicar.`}),
+
+P('c69',27,'smilbot','tt','Explicación (cross-post)','video','19:30',
+`"Qué pasa en un diagnóstico de 30 minutos con tu clínica."`,
+`Quitar el misterio al primer paso mejora la conversión.`,
+`Qué pasa en un diagnóstico de 30 minutos con tu clínica.`,
+[`0-3s — "Esto pasa en 30 minutos".`,`3-20s — 3 preguntas: volumen de mensajes, no-shows, horarios.`,`20-28s — "Reserva en la bio."`],
+`Un reloj de 30 minutos dividido en tres bloques con iconos de línea fina.`,
+`titular: "Diagnóstico de 30 minutos"`,`Enlace en bio`,{dur:'28s'}),
+
+/* ===== D28 · Mié 18 ===== */
+P('c70',28,'smilbot','li','Opinión argumentada','post','09:00',
+`"Por qué ofrecemos 30 días de garantía con devolución del 100%."`,
+`Explicar el porqué de una garantía genera confianza B2B.`,
+`Por qué ofrecemos 30 días de garantía con devolución del 100%.
+
+Porque un director de clínica no debería tener que confiar en una promesa. Debería poder comprobarlo.
+
+En 30 días se ve si hay menos no-shows, si los mensajes se contestan y si el equipo recupera tiempo. Si no, se devuelve el dinero.
+
+Es la forma más honesta de decir: confiamos en que funciona.
+
+¿Qué necesitaríais ver en 30 días para decidir si algo funciona en vuestra clínica?`,
+[],``,``,`Pregunta abierta, sin hashtags ni enlace`,
+{note:`Revisa las condiciones exactas de la garantía en smilbot.com antes de publicar.`}),
+
+P('c71',28,'personal','ig','Carrusel de stack','carousel','13:00',
+`"Mi stack de IA: qué uso, para qué y cuánto cuesta (verifica precios)"`,
+`El stack con precio real es el contenido más guardable.`,
+`Mi stack de IA: qué uso, para qué y cuánto cuesta.
+
+[Completa con tus 5 herramientas reales y sus precios actuales.]
+
+Guárdalo ⚡`,
+[`Slide 1 — portada`,`Slides 2-6 — una herramienta por slide`,`Slide 7 — regla de los 30 días`,`Slide 8 — CTA`],
+`Sistema visual: número enorme semitransparente en azul y nombre de herramienta (solo texto).`,
+`Slide 1: "Mi stack de IA (con precio real)"`,`"Guárdalo"`,
+{sl:8,todo:`Completa con tus herramientas reales y precios actuales antes de publicar.`}),
+
+P('c72',28,'nova','tt','Presupuesto','video','13:30',
+`"Si tuviera 500 € para automatizar un negocio, esto montaría primero."`,
+`Un escenario concreto con límite de presupuesto engancha.`,
+`Si tuviera 500 € para automatizar un negocio, esto montaría primero.`,
+[`0-3s — "500 € para automatizar".`,`3-20s — prioridad 1: respuesta inmediata; 2: recordatorios; 3: seguimiento.`,`20-28s — "Guárdalo."`],
+`Una moneda y tres tarjetas numeradas en cian.`,
+`titular: "500 € para automatizar"`,`"Guárdalo" + DM "AUTOMATIZA"`,{dur:'28s'}),
+
+P('c73',28,'smilbot','fb','Integraciones','post','19:00',
+`"¿Usas Gesden, Clinicalia o Klinikare? Smilbot se conecta."`,
+`Contestar la duda técnica más frecuente acelera la decisión.`,
+`¿Usas Gesden, Clinicalia, Klinikare, OdontoNet o Dentsply?
+
+Smilbot se conecta a las herramientas que ya usas y a Google Calendar, sin cambiar tu sistema de gestión.
+
+Consúltanos tu caso por WhatsApp: +34 675 25 87 58.`,
+[],`Iconos esquemáticos de sistemas conectados por líneas finas a una burbuja de chat azul.`,
+`titular: "Se conecta a lo que ya usas"`,`WhatsApp +34 675 25 87 58`,{note:`Verifica en smilbot.com el listado actual de integraciones.`}),
+
+/* ===== D29 · Jue 19 ===== */
+P('c74',29,'nova','ig','Carrusel de proceso','carousel','13:00',
+`"Cómo trabajamos: 4 fases desde el diagnóstico hasta la mejora continua"`,
+`Mostrar el proceso baja la fricción.`,
+`Cómo trabajamos:
+
+1. Diagnóstico: entendemos tu proceso.
+2. Construcción: montamos lo mínimo útil.
+3. Prueba: validamos con casos reales.
+4. Mejora: revisamos cada mes.
+
+Sin humo, sin promesas vacías ⚙️ DM "DIAGNÓSTICO".`,
+[`Slide 1 — portada`,`Slides 2-5 — una fase por slide`,`Slide 6 — CTA`],
+`Cuatro nodos conectados por flechas cian, uno por fase, fondo #0D0D1A.`,
+`Slide 1: "Cómo trabajamos en 4 fases"`,`DM "DIAGNÓSTICO"`,{sl:6}),
+
+P('c75',29,'personal','tt','Resumen de la serie','video','20:00',
+`"Los 3 mitos de la IA que desmonté este mes (y el que viene)."`,
+`Cerrar la serie con un resumen refuerza la audiencia recurrente.`,
+`Resumen: los 3 mitos que desmonté este mes y el siguiente.`,
+[`0-3s — "3 mitos desmontados".`,`3-20s — resumen en 3 frases.`,`20-28s — "¿Cuál sigue? Comenta."`],
+`Tres "MITO" tachados en columna y un cuarto con interrogación.`,
+`titular: "3 mitos desmontados"`,`"¿Cuál sigue? Comenta"`,{dur:'28s'}),
+
+/* ===== D30 · Vie 20 · CIERRE ===== */
+P('c76',30,'personal','li','Cierre de 30 días','post','09:00',
+`"30 días construyendo en público: lo que funcionó, lo que no y lo que sigue."`,
+`Un cierre honesto con datos propios es el post de mayor dwell time.`,
+`30 días construyendo en público con tres marcas.
+
+Lo que funcionó: [COMPLETA con tus 2-3 datos reales].
+Lo que no: [COMPLETA con 1 cosa que no funcionó].
+Lo que sigue: más profundidad, menos volumen.
+
+Lo más importante que aprendí: la constancia sin criterio es ruido, y el criterio sin constancia es silencio.
+
+Fe primero. Lo demás se ordena después.
+
+¿Qué cambiarías tú de tu estrategia de contenido para el próximo mes?`,
+[],``,``,`Pregunta abierta, sin hashtags ni enlace`,
+{todo:`Completa los corchetes con TUS métricas reales de estos 30 días.`}),
+
+P('c77',30,'personal','ig','Carrusel de cierre','carousel','13:00',
+`"Lo que más se guardó en 30 días (y por qué)"`,
+`El repaso de lo que funcionó es contenido nuevo y guardable.`,
+`Lo que más se guardó en estos 30 días, y por qué creo que funcionó.
+
+[Completa con tus 5 piezas más guardadas.]
+
+Guárdalo 🔑`,
+[`Slide 1 — portada`,`Slides 2-6 — una pieza por slide`,`Slide 7 — patrón común`],
+`Cinco miniaturas de piezas en línea fina con un check azul eléctrico en la más guardada.`,
+`Slide 1: "Lo que más se guardó"`,`"Guárdalo"`,
+{sl:7,todo:`Completa con tus 5 piezas más guardadas reales.`}),
+
+P('c78',30,'personal','tt','Cierre de la serie','video','20:00',
+`"Mito: hay que publicar todos los días. Realidad: lo que importó en 30 días."`,
+`Cierre de la serie de mitos con datos propios.`,
+`Mito: hay que publicar todos los días. Realidad: lo que importó en 30 días fue ser específico.`,
+[`0-3s — "MITO ❌".`,`3-18s — mostrar métricas reales.`,`18-25s — "¿Qué probamos el próximo mes? Comenta."`],
+`Plantilla de la serie con un calendario de 30 casillas.`,
+`línea inferior: "30 días. Lo que de verdad importó."`,`"¿Qué probamos? Comenta"`,
+{dur:'25s',todo:`Usa tus métricas reales de los 30 días.`}),
+
+P('c79',30,'smilbot','fb','Cierre y CTA','post','11:00',
+`"Esta semana: bloquea tu slot de diagnóstico."`,
+`Un cierre con CTA claro tras 30 días de contenido de valor.`,
+`Esta semana: bloquea tu slot de diagnóstico de 30 minutos.
+
+Qué incluye: revisamos tu volumen de mensajes, tus no-shows y tu horario real, y te decimos qué cambiaría en tu clínica.
+
+Sin compromiso y sin permanencia. Enlace en el primer comentario 👇 o WhatsApp: +34 675 25 87 58.`,
+[],`Un calendario con un hueco resaltado en ámbar y una burbuja de WhatsApp azul.`,
+`titular: "Bloquea tu diagnóstico esta semana"`,`Enlace en el primer comentario + WhatsApp +34 675 25 87 58`,
+{note:`Si usas escasez ("plazas limitadas") asegúrate de que sea real.`}),
+];
+
+const POSTS = [...POSTS_A, ...POSTS_B];
+
+/* ============ RENDER ============ */
+const STORAGE_KEY = 'calviral_30d_v1_checked';
+function getChecked(){ try{ return new Set(JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')); }catch(e){ return new Set(); } }
+function saveChecked(s){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify([...s])); }catch(e){} }
+let checked = getChecked();
+function todayStr(){ const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+const TODAY = todayStr();
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function renderKits(){
+  document.getElementById('kits').innerHTML = Object.entries(BRANDS).map(([k,b])=>`
+    <div class="kitcard"><h3 class="sub" style="color:${b.color}"><span class="swatch" style="background:${b.color}"></span>${b.label}</h3>
+    <div class="promptbox"><button class="copybtn" data-copy="kit-${k}">Copiar</button><pre id="kit-${k}">${esc(b.kit+'\n\n'+b.prohibited)}</pre></div></div>`).join('');
+}
+
+function cardHTML(p){
+  const prompt = p.aspect ? buildPrompt(p.brand, p.aspect, p.scene, p.textOverlay) : null;
+  const kindLabel = {reel:'Reel', video:'Video', carousel:'Carrusel', pdf:'PDF', post:'Post'}[p.kind]||'Pieza';
+  const meta = [kindLabel, p.dur || (p.slides? p.slides+' slides':null)].filter(Boolean).join(' · ');
+  let s = '';
+  if (p.todo) s += `<div class="sec"><div class="todo">⚠️ Por completar: ${esc(p.todo)}</div></div>`;
+  if (p.caption) s += `<div class="sec"><h4>Caption / texto</h4><div class="caption" id="cap-${p.id}">${esc(p.caption)}</div><div class="rowbtn"><button class="copybtn inline" data-copy="cap-${p.id}">Copiar texto</button></div>${p.note?`<p class="notep">${esc(p.note)}</p>`:''}</div>`;
+  if (p.steps && p.steps.length) s += `<div class="sec"><h4>${(p.kind==='carousel'||p.kind==='pdf')?'Slides':'Guion'}</h4><ul>${p.steps.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`;
+  if (prompt) s += `<div class="sec"><h4>Prompt de imagen — copiar y pegar</h4><div class="promptbox"><button class="copybtn" data-copy="pr-${p.id}">Copiar</button><pre id="pr-${p.id}">${esc(prompt)}</pre></div></div>`;
+  s += `<div class="sec"><p class="cta-line">${esc(p.cta)}</p></div>`;
+  return `<div class="card ${checked.has(p.id)?'done':''}" data-id="${p.id}" data-brand="${p.brand}" data-net="${p.net}">
+    <div class="chead"><label class="chkwrap"><input type="checkbox" data-check="${p.id}" ${checked.has(p.id)?'checked':''}></label>
+      <span class="net ${p.net}">${NET_LABEL[p.net]}</span><span class="vformat">${esc(p.format)}</span>
+      <span class="acct">${esc(p.account)}</span><span class="acct">· ${meta}</span>${p.todo?'<span class="todotag">completar</span>':''}<span class="t">${p.time}</span></div>
+    <div class="hook">${esc(p.hook)}</div>
+    <div class="why"><b>Por qué:</b> ${esc(p.why)}</div>
+    <details><summary>Ver texto, guion/slides y prompt</summary><div class="cbody">${s}</div></details></div>`;
+}
+
+function renderCalendar(){
+  const root = document.getElementById('weeks'); root.innerHTML='';
+  WEEKS.forEach(w=>{
+    let html = `<h3 class="sub weekh">${w.title}</h3><p class="subtext weektheme">${esc(w.theme)}</p>`;
+    DAYS.filter(d=>d.n>=w.from && d.n<=w.to).forEach(d=>{
+      const ps = POSTS.filter(p=>p.day===d.key);
+      html += `<div class="day" id="${d.key}"><div class="dayhead"><h3>${d.label}</h3><span class="date">${d.date}</span>${d.date===TODAY?'<span class="today-tag">HOY</span>':''}${d.note?`<span class="daynote">${esc(d.note)}</span>`:''}<span class="daycount">${ps.length} pieza${ps.length===1?'':'s'}</span></div>${ps.map(cardHTML).join('')}</div>`;
+    });
+    root.insertAdjacentHTML('beforeend', html);
+  });
+}
+function renderDayNav(){
+  const el = document.getElementById('daynav');
+  el.innerHTML = DAYS.map(d=>`<div class="daypill ${d.date===TODAY?'today':''}" data-jump="${d.key}">${d.short}<small>${d.date===TODAY?'HOY':(d.n===1||d.day===1?d.month.slice(0,3):'')}</small></div>`).join('');
+  el.addEventListener('click',e=>{const t=e.target.closest('[data-jump]'); if(t) document.getElementById(t.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'start'});});
+}
+function renderStats(){
+  const n = POSTS.length;
+  document.getElementById('stats').innerHTML = `<div class="stat"><b>${n}</b><span>Piezas</span></div><div class="stat"><b>30</b><span>Días</span></div><div class="stat"><b>${POSTS.filter(p=>p.todo).length}</b><span>Por completar</span></div><div class="stat"><b>3</b><span>Marcas</span></div>`;
+  document.getElementById('h2count').textContent = `22 oct – 20 nov · ${n} piezas`;
+  const c = {}; POSTS.forEach(p=>{c['brand-'+p.brand]=(c['brand-'+p.brand]||0)+1; c['net-'+p.net]=(c['net-'+p.net]||0)+1;});
+  document.querySelectorAll('[data-count]').forEach(el=>el.textContent='('+(c[el.dataset.count]||0)+')');
+}
+function updateProgress(){
+  const t=POSTS.length, d=POSTS.filter(p=>checked.has(p.id)).length;
+  document.getElementById('progressFill').style.width=(d/t*100)+'%';
+  document.getElementById('progressLabel').textContent=`${d}/${t} publicadas`;
+}
+
+/* ============ FILTROS ============ */
+const state={brands:new Set(['personal','nova','smilbot']),nets:new Set(['li','ig','tt','fb']),q:'',hideDone:false,onlyTodo:false};
+function applyFilters(){
+  let v=0;
+  document.querySelectorAll('.card').forEach(c=>{
+    const id=c.dataset.id, p=POSTS.find(x=>x.id===id);
+    const show=state.brands.has(c.dataset.brand)&&state.nets.has(c.dataset.net)&&(!state.hideDone||!checked.has(id))&&(!state.onlyTodo||p.todo)&&(!state.q||c.textContent.toLowerCase().includes(state.q));
+    c.classList.toggle('hide',!show); if(show)v++;
+  });
+  document.querySelectorAll('.day').forEach(d=>{d.style.display=d.querySelector('.card:not(.hide)')?'':'none';});
+  document.querySelectorAll('.weekh').forEach(h=>{ let n=h.nextElementSibling.nextElementSibling, any=false; while(n&&n.classList.contains('day')){ if(n.style.display!=='none') any=true; n=n.nextElementSibling;} h.style.display=any?'':'none'; h.nextElementSibling.style.display=any?'':'none'; });
+  document.getElementById('emptyState').style.display=v?'none':'';
+}
+function wire(){
+  document.getElementById('filters').addEventListener('click',e=>{
+    const ch=e.target.closest('.chip'); if(!ch) return;
+    if(ch.dataset.f==='reset'){state.brands=new Set(['personal','nova','smilbot']);state.nets=new Set(['li','ig','tt','fb']);state.hideDone=false;state.onlyTodo=false;document.querySelectorAll('.chip[data-b],.chip[data-n]').forEach(c=>c.classList.add('on'));document.getElementById('hideDoneChip').classList.remove('on');document.getElementById('todoChip').classList.remove('on');}
+    else if(ch.dataset.f==='brand'){const b=ch.dataset.b; state.brands.has(b)?state.brands.delete(b):state.brands.add(b); ch.classList.toggle('on');}
+    else if(ch.dataset.f==='net'){const n=ch.dataset.n; state.nets.has(n)?state.nets.delete(n):state.nets.add(n); ch.classList.toggle('on');}
+    else if(ch.id==='hideDoneChip'){state.hideDone=!state.hideDone; ch.classList.toggle('on',state.hideDone);}
+    else if(ch.id==='todoChip'){state.onlyTodo=!state.onlyTodo; ch.classList.toggle('on',state.onlyTodo);}
+    applyFilters();
+  });
+  document.getElementById('searchInput').addEventListener('input',e=>{state.q=e.target.value.trim().toLowerCase(); applyFilters();});
+  document.body.addEventListener('change',e=>{
+    const b=e.target.closest('[data-check]'); if(!b) return;
+    b.checked?checked.add(b.dataset.check):checked.delete(b.dataset.check); saveChecked(checked);
+    b.closest('.card').classList.toggle('done',b.checked); updateProgress(); if(state.hideDone) applyFilters();
+  });
+  document.body.addEventListener('click',e=>{
+    const btn=e.target.closest('.copybtn'); if(!btn) return;
+    const el=document.getElementById(btn.dataset.copy); if(!el) return;
+    const done=()=>{const o=btn.textContent; btn.textContent='Copiado ✓'; btn.classList.add('copied'); setTimeout(()=>{btn.textContent=o;btn.classList.remove('copied');},1600);};
+    const fb=()=>{const ta=document.createElement('textarea'); ta.value=el.textContent; ta.style.cssText='position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(_){} ta.remove(); done();};
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(el.textContent).then(done).catch(fb); else fb();
+  });
+  const bt=document.getElementById('backtop');
+  window.addEventListener('scroll',()=>bt.classList.toggle('show',window.scrollY>800));
+  bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+}
+
+renderKits(); renderStats(); renderCalendar(); renderDayNav(); wire(); updateProgress();
+const td = DAYS.find(d=>d.date===TODAY);
+if (td) setTimeout(()=>document.getElementById(td.key)?.scrollIntoView({behavior:'smooth',block:'center'}),400);
+
+</script>
+</body>
+</html>
