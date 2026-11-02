@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de redes y publicidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0F;--s:#13131C;--s2:#1A1A26;--line:#26263A;--text:#EDEDF2;--muted:#9A9AB0;--muted2:#6f6f85;
+--p:#1D78FF;--n:#00D4FF;--sm:#F59E0B;--ok:#34d399;--warn:#ff6b6b;--amber:#fbbf24}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1000px 480px at 10% -10%,rgba(29,120,255,.10),transparent 60%),var(--bg);color:var(--text);font-family:Poppins,sans-serif;font-size:15px;line-height:1.65}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px 100px}
+header{padding:46px 0 26px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+h1{font-family:Montserrat;font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.1}
+h1 .g{background:linear-gradient(90deg,var(--p),var(--n) 55%,var(--sm));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);margin-top:14px;max-width:720px}
+nav.toc{position:sticky;top:0;z-index:20;background:rgba(10,10,15,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;font-size:12.5px;color:var(--muted);text-decoration:none;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--s)}
+nav.toc a:hover{color:var(--text)}
+section{margin-top:46px;scroll-margin-top:70px}
+h2{font-family:Montserrat;font-weight:800;font-size:22px}
+h2 small{color:var(--muted);font-weight:600;font-size:13px;margin-left:8px}
+h3{font-family:Montserrat;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.06em;margin:24px 0 10px}
+p{margin-top:10px}
+.muted{color:var(--muted)}
+ul,ol{padding-left:20px;margin-top:8px;display:grid;gap:6px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.card{background:var(--s);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.card h4{font-family:Montserrat;font-weight:800;font-size:15px;margin-bottom:4px}
+.card.p{border-top:3px solid var(--p)}.card.n{border-top:3px solid var(--n)}.card.s{border-top:3px solid var(--sm)}
+.card ul{font-size:14px}
+.kpi b{display:block;font-family:Montserrat;font-weight:900;font-size:26px;line-height:1.1}
+.kpi span{color:var(--muted);font-size:12.5px}
+.tablewrap{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:680px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--s2);color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em}
+tr:last-child td{border-bottom:none}
+.note{margin-top:14px;padding:14px 16px;background:var(--s);border:1px solid var(--line);border-left:3px solid var(--p);border-radius:10px;font-size:14px}
+.note.warn{border-left-color:var(--warn)}.note.ok{border-left-color:var(--ok)}.note.amber{border-left-color:var(--sm)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:4px;vertical-align:1px}
+.t-ok{background:rgba(52,211,153,.15);color:var(--ok)}.t-no{background:rgba(255,107,107,.15);color:var(--warn)}.t-mid{background:rgba(245,158,11,.15);color:var(--amber)}
+.t-p{background:rgba(29,120,255,.15);color:#6aa8ff}.t-n{background:rgba(0,212,255,.12);color:var(--n)}.t-s{background:rgba(245,158,11,.15);color:var(--amber)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:12px 14px 12px 52px;background:var(--s);border:1px solid var(--line);border-radius:12px}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--p);color:#fff;font-weight:700;font-size:13px;display:grid;place-items:center}
+.check{list-style:none;padding:0}
+.check li{padding-left:28px;position:relative}
+.check li::before{content:"☐";position:absolute;left:4px;color:var(--muted)}
+.src{font-size:12.5px;color:var(--muted);columns:2;column-gap:24px}
+.src li{break-inside:avoid}
+.src a{color:#8fb8ea}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+@media(max-width:760px){.grid2,.grid3{grid-template-columns:1fr}.src{columns:1}}
+@media(max-width:760px){
+  .tablewrap{border:none;overflow:visible}
+  table{min-width:0}
+  table,tbody,tr,td{display:block;width:100%}
+  tr:first-child{display:none}
+  tr{background:var(--s);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:6px 0}
+  td{border-bottom:1px dashed var(--line);padding:8px 14px}
+  td:last-child{border-bottom:none}
+  td[data-label]::before{content:attr(data-label);display:block;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Auditoría · 2 de noviembre de 2026 · Personal · Nova Funnels · Smilbot</div>
+  <h1>Auditoría de redes y publicidad: <span class="g">qué hacer, dónde, cuándo y con cuánto</span></h1>
+  <p class="lead">Análisis de tus webs, tu nicho, lo que funciona y lo que no en cada red en 2026, horarios para España y LATAM, formatos orgánicos y de pago, presupuesto de arranque, uso de HeyGen y un plan para empezar a publicar hoy mismo.</p>
+</header>
+
+<nav class="toc">
+  <a href="#resumen">Resumen</a><a href="#web">Tus webs</a><a href="#nicho">Nicho y competencia</a><a href="#redes">Qué funciona por red</a>
+  <a href="#horarios">Horarios</a><a href="#formatos">Formatos por marca</a><a href="#ads">Publicidad pagada</a><a href="#heygen">HeyGen</a>
+  <a href="#hoy">Empieza hoy</a><a href="#kpis">Métricas</a><a href="#riesgos">Riesgos</a><a href="#fuentes">Fuentes</a>
+</nav>
+
+<!-- ═════════ RESUMEN ═════════ -->
+<section id="resumen">
+  <h2>1 · Resumen ejecutivo</h2>
+  <p>La forma más rápida de avanzar no es publicar más en todas partes: es poner <b>una sola marca a vender (Smilbot)</b>, usar las otras dos para generar autoridad y confianza, y meter <b>poco dinero en publicidad desde la primera semana</b> sobre las piezas orgánicas que mejor respondan.</p>
+  <div class="grid3">
+    <div class="card kpi"><b>Smilbot</b><span>Marca que vende primero: ticket recurrente (desde 199 €/mes), comprador claro y oferta con garantía.</span></div>
+    <div class="card kpi"><b>~45 €/día</b><span>Presupuesto recomendado de arranque (mínimo viable: ~20 €/día). Se reparte por marca abajo.</span></div>
+    <div class="card kpi"><b>3 formatos</b><span>Reel con demo real, carrusel guardable y anuncio de clic a WhatsApp. Con eso cubres el 80% del resultado.</span></div>
+  </div>
+  <div class="note warn"><b>Bloqueo antes de empezar:</b> soyluisfloresoficial.es y novafunnels.es no existen en el registro de dominios, y smilbot.com tiene problemas de seguimiento y de confianza (testimonios, aviso legal) que conviene arreglar antes de pagar anuncios. Detalle en la sección 2. Lo orgánico puedes publicarlo desde hoy.</div>
+  <h3>Las 7 decisiones</h3>
+  <ol class="steps" style="display:grid;gap:8px">
+    <li><b>Prioridad de marca:</b> Smilbot (ventas) → Nova Funnels (leads cualificados) → marca personal (autoridad y alcance que alimenta a las otras dos).</li>
+    <li><b>Red principal por marca:</b> Smilbot = Instagram + LinkedIn (perfil personal) + Facebook. Nova = Instagram + TikTok. Personal = TikTok + Instagram + LinkedIn.</li>
+    <li><b>Formato estrella:</b> el reel de demo real sin cortes (el "23:47") es tu mejor activo. Se publica orgánico y se convierte en anuncio.</li>
+    <li><b>Publicidad:</b> anuncios de clic a WhatsApp en Meta para Smilbot y Nova; anuncios de líder de opinión (Thought Leader Ads) en LinkedIn para Smilbot. TikTok de pago, todavía no.</li>
+    <li><b>Horarios:</b> Smilbot alrededor de las 14:00 y las 21:30 (pausas de una clínica); Nova y personal entre 19:00 y 21:00 hora de España (mediodía en LATAM); LinkedIn de martes a jueves de 8:00 a 10:00.</li>
+    <li><b>HeyGen:</b> sí para explicaciones, preguntas frecuentes y variantes de anuncios; nunca para testimonios ni demos, y siempre con la etiqueta de contenido IA (obligatoria en la UE desde el 2 de agosto de 2026).</li>
+    <li><b>Medición antes de gastar:</b> un solo píxel de Meta con eventos de contacto y reserva, API de conversiones, consentimiento de cookies correcto, LinkedIn Insight Tag y UTM en todos los enlaces. Hoy smilbot.com solo mide visitas: con eso, la publicidad optimiza a ciegas.</li>
+  </ol>
+</section>
+
+<!-- ═════════ WEB ═════════ -->
+<section id="web">
+  <h2>2 · Auditoría de tus webs</h2>
+  <div class="note warn"><b>Hallazgo crítico: soyluisfloresoficial.es y novafunnels.es no existen en Internet ahora mismo.</b> El registro oficial de dominios .es (nic.es) responde "dominio inexistente" para los dos (comprobado hoy, 2 de noviembre, con resolución DNS pública). Eso significa que cualquier persona que escriba esas direcciones, o que pulse un enlace en tu bio o en un anuncio, ve un error. Antes de publicar el enlace o pagar un solo anuncio hacia ellas: <b>registra o activa los dominios y apúntalos a la web</b> (si la web está en Base44 o Lovable, se conecta el dominio desde su panel). Si tu web está en otra dirección, pásamela y la audito.</div>
+
+  <h3>smilbot.com: lo que está bien</h3>
+  <ul>
+    <li>Propuesta clara en el titular: "Tu clínica nunca más perderá un paciente por falta de respuesta".</li>
+    <li>Muchas llamadas a la acción, WhatsApp directo (+34 675 25 87 58), calculadora de ROI, preguntas frecuentes completas y garantía de 30 días.</li>
+    <li>Blog con 14 artículos sobre temas que busca tu cliente (no-shows, WhatsApp, agentes de IA): buena base para SEO y para convertir en carruseles.</li>
+    <li>Google Tag Manager, píxel de Meta, robots.txt, sitemap y etiquetas para compartir en redes (Open Graph) ya instalados.</li>
+  </ul>
+
+  <h3>smilbot.com: lo que hay que arreglar antes de hacer publicidad</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Prioridad</th><th>Problema</th><th>Por qué importa</th><th>Qué hacer</th></tr>
+    <tr><td><span class="tag t-no">Alta</span></td><td><b>Testimonios con "retratos representativos"</b>: la propia web dice que algunas identidades se protegen con retratos representativos, y las imágenes son generadas. No hay enlaces a reseñas verificables.</td><td>Un testimonio que no puede comprobarse es un riesgo legal (prácticas comerciales desleales y reseñas) y la mayor amenaza para la confianza de un director de clínica. Meta también puede rechazar anuncios que lo usen.</td><td>Deja solo testimonios reales y con permiso. Si usas una imagen ilustrativa, indícalo junto a cada testimonio. Enlaza a la reseña de Google o Trustpilot cuando exista. No uses ningún caso en anuncios hasta tener el permiso por escrito.</td></tr>
+    <tr><td><span class="tag t-no">Alta</span></td><td><b>El píxel de Meta y Google Tag Manager se cargan antes del consentimiento</b>, aunque tu política de cookies dice que solo se activan si el visitante acepta.</td><td>Incumple tu propia política y la normativa de cookies que vigila la AEPD.</td><td>Activa el modo de consentimiento (consentimiento denegado por defecto) y carga el píxel solo tras aceptar.</td></tr>
+    <tr><td><span class="tag t-no">Alta</span></td><td><b>Dos píxeles de Meta distintos</b> en la misma página (IDs que acaban en …910480 y …529623).</td><td>Los datos se reparten entre dos píxeles y las campañas aprenden peor.</td><td>Quédate con uno solo, vinculado a la cuenta publicitaria de Smilbot.</td></tr>
+    <tr><td><span class="tag t-no">Alta</span></td><td><b>Solo se registra la visita a la página.</b> No encontré eventos de contacto ni de reserva (clic en WhatsApp, reserva de diagnóstico).</td><td>Sin esos eventos, Meta no puede optimizar hacia personas que contactan: optimiza hacia visitas, que son baratas y no compran.</td><td>Crea en GTM los eventos "Contact" (clic en WhatsApp) y "Lead" o "Schedule" (diagnóstico reservado), y la API de conversiones.</td></tr>
+    <tr><td><span class="tag t-no">Alta</span></td><td><b>Aviso legal incompleto</b>: NIF/CIF y domicilio "pendiente de completar"; la política de privacidad no tiene razón social y usa un Gmail.</td><td>La LSSI obliga a identificar al titular. Un director de clínica que revise el aviso legal antes de contratar se va.</td><td>Completa razón social, NIF y domicilio, y usa un correo con dominio propio (por ejemplo, hola@smilbot.com).</td></tr>
+    <tr><td><span class="tag t-mid">Media</span></td><td><b>Cifras que se contradicen</b>: 60% de consultas fuera de horario frente a 35-45%; paciente perdido ~120 € frente a 200-800 €; ROI 8x en 30 días frente a ROI en menos de 60 días; disponibilidad del 99,9% frente al 99,5%; "cancela cuando quieras" frente a "avisando con 30 días"; 30, 32 o +25 reseñas.</td><td>Un comprador racional detecta la contradicción y deja de creer todas las cifras. Además, los datos estructurados de la web declaran 32 reseñas con 4,9 estrellas, y Google no admite estrellas de reseñas sobre tu propia empresa.</td><td>Elige una cifra de cada dato, explica de dónde sale y úsala igual en la web, el calendario y los anuncios.</td></tr>
+    <tr><td><span class="tag t-mid">Media</span></td><td><b>"Conversación real automatizada"</b> sobre lo que es una maqueta, y contadores que muestran 0 si no se ejecuta la animación.</td><td>Si alguien lo nota, pierde la confianza en el resto.</td><td>Sustituye la maqueta por una grabación real (difuminando datos) o cambia la etiqueta a "Ejemplo".</td></tr>
+    <tr><td><span class="tag t-mid">Media</span></td><td><b>Catálogo muy amplio y sin precios</b> (SmilAgent, SmilSite, SmilFlow, SmilAds, SmilClone, cuatro packs) y nombres de planes distintos en la home (Starter/Pro/Enterprise) y en el catálogo (Starter/Growth/Premium).</td><td>Quien llega desde un anuncio de "recepcionista IA" se encuentra veinte productos y se dispersa.</td><td>Los anuncios deben llevar a una página dedicada solo al agente (SmilAgent) con un único botón: reservar diagnóstico o abrir WhatsApp.</td></tr>
+    <tr><td><span class="tag t-mid">Media</span></td><td><b>No está claro adónde llevan los botones de reserva</b> (no hay Calendly ni formulario visible en el código).</td><td>Si "Reservar diagnóstico" no lleva directo a una agenda, se pierden leads justo en el último paso.</td><td>Compruébalo en el móvil. Lo ideal: WhatsApp con mensaje prellenado o agenda embebida, y que ese clic dispare el evento de conversión.</td></tr>
+    <tr><td><span class="tag t-ok">Baja</span></td><td>Solo enlaza a Instagram; no hay LinkedIn, Facebook ni TikTok. Blog sin fechas ni captura de email.</td><td>Pierdes señales de confianza y una lista de correo que podrías reimpactar.</td><td>Añade los enlaces a redes y un recurso descargable (por ejemplo, "Calculadora de no-shows en PDF") a cambio del email.</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:13px">Revisado hoy: home, catálogo, blog, aviso legal, privacidad, cookies y el código de la página de smilbot.com. Los datos de seguimiento son los que aparecen en el código; confírmalos con la extensión Meta Pixel Helper y con la vista previa de Google Tag Manager.</p>
+
+</section>
+
+<!-- ═════════ NICHO ═════════ -->
+<section id="nicho">
+  <h2>3 · Nicho, competencia y posicionamiento</h2>
+
+  <div class="grid3">
+    <div class="card s">
+      <h4>Smilbot · B2B dental</h4>
+      <p class="muted" style="font-size:13.5px">Dueños y directores de clínica, 40-60 años, España. Deciden por ROI y confianza, no por tecnología.</p>
+      <ul>
+        <li><span class="tag t-ok">Funciona</span>calculadoras de pérdida, demos reales sin cortes, casos con nombre y número, contenido de gestión de clínica.</li>
+        <li><span class="tag t-no">No funciona</span>"revolucionario/disruptivo", hablarle al paciente en vez de al dueño, dientes e imágenes clínicas, promesas sin prueba.</li>
+      </ul>
+    </div>
+    <div class="card n">
+      <h4>Nova Funnels · pymes ES/LATAM</h4>
+      <p class="muted" style="font-size:13.5px">Pymes de servicios, freelancers y negocios digitales que quieren IA aplicada pero no saben por dónde empezar.</p>
+      <ul>
+        <li><span class="tag t-ok">Funciona</span>comparativas con precios reales, construcción en directo con cronómetro, errores comunes, casos con horas ahorradas.</li>
+        <li><span class="tag t-no">No funciona</span>"automatiza todo", jerga técnica sin contexto, promesas de ingresos, capturas genéricas de ChatGPT.</li>
+      </ul>
+    </div>
+    <div class="card p">
+      <h4>Marca personal</h4>
+      <p class="muted" style="font-size:13.5px">Emprendedores de España y LATAM interesados en IA aplicada y en construir negocio con valores.</p>
+      <ul>
+        <li><span class="tag t-ok">Funciona</span>construir en público, opinión con argumentos, sistemas propios documentados, detrás de cámaras real.</li>
+        <li><span class="tag t-no">No funciona</span>motivación genérica, textos con voz de IA, vender en cada post, hablar de diez temas distintos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Competencia directa de Smilbot (España)</h3>
+  <p>El mercado de recepcionistas de IA para clínicas dentales <b>ya está concurrido</b>. Hay proveedores con mensajes muy parecidos al tuyo ("WhatsApp 24/7, agenda, recordatorios"):</p>
+  <div class="tablewrap"><table>
+    <tr><th>Proveedor</th><th>Qué ofrece (según su web)</th><th>Precio público</th><th>Implicación para ti</th></tr>
+    <tr><td><b>Clara Assistant</b></td><td>Chat y voz, datos en la UE, instalación pegando un código en la web.</td><td>Desde 49,95 €/mes</td><td>Te gana en precio de entrada: tienes que justificar los 199 € con resultados, integración y servicio.</td></tr>
+    <tr><td><b>ClinicSmart</b></td><td>Agente para WhatsApp y llamadas, recordatorios de revisión, urgencias.</td><td>No publicado</td><td>Ofrece voz; tú solo la tienes en el plan Enterprise.</td></tr>
+    <tr><td><b>Engrana</b></td><td>WhatsApp para clínicas privadas; compatible con Gesden, Klinikare, Odontonet, Clinic Cloud…</td><td>No publicado</td><td>Mismo argumento de integraciones: no es diferencial por sí solo.</td></tr>
+    <tr><td><b>AInora, Dentiqa, OptimusCall, Clinicbot…</b></td><td>Agentes de voz o chat gestionados, o software que configura la clínica.</td><td>Variable</td><td>El sector se va a llenar de anuncios iguales: gana quien enseñe prueba.</td></tr>
+  </table></div>
+  <div class="note amber"><b>Tu diferencial real (y lo que debes repetir en todo):</b> garantía de 30 días con devolución del 100%, activación en 72 horas, onboarding hecho por vosotros (no "configúralo tú"), integraciones con el software dental español y casos de clínicas reales con nombre. El precio no lo es: no compitas por precio, compite por <b>"lo dejamos funcionando y si no funciona, te devolvemos el dinero"</b>.</div>
+
+  <h3>Nova Funnels: mercado saturado de "agencias de IA"</h3>
+  <p>En España y LATAM hay cientos de freelancers y agencias vendiendo automatización con n8n, Make y agentes. Los precios publicados van de unos 500 €/mes (freelance) a proyectos "llave en mano" desde 5.000 €. Para destacar necesitas <b>especialización y prueba</b>: ya tienes la mejor prueba posible, <b>Smilbot es un producto construido por ti</b>. Úsalo como caso: "esto es lo que construimos para clínicas; esto podemos construir para tu sector".</p>
+
+  <h3>Marca personal: el pegamento</h3>
+  <p>Tu cuenta personal es la que más alcance puede ganar en TikTok e Instagram, y en LinkedIn el perfil personal rinde mucho más que una página de empresa. Por eso el contenido de LinkedIn de Smilbot y Nova sale desde tu perfil. Mantén <b>tres temas fijos</b> (IA aplicada a negocios, sistemas y automatización, emprendimiento con fe) para que los algoritmos sepan a quién enseñarte.</p>
+</section>
+
+<!-- ═════════ REDES ═════════ -->
+<section id="redes">
+  <h2>4 · Qué está funcionando y qué no en cada red <small>(datos 2026)</small></h2>
+  <div class="tablewrap"><table>
+    <tr><th>Red</th><th>Qué funciona ahora</th><th>Qué ha dejado de funcionar</th><th>Señal que más pesa</th></tr>
+    <tr><td><b>Instagram</b></td>
+      <td>Carruseles (más de 3 veces las interacciones de una imagen única según Metricool) y reels originales. Instagram empuja el contenido original: en EE. UU., el 75% de las recomendaciones ya son de publicaciones originales.</td>
+      <td>Imagen única (alcance −22% y engagement −46% interanual según Metricool). Reposts y vídeos con marca de agua de otras apps. Publicar mucho sin conversación (la saturación bajó el alcance de reels ~35%).</td>
+      <td>Tiempo de visualización, "me gusta" y <b>envíos por DM</b> respecto al alcance.</td></tr>
+    <tr><td><b>TikTok</b></td>
+      <td>Funciona como buscador: palabras clave dichas en voz alta, texto en pantalla y descripción. Desde abril de 2026 puedes revisar las palabras clave de búsqueda que TikTok asigna a cada vídeo. Contenido crudo grabado con móvil.</td>
+      <td>Vídeos que parecen anuncios, vídeos sin palabras clave, contenido con IA realista sin etiquetar.</td>
+      <td>Porcentaje de vídeo visto, vídeos vistos completos, comentarios y compartidos.</td></tr>
+    <tr><td><b>LinkedIn</b></td>
+      <td>Perfil personal, carruseles PDF, opinión argumentada, temas consistentes. El sistema 360Brew muestra tu contenido a menos gente pero más relevante.</td>
+      <td>Páginas de empresa (alcance reportado −60%), hashtags, "comenta X", textos que suenan a IA (se reporta ~30% menos alcance), cambiar de tema cada día. Los enlaces externos siguen penalizados según la mayoría de fuentes.</td>
+      <td>Comentarios con sustancia, guardados, tiempo de lectura y coherencia del perfil con el tema.</td></tr>
+    <tr><td><b>Facebook</b></td>
+      <td>Reels nativos reutilizados de Instagram (sin marca de agua), preguntas a la comunidad, casos con números. El enlace en el primer comentario sí funciona.</td>
+      <td>Publicaciones con enlace directo, imágenes de stock.</td>
+      <td>Comentarios, compartidos y visualización de reels. Para tu público de 40-60 años sigue siendo una red relevante.</td></tr>
+  </table></div>
+  <div class="note">El contexto general: según Metricool 2026 (39,7 millones de publicaciones), el alcance orgánico cae por saturación pero el engagement de las audiencias que quedan sube. Traducción práctica: <b>menos publicaciones y mejores</b>, y usar la publicidad para amplificar lo que ya funciona.</div>
+</section>
+
+<!-- ═════════ HORARIOS ═════════ -->
+<section id="horarios">
+  <h2>5 · Horarios de publicación <small>(hora peninsular española)</small></h2>
+  <p>Los estudios coinciden en lo general: Instagram y TikTok rinden de tarde-noche (Metricool sitúa TikTok entre 18:00 y 20:00), LinkedIn en horario laboral de martes a jueves y el fin de semana es el peor momento para LinkedIn. Pero <b>tu público no es el público medio</b>, así que estos horarios están adaptados a cada audiencia:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Marca</th><th>Instagram</th><th>TikTok</th><th>LinkedIn</th><th>Facebook</th><th>Por qué</th></tr>
+    <tr><td><span class="tag t-s">Smilbot</span></td><td>14:00–15:00 y 21:00–22:00</td><td>20:00–21:30</td><td>Mar–jue 8:00–9:00 o 14:00</td><td>21:30–22:30</td><td>Un director de clínica mira el móvil antes de la primera cita, en la pausa de comida (muchas clínicas cierran de 14:00 a 16:00) y por la noche, después de cerrar.</td></tr>
+    <tr><td><span class="tag t-n">Nova</span></td><td>19:00–21:00</td><td>19:30–22:00</td><td>Mar–jue 9:00–10:30</td><td>19:00–21:00</td><td>Las 20:00 en España son las 13:00 en México, las 14:00 en Colombia y las 16:00 en Argentina: cubres España y la hora de comida de LATAM.</td></tr>
+    <tr><td><span class="tag t-p">Personal</span></td><td>20:00–21:00 (dom 19:00)</td><td>19:00–23:00</td><td>Mar–jue 8:30–10:00</td><td>—</td><td>Emprendedores: consumen contenido por la noche; en LinkedIn, antes de empezar el día.</td></tr>
+  </table></div>
+  <div class="note ok"><b>Regla de oro:</b> después de 3 semanas, mira en Instagram y TikTok (Estadísticas → Público → Horas más activas) a qué hora está conectado <b>tu</b> público y ajusta. Y quédate 30-60 minutos después de publicar para responder los comentarios: es cuando más pesan.</div>
+  <h3>Frecuencia mínima que funciona</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Red</th><th>Frecuencia recomendada (las tres marcas juntas)</th><th>Mínimo si vas justo de tiempo</th></tr>
+    <tr><td>Instagram</td><td>4-5 publicaciones/semana por cuenta + historias diarias</td><td>3/semana por cuenta</td></tr>
+    <tr><td>TikTok</td><td>5-7 vídeos/semana (desde tu cuenta personal)</td><td>3/semana</td></tr>
+    <tr><td>LinkedIn</td><td>3-4 publicaciones/semana, nunca 2 en menos de 12 horas</td><td>2/semana</td></tr>
+    <tr><td>Facebook</td><td>3-4/semana (reutilizando reels)</td><td>2/semana</td></tr>
+  </table></div>
+</section>
+
+<!-- ═════════ FORMATOS ═════════ -->
+<section id="formatos">
+  <h2>6 · Formato por marca y objetivo</h2>
+  <p>Ordenados por prioridad. Si solo puedes producir uno a la semana, produce el primero de la lista.</p>
+  <div class="grid3">
+    <div class="card s">
+      <h4>Smilbot</h4>
+      <ol>
+        <li><b>Reel de demo real sin cortes</b> (un paciente escribe a deshoras y el agente responde en menos de 90 s). Orgánico y como anuncio.</li>
+        <li><b>Carrusel de pérdida con números</b> (no-shows, citas perdidas, coste de recepción). Se guarda y se reenvía al socio.</li>
+        <li><b>Caso de cliente</b> en reel o en LinkedIn, con permiso de la clínica.</li>
+        <li><b>PDF en LinkedIn</b> con datos (formato que más se lee en B2B).</li>
+        <li>Historias con encuesta ("¿cuántos WhatsApp se os quedan sin contestar?") que llevan a DM.</li>
+      </ol>
+    </div>
+    <div class="card n">
+      <h4>Nova Funnels</h4>
+      <ol>
+        <li><b>Vídeo de construcción con cronómetro</b> ("monto esto en 10 minutos").</li>
+        <li><b>Comparativa de herramientas</b> con precios reales (TikTok como buscador).</li>
+        <li><b>Carrusel de checklist</b> ("antes de contratar automatización, revisa esto").</li>
+        <li><b>Caso Smilbot</b>: "esto construimos para clínicas".</li>
+        <li>"3 errores" / "lo que nadie te cuenta".</li>
+      </ol>
+    </div>
+    <div class="card p">
+      <h4>Marca personal</h4>
+      <ol>
+        <li><b>Vídeo a cámara</b> de opinión o mito vs realidad (TikTok + reel).</li>
+        <li><b>Detrás de cámaras</b> crudo de cómo llevas tres negocios.</li>
+        <li><b>Post de texto en LinkedIn</b> con lección profesional y pregunta abierta.</li>
+        <li><b>Carrusel de sistema propio</b> (tu stack, tu semana).</li>
+        <li>Reflexión de domingo (fe + criterio), sin vender.</li>
+      </ol>
+    </div>
+  </div>
+  <h3>Reaprovechamiento: una grabación, siete piezas</h3>
+  <p>Graba <b>un vídeo largo de 8-10 minutos a la semana</b> (por ejemplo, una demo comentada de Smilbot o una explicación tuya). De ahí salen: 3 clips para TikTok/Reels, 1 carrusel con las ideas clave, 1 post de LinkedIn, 1 reel para Facebook y 1 versión con avatar de HeyGen para probar como anuncio. El calendario de 30 días que ya tienes sigue sirviendo como guion de cada pieza.</p>
+</section>
+
+<!-- ═════════ ADS ═════════ -->
+<section id="ads">
+  <h2>7 · Publicidad pagada: plan de arranque</h2>
+  <p>Regla: <b>no se promociona nada que no haya funcionado antes en orgánico</b>. Cada semana eliges las 1-2 piezas con más envíos por DM, guardados o comentarios y esas son tus anuncios.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Marca</th><th>Campaña</th><th>Segmentación</th><th>Creatividad</th><th>Presupuesto inicial</th><th>Qué esperar (orientativo)</th></tr>
+    <tr><td><span class="tag t-s">Smilbot</span></td><td><b>Meta · Mensajes a WhatsApp</b> (clic a WhatsApp)</td><td>España, 30-65 años. Audiencia amplia (Advantage+) guiada por la creatividad + públicos personalizados: visitantes de la web, quien interactuó en Instagram y un público similar a tus clínicas clientes.</td><td>Reel "23:47" y reel de la calculadora. Primer mensaje prellenado: "Quiero mi diagnóstico de 30 min".</td><td>15 €/día · 14 días</td><td>Coste por conversación iniciada reportado en España: ~1-4 € en sectores poco saturados. Lo que importa es el coste por diagnóstico reservado.</td></tr>
+    <tr><td><span class="tag t-s">Smilbot</span></td><td><b>LinkedIn · Thought Leader Ads</b> (promocionar tu post personal)</td><td>España; cargos: odontólogo, director médico, propietario, gerente; sector: clínicas dentales / práctica médica.</td><td>Tus mejores posts de opinión de Smilbot (por ejemplo, "más marketing no arregla una recepción saturada").</td><td>15-20 €/día · 14 días</td><td>LinkedIn es caro (€5-8 por clic y €125-180 por lead en Europa), pero llega al decisor exacto. Los PDF (Document Ads) suelen salir más baratos por lead.</td></tr>
+    <tr><td><span class="tag t-n">Nova</span></td><td><b>Meta · Mensajes a WhatsApp</b></td><td>Dos conjuntos separados: España (25-55) y LATAM (México, Colombia, Argentina, Chile). LATAM es más barato pero de menor ticket: cualifica en el primer mensaje.</td><td>Vídeo "monto un agente en 10 minutos" + carrusel checklist.</td><td>10 €/día · 14 días</td><td>Mide el coste por conversación y cuántas pasan a diagnóstico.</td></tr>
+    <tr><td><span class="tag t-p">Personal</span></td><td><b>Promoción de reels</b> (amplificar, no captar)</td><td>España + LATAM, intereses de emprendimiento y negocios.</td><td>El reel orgánico con más envíos de la semana.</td><td>5 €/día · 3-4 días por pieza</td><td>Objetivo: alcance y seguidores de calidad, no ventas.</td></tr>
+  </table></div>
+
+  <div class="grid2">
+    <div class="card"><h4>Presupuesto total</h4>
+      <ul>
+        <li><b>Recomendado:</b> ~45 €/día ≈ 1.350 €/mes (15 Smilbot Meta + 15 Smilbot LinkedIn + 10 Nova + 5 personal).</li>
+        <li><b>Mínimo viable:</b> ~20 €/día ≈ 600 €/mes (15 Smilbot Meta + 5 personal). LinkedIn y Nova, cuando entre el primer cliente.</li>
+        <li>Con un cliente de Smilbot a 199 €/mes que se queda 12 meses (≈2.400 €), puedes pagar hasta varios cientos de euros por cliente y seguir siendo rentable.</li>
+      </ul>
+    </div>
+    <div class="card"><h4>Reglas para cortar o escalar</h4>
+      <ul>
+        <li><b>Cortar</b> un anuncio si tras 3 días el CTR es menor del 0,8% o el coste por conversación duplica la media.</li>
+        <li><b>Cortar</b> la campaña si con 300 € gastados no hay ningún diagnóstico reservado: el problema es la oferta o el seguimiento, no el anuncio.</li>
+        <li><b>Escalar</b> un 20% cada 3 días lo que funcione; nunca duplicar de golpe.</li>
+        <li>Rotar creatividades cada 10-14 días para evitar la fatiga.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note warn"><b>Cuidado con las normas de salud de Meta.</b> Smilbot es software B2B, pero toca el sector salud. Meta limita desde 2025 qué conversiones pueden enviar los sitios de salud y bienestar, y desde 2022 no permite segmentar por intereses de salud. Por eso la segmentación se basa en la creatividad y en tus propios públicos, y el objetivo es "mensajes", no "compra". Evita afirmaciones sobre tratamientos o resultados médicos: habla de agenda, respuesta y gestión.</div>
+  <div class="note"><b>Por qué no TikTok de pago todavía:</b> el presupuesto mínimo es de unos 50 $/día por campaña, y tu comprador de Smilbot no está decidiendo ahí. Cuando un vídeo de Nova o personal funcione muy bien en orgánico, se promociona como Spark Ad (suele salir más barato por clic que un anuncio normal).</div>
+  <div class="note"><b>Fuera de redes, pero muy recomendable para Smilbot:</b> una campaña pequeña de búsqueda en Google ("recordatorios whatsapp clínica dental", "software recepción clínica dental"). Capta a quien ya está buscando la solución.</div>
+</section>
+
+<!-- ═════════ HEYGEN ═════════ -->
+<section id="heygen">
+  <h2>8 · Cómo usar tu plan de HeyGen</h2>
+  <p>La evidencia independiente de 2026 (un estudio aleatorizado publicado en JMIR) indica que un avatar de IA y un presentador humano funcionan parecido para <b>contenido explicativo</b>. No hay estudios independientes que demuestren que los anuncios con avatar convierten mejor que una persona real. Así que úsalo donde ahorra tiempo sin restar confianza:</p>
+  <div class="grid2">
+    <div class="card"><h4><span class="tag t-ok">Sí</span>Dónde usar el avatar</h4>
+      <ul>
+        <li>Explicaciones y preguntas frecuentes ("¿qué pasa si el paciente quiere hablar con una persona?").</li>
+        <li><b>Variantes de anuncios</b>: el mismo guion con 3-5 ganchos distintos para encontrar el que mejor funciona sin grabar cinco veces.</li>
+        <li>Versiones para LATAM o en otro idioma de un vídeo que ya funcionó.</li>
+        <li>Los días que no puedas grabar, para mantener la frecuencia.</li>
+      </ul>
+    </div>
+    <div class="card"><h4><span class="tag t-no">No</span>Dónde no usarlo</h4>
+      <ul>
+        <li><b>Testimonios</b> (nunca un avatar haciéndose pasar por un dentista o un cliente).</li>
+        <li><b>Demos</b>: la prueba de Smilbot es la grabación de pantalla real.</li>
+        <li>Contenido personal, de fe o de opinión: ahí tu cara es el producto.</li>
+        <li>Más de un 30% de tus publicaciones: si todo es avatar, se pierde la confianza.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note warn"><b>Obligatorio etiquetarlo.</b> Desde el 2 de agosto de 2026 el artículo 50 de la Ley de IA de la UE obliga a quien publica (tú, no HeyGen) a indicar que un vídeo realista generado con IA es artificial. Además, Instagram y TikTok piden activar su etiqueta de contenido generado con IA en vídeos realistas. En la práctica: activa la etiqueta de la plataforma, añade "Vídeo con avatar de IA" en la descripción y usa solo tu propio avatar (tu cara y tu voz, con tu consentimiento).</div>
+</section>
+
+<!-- ═════════ HOY ═════════ -->
+<section id="hoy">
+  <h2>9 · Empieza hoy: plan de 7 días</h2>
+  <p>Ya tienes el calendario de 30 días en marcha (22 oct–20 nov). Hoy, lunes 2 de noviembre, es el <b>día 12</b>: no hace falta inventar nada nuevo, hace falta ejecutar y medir.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Día</th><th>Publicar (del calendario)</th><th>Además</th></tr>
+    <tr><td><b>Lun 2</b> (hoy)</td><td>LinkedIn personal "El orden importa" · Instagram Smilbot caso 41%→67% · TikTok Nova "3 errores WhatsApp + CRM"</td><td>Activar los dominios soyluisfloresoficial.es y novafunnels.es. En smilbot.com: un solo píxel, consentimiento antes de cargarlo, eventos de contacto/reserva y aviso legal completo. Quitar de las bios cualquier enlace que no funcione.</td></tr>
+    <tr><td><b>Mar 3</b></td><td>Instagram Nova "Instagram → CRM en 30 s" · TikTok personal mito 2</td><td>Crear públicos personalizados (web, interacción en Instagram, lista de clínicas). Preparar 3 variantes del reel "23:47" (dos con HeyGen y una real).</td></tr>
+    <tr><td><b>Mié 4</b></td><td>LinkedIn Smilbot · Instagram personal · TikTok Nova · Facebook Nova</td><td><b>Lanzar</b> Meta clic a WhatsApp de Smilbot (15 €/día), solo si el píxel y los testimonios ya están corregidos; si no, retrasa el lanzamiento hasta que lo estén.</td></tr>
+    <tr><td><b>Jue 5</b></td><td>Instagram Smilbot antes/después · TikTok personal · Facebook Smilbot</td><td>Lanzar Thought Leader Ad en LinkedIn con el post de Smilbot del miércoles si tuvo buena respuesta.</td></tr>
+    <tr><td><b>Vie 6</b></td><td>LinkedIn Nova · Instagram Nova · TikTok Nova</td><td>Lanzar Meta clic a WhatsApp de Nova (10 €/día, España y LATAM por separado).</td></tr>
+    <tr><td><b>Sáb 7</b></td><td>TikTok personal · reel personal</td><td>Grabar el vídeo largo de la semana para reaprovechar.</td></tr>
+    <tr><td><b>Dom 8</b></td><td>Facebook Smilbot (pregunta)</td><td>Revisión semanal: qué 2 piezas tuvieron más envíos o guardados → serán los anuncios de la semana siguiente.</td></tr>
+  </table></div>
+
+  <h3>Lista de comprobación antes de gastar un euro</h3>
+  <ul class="check">
+    <li>Dominios soyluisfloresoficial.es y novafunnels.es registrados, conectados y cargando.</li>
+    <li>Un solo píxel de Meta + API de conversiones, con evento de contacto al pulsar WhatsApp y de reserva al agendar.</li>
+    <li>Banner de cookies que bloquee el píxel y Google Tag Manager hasta que el visitante acepte.</li>
+    <li>Aviso legal y privacidad con razón social, NIF y domicilio.</li>
+    <li>Testimonios solo reales y con permiso; imágenes ilustrativas señaladas como tales.</li>
+    <li>LinkedIn Insight Tag en smilbot.com.</li>
+    <li>Google Analytics 4 con UTM en todos los enlaces de bio y anuncios (utm_source=instagram, utm_campaign=smilbot-demo…).</li>
+    <li>WhatsApp Business conectado al administrador de anuncios, con mensaje de bienvenida y respuestas rápidas.</li>
+    <li>Bio de Instagram con una sola promesa y un solo enlace (a la página de diagnóstico, no a la home).</li>
+    <li>Tres publicaciones fijadas por cuenta: demo, caso con número y "cómo empezar".</li>
+    <li>Destacadas de historias: Demo · Casos · Precio y garantía · Preguntas.</li>
+    <li>Permiso por escrito de cada clínica que nombres en un caso.</li>
+    <li>Hoja de seguimiento (o CRM) de cada conversación: origen, fecha, estado, diagnóstico sí/no.</li>
+  </ul>
+</section>
+
+<!-- ═════════ KPIs ═════════ -->
+<section id="kpis">
+  <h2>10 · Qué medir cada semana</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Nivel</th><th>Métrica</th><th>Dónde se ve</th><th>Referencia para empezar</th></tr>
+    <tr><td>Orgánico</td><td>Envíos y guardados por cada 1.000 cuentas alcanzadas</td><td>Estadísticas de Instagram</td><td>Compárate contigo mismo: el top 20% de tus piezas son los futuros anuncios.</td></tr>
+    <tr><td>Orgánico</td><td>Retención a los 3 segundos y % visto completo</td><td>Estadísticas de TikTok/Instagram</td><td>Si pierdes a más de la mitad en 3 segundos, el problema es el gancho.</td></tr>
+    <tr><td>Orgánico</td><td>Comentarios con sustancia en LinkedIn</td><td>LinkedIn</td><td>Más importante que las reacciones.</td></tr>
+    <tr><td>Pago</td><td>CTR y coste por conversación de WhatsApp</td><td>Administrador de anuncios</td><td>CTR &gt; 1%; conversación por debajo de 4 €.</td></tr>
+    <tr><td>Negocio</td><td>Conversaciones → diagnósticos → clientes</td><td>Tu CRM u hoja</td><td>Si hay conversaciones pero no diagnósticos, el fallo está en el seguimiento por WhatsApp.</td></tr>
+    <tr><td>Negocio</td><td>Coste por cliente (CAC) vs valor del cliente</td><td>Cálculo mensual</td><td>Smilbot: un cliente de 12 meses ≈ 2.400 €.</td></tr>
+  </table></div>
+</section>
+
+<!-- ═════════ RIESGOS ═════════ -->
+<section id="riesgos">
+  <h2>11 · Riesgos y cumplimiento</h2>
+  <ul>
+    <li><b>Cifras autodeclaradas:</b> los datos de smilbot.com (−68% no-shows, +47% citas, ROI 8x) son internos. En anuncios, preséntalos como "resultados de nuestras clínicas" y ten los datos para respaldarlos.</li>
+    <li><b>Testimonios:</b> permiso por escrito de cada clínica y que el resultado sea real y actual. Hoy la web usa "retratos representativos" generados: no los uses en anuncios y señálalos en la web.</li>
+    <li><b>Cookies:</b> el píxel y GTM no pueden cargar antes del consentimiento (AEPD).</li>
+    <li><b>Identificación del titular (LSSI):</b> completa razón social, NIF y domicilio.</li>
+    <li><b>Escasez falsa:</b> "solo 2 plazas esta semana" solo si es verdad; en España la publicidad engañosa tiene consecuencias legales y destruye la confianza B2B.</li>
+    <li><b>RGPD:</b> si hablas de datos de pacientes, menciona el cumplimiento (servidores en la UE, DPA) y nunca enseñes datos reales en las demos.</li>
+    <li><b>Ley de IA (art. 50) y etiquetas de plataforma:</b> todo vídeo con avatar, etiquetado.</li>
+    <li><b>Políticas de salud de Meta:</b> nada de afirmaciones médicas; habla de gestión, agenda y respuesta.</li>
+  </ul>
+</section>
+
+<!-- ═════════ FUENTES ═════════ -->
+<section id="fuentes">
+  <h2>12 · Fuentes</h2>
+  <p class="muted" style="font-size:13px">Muchas cifras de costes publicitarios vienen de blogs de agencias y son orientativas. Los datos reales los darán tus primeras dos semanas de campaña.</p>
+  <ul class="src">
+    <li><a href="https://metricool.com/best-time-to-post-social-networks/">Metricool · Mejor hora para publicar</a></li>
+    <li><a href="https://metricool.com/best-time-post-tiktok/">Metricool · Mejor hora en TikTok</a></li>
+    <li><a href="https://metricool.com/press-release-instagram-study-2026/">Metricool · Estudio de Instagram 2026</a></li>
+    <li><a href="https://www.reasonwhy.es/actualidad/estudio-instagram-metricool-2026">Reason Why · Instagram premia carruseles y reels</a></li>
+    <li><a href="https://laboratoriodeperiodismo.org/el-estudio-anual-de-metricool-sobre-redes-sociales-refleja-el-dominio-del-video-y-la-presion-creciente-sobre-el-alcance-organico/">Laboratorio de Periodismo · Estudio anual de Metricool</a></li>
+    <li><a href="https://sproutsocial.com/insights/best-times-to-post-on-social-media/">Sprout Social · Best times to post 2026</a></li>
+    <li><a href="https://sproutsocial.com/insights/best-times-to-post-on-instagram/">Sprout Social · Instagram</a></li>
+    <li><a href="https://sproutsocial.com/insights/best-times-to-post-on-facebook/">Sprout Social · Facebook</a></li>
+    <li><a href="https://socialk.it/en/best-time-to-post/linkedin">Socialkit · LinkedIn (estudios comparados)</a></li>
+    <li><a href="https://instabooster.es/blog/mejores-horas-publicar-instagram-tiktok-2026">Instabooster · Horas en España 2026</a></li>
+    <li><a href="https://iabspain.es/iab-spain-presenta-estudio-rrss-2026/">IAB Spain · Estudio de Redes Sociales 2026</a></li>
+    <li><a href="https://buffer.com/resources/instagram-algorithms/">Buffer · Algoritmo de Instagram 2026</a></li>
+    <li><a href="https://www.dataslayer.ai/blog/instagram-algorithm-2025-complete-guide-for-marketers">Dataslayer · Señales confirmadas por Mosseri</a></li>
+    <li><a href="https://www.socialpilot.co/blog/linkedin-algorithm">SocialPilot · Algoritmo de LinkedIn 2026</a></li>
+    <li><a href="https://www.forbes.com/sites/jodiecook/2026/01/12/the-linkedin-algorithm-changed-again-heres-whats-new-for-2026/">Forbes · LinkedIn algorithm 2026</a></li>
+    <li><a href="https://www.darkroomagency.com/observatory/tiktok-seo">Darkroom · TikTok SEO</a></li>
+    <li><a href="https://cactusmarketing.es/blog/cuanto-cuesta-meta-ads-espana-2026">Cactus · Coste de Meta Ads en España 2026</a></li>
+    <li><a href="https://vectorpartners.es/blog/coste-adquisicion-paciente-implantes/">Vector Partners · CAC paciente de implantes</a></li>
+    <li><a href="https://www.growthlyfy.com/blog/publicidad-clinica-dental-coste-por-lead">Growthlyfy · Coste por lead dental</a></li>
+    <li><a href="https://novachatia.com/blog/anuncios-click-to-whatsapp-guia-espana-2026/">Novachatia · Clic a WhatsApp en España</a></li>
+    <li><a href="https://zeniapartners.com/blog/click-to-whatsapp-ads-para-pymes.html">Zenia Partners · Click to WhatsApp para pymes</a></li>
+    <li><a href="https://engrana.es/en/blog/whatsapp-business-api-pricing-spain">Engrana · Precio de WhatsApp Business API</a></li>
+    <li><a href="https://piquiyo.com/blog/linkedin-ads-cost/">Piquiyo · Costes de LinkedIn Ads en €</a></li>
+    <li><a href="https://www.factors.ai/blog/linkedin-ads-cost">Factors · LinkedIn Ads cost 2026</a></li>
+    <li><a href="https://www.trackbee.ai/blog/tiktok-ads-cost-cpc-cpm-budget-best-strategies">Trackbee · TikTok Ads cost 2026</a></li>
+    <li><a href="https://adliftr.com/blog/tiktok-ads-cost-benchmarks-2026">Adliftr · Spark Ads benchmarks</a></li>
+    <li><a href="https://www.curvecompliance.com/meta-healthcare-ad-restrictions-2026-changes-adaptation">Curve · Reglas de Meta para salud 2026</a></li>
+    <li><a href="https://www.oney.studio/post/meta-july-2026-health-wellness-ad-policy-update">Oney · Cambio de política de salud de Meta (jul 2026)</a></li>
+    <li><a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations">Comisión Europea · Guía de transparencia (art. 50)</a></li>
+    <li><a href="https://www.orrick.com/en/Insights/2026/08/EU-AI-Act-Transparency-Obligations-for-AI-Generated-Content-Article-50">Orrick · Art. 50 de la Ley de IA</a></li>
+    <li><a href="https://influencermarketinghub.com/ai-disclosure-rules/">Influencer Marketing Hub · Etiquetas de IA por plataforma</a></li>
+    <li><a href="https://doi.org/10.2196/90037">JMIR 2026 · Avatar IA vs presentador humano</a></li>
+    <li><a href="https://claraassistant.com/dentistas/">Clara Assistant · Dentistas</a></li>
+    <li><a href="https://clinicsmart.es/clinica-dental">ClinicSmart · Clínica dental</a></li>
+    <li><a href="https://engrana.es/sectores/clinicas-dentales">Engrana · Clínicas dentales</a></li>
+    <li><a href="https://neurocallia.com/mejores-empresas-ia-clinicas-espana/">Neuro Call · Empresas de IA para clínicas</a></li>
+    <li><a href="https://www.javadex.es/blog/mejores-agentes-ia-empresas-espana-servicios-automatizacion-2026">Javadex · Agencias de IA en España 2026</a></li>
+    <li><a href="https://smilbot.com">smilbot.com</a> (home, /catalogo, /blog, /aviso-legal, /politica-privacidad, /politica-cookies y código fuente)</li>
+    <li><a href="https://dns.google/resolve?name=novafunnels.es">DNS público · novafunnels.es (NXDOMAIN)</a></li>
+    <li><a href="https://dns.google/resolve?name=soyluisfloresoficial.es">DNS público · soyluisfloresoficial.es (NXDOMAIN)</a></li>
+  </ul>
+</section>
+
+<footer>Auditoría preparada el 2 de noviembre de 2026. Los costes de publicidad son rangos orientativos de fuentes del sector; revisa tus propios datos a las dos semanas y ajusta.</footer>
+</div>
+<script>
+document.querySelectorAll('table').forEach(function(t){
+  var heads=[].map.call(t.querySelectorAll('tr:first-child th'),function(th){return th.textContent.trim();});
+  t.querySelectorAll('tr').forEach(function(tr,i){ if(!i) return; [].forEach.call(tr.children,function(td,j){ if(heads[j]) td.setAttribute('data-label',heads[j]); }); });
+});
+</script>
+</body>
+</html>
