@@ -14,10 +14,10 @@ html{scroll-behavior:smooth}
 body{background:radial-gradient(900px 480px at 12% -10%,rgba(29,120,255,.14),transparent 60%),var(--bg);color:var(--text);font-family:Poppins,sans-serif;font-size:15px;line-height:1.65}
 .wrap{max-width:980px;margin:0 auto;padding:0 18px 100px}
 header{padding:46px 0 24px;border-bottom:1px solid var(--line)}
-.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 h1{font-family:Montserrat;font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.1}
 h1 span{color:var(--p)}
-.lead{color:var(--muted);margin-top:12px;max-width:700px}
+.lead{color:var(--muted);margin-top:12px;max-width:720px}
 nav.toc{position:sticky;top:0;z-index:20;background:rgba(10,10,15,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 nav.toc::-webkit-scrollbar{display:none}
 nav.toc a{flex:none;font-size:12.5px;color:var(--muted);text-decoration:none;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--s)}
@@ -28,6 +28,10 @@ h3{font-family:Montserrat;font-weight:800;font-size:14.5px;text-transform:upperc
 p{margin-top:10px}
 .muted{color:var(--muted)}
 ul,ol{padding-left:20px;margin-top:8px;display:grid;gap:6px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.box3{background:var(--s);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.box3 h4{font-family:Montserrat;font-weight:800;font-size:15px;margin-bottom:4px}
+.box3 .ex{margin-top:8px;font-size:13.5px;background:var(--s2);border-radius:8px;padding:8px 10px}
 .tablewrap{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:12px}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -39,6 +43,8 @@ tr:last-child td{border-bottom:none}
 .chead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:14px 16px 0;font-size:12.5px;color:var(--muted)}
 .pill{font-weight:600;padding:3px 10px;border-radius:6px;background:var(--s2);border:1px solid var(--line);color:var(--text)}
 .pill.ig{color:var(--ig)}.pill.tt{color:var(--tt)}.pill.li{color:var(--li)}
+.pill.obj{color:var(--ok);border-color:rgba(52,211,153,.4)}
+.pill.cli{color:var(--amber);border-color:rgba(251,191,36,.4)}
 .hook{font-family:Montserrat;font-weight:800;font-size:17px;line-height:1.35;padding:10px 16px 2px}
 .why{padding:2px 16px 12px;font-size:13.2px;color:var(--muted)}
 .why b{color:var(--text)}
@@ -47,12 +53,22 @@ summary{cursor:pointer;padding:11px 16px;font-size:13px;font-weight:600;color:va
 summary::-webkit-details-marker{display:none}
 summary::before{content:"+";font-weight:800;width:14px}
 details[open] summary::before{content:"–"}
-.cbody{padding:0 16px 18px;display:grid;gap:14px}
+.cbody{padding:0 16px 18px;display:grid;gap:16px}
 .sec h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.loop{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:10px;padding:10px 12px;font-size:14px}
+.loop b{color:var(--amber)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{cursor:pointer;font:600 13px Poppins;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--s2);color:var(--muted)}
+.tab.on{color:#fff;background:var(--p);border-color:var(--p)}
+.variant{display:none;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--s2);margin-top:10px}
+.variant.on{display:grid;gap:10px}
+.hookline{font-family:Montserrat;font-weight:800;font-size:16px}
+.kv{font-size:14px}
+.kv span{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .timeline{display:flex;height:30px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
 .timeline div{display:grid;place-items:center;font-size:11.5px;font-weight:700;border-right:1px solid var(--bg);color:#fff}
 .timeline div:last-child{border-right:none}
-.k-avatar{background:#1D78FF}.k-broll{background:#3b3b58}.k-pantalla{background:#0e7f6e}
+.k-hook{background:#b8457f}.k-avatar{background:#1D78FF}.k-broll{background:#3b3b58}.k-pantalla{background:#0e7f6e}.k-cierre{background:#a16207}
 .legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted);margin-top:6px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 .seg{border:1px solid var(--line);border-radius:12px;background:var(--s2);padding:12px 14px}
@@ -75,7 +91,8 @@ details[open] summary::before{content:"–"}
 .steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--p);color:#fff;font-weight:700;font-size:12.5px;display:grid;place-items:center}
 footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
 footer a{color:#8fb8ea}
-@media(max-width:700px){
+@media(max-width:760px){
+  .grid3{grid-template-columns:1fr}
   .tablewrap{border:none}
   table,tbody,tr,td{display:block;width:100%}
   tr:first-child{display:none}
@@ -91,302 +108,373 @@ footer a{color:#8fb8ea}
 
 <header>
   <div class="eyebrow">Marca personal · Luis Carlos Flores · soyluisflores.es · Instagram y TikTok @soyluisfloresoficial · LinkedIn /in/soyluisflores</div>
-  <h1>Contenido de <span>Luis Flores</span>: guiones, textos y prompts listos para producir</h1>
-  <p class="lead">Solo tu marca personal, alineado con soyluisflores.es: automatizo lo que hoy haces a mano (mensajes, citas y seguimiento) para pymes y emprendedores de Latinoamérica y España. Ocho vídeos divididos en clips de 10 segundos como máximo que encadenan uno con el siguiente, cuatro carruseles, tres publicaciones de LinkedIn, historias y un calendario de dos semanas. Todo con botón de copiar.</p>
+  <h1>Contenido de <span>Luis Flores</span>: ganchos de curiosidad, guiones y prompts para HeyGen</h1>
+  <p class="lead">Solo tu marca personal. Cada vídeo trae tres ganchos de curiosidad distintos para tu gemelo digital de HeyGen, cada uno con su cierre, y clips de 10 segundos como máximo que encadenan entre sí. Ordenado según el orden de producción: entiendes el gancho, preparas el estilo, produces, publicas y pruebas.</p>
 </header>
 
 <nav class="toc">
-  <a href="#funciona">Qué funciona</a><a href="#sistema">Cómo encadenar clips</a><a href="#videos">8 vídeos</a><a href="#carruseles">4 carruseles</a><a href="#linkedin">LinkedIn</a><a href="#historias">Historias</a><a href="#recurso">10 prompts (DM)</a><a href="#calendario">Calendario</a>
+  <a href="#tus-respuestas">Tus respuestas</a><a href="#ganchos">1 · Ganchos</a><a href="#produccion">2 · Producción</a><a href="#videos">3 · 8 vídeos</a><a href="#prueba">4 · Probar ganchos</a><a href="#carruseles">5 · Carruseles</a><a href="#linkedin">6 · LinkedIn</a><a href="#historias">7 · Historias</a><a href="#recursos">8 · Recursos DM</a><a href="#calendario">9 · Calendario</a>
 </nav>
 
-<!-- ═════════ QUÉ FUNCIONA ═════════ -->
-<section id="funciona">
-  <h2>1 · Qué está funcionando ahora para una marca personal</h2>
+<section id="tus-respuestas">
+  <h2>Lo que me dijiste y cómo lo apliqué</h2>
   <div class="tablewrap"><table>
-    <tr><th>Formato</th><th>Dónde</th><th>Por qué funciona en 2026</th><th>Duración ideal</th></tr>
-    <tr><td><b>Mito vs realidad</b> (a cámara + prueba)</td><td>Reels y TikTok</td><td>Rompe una creencia en el primer segundo y la demuestra. Genera comentarios ("¿y este otro mito?") y se comparte por mensaje directo, que es la señal que más pesa en Instagram junto al tiempo de visualización.</td><td>35-45 s</td></tr>
-    <tr><td><b>Lista útil</b> ("3 tareas que…")</td><td>Reels, TikTok y carrusel</td><td>Se guarda para después. En TikTok, decir en voz alta las palabras clave hace que aparezca en las búsquedas.</td><td>25-35 s</td></tr>
-    <tr><td><b>Opinión contraria</b></td><td>Reels, TikTok y LinkedIn</td><td>Crea debate en comentarios. En LinkedIn es de lo que más se lee si va argumentado y sin hashtags.</td><td>20-25 s</td></tr>
-    <tr><td><b>Detrás de cámaras real</b> (construir en público)</td><td>TikTok y Reels</td><td>Instagram y TikTok premian el contenido original y crudo frente al que parece anuncio. Humaniza y crea vínculo.</td><td>30-45 s</td></tr>
-    <tr><td><b>Tutorial con pantalla</b></td><td>Reels y TikTok</td><td>Da valor inmediato. Es el formato perfecto para pedir una palabra clave por mensaje directo.</td><td>30-35 s</td></tr>
-    <tr><td><b>Antes vs ahora</b></td><td>Reels y TikTok</td><td>El contraste visual retiene hasta el final.</td><td>20-25 s</td></tr>
-    <tr><td><b>Carrusel guardable</b></td><td>Instagram</td><td>Según Metricool 2026, los carruseles logran más de 3 veces las interacciones de una imagen única. La imagen única está cayendo.</td><td>7-9 láminas</td></tr>
-    <tr><td><b>Post de texto con criterio</b></td><td>LinkedIn</td><td>El perfil personal rinde mucho más que una página. Funciona sin hashtags, sin enlaces y con una pregunta abierta real.</td><td>150-250 palabras</td></tr>
+    <tr><th>Pregunta</th><th>Tu respuesta</th><th>Qué cambia en el documento</th></tr>
+    <tr><td>Avatar de HeyGen</td><td>Gemelo digital (tu cara y tu voz)</td><td>Los ganchos van en primera persona ("yo", "mi oficina", "me dicen"). Todo lo hablado lo genera tu avatar, y la voz en off de los recursos visuales es tu voz clonada.</td></tr>
+    <tr><td>Objetivo</td><td>Mezcla: seguidores, DM y llamada</td><td>Cada vídeo tiene su objetivo marcado en verde: 4 para ganar seguidores, 2 para mensajes directos (PROMPTS y MAPA) y 2 para la llamada gratis de 30 minutos.</td></tr>
+    <tr><td>Cliente</td><td>Coaches y consultores, creadores de cursos y mentores, negocios con citas, pymes y agencias</td><td>Cada vídeo le habla a un cliente concreto (en amarillo). Dos vídeos son para todos.</td></tr>
+    <tr><td>Tipo de gancho</td><td>Mezcla de secreto, contradicción e historia cortada</td><td>Cada vídeo trae los tres. Los clips del medio son comunes: los produces una vez y solo cambias el primer y el último clip para tener tres versiones.</td></tr>
   </table></div>
-  <div class="note"><b>Lo que repites en todo (sale de tu web):</b> "Automatizo lo que hoy haces a mano: mensajes, citas y seguimiento." · "Antes de ofrecértelo, lo pruebo en mi negocio." · "La IA no inventa respuestas: si no sabe algo, pasa la conversación a una persona." · Llamada a la acción principal: <b>la llamada gratis de 30 minutos</b>. Para quién: coaches y consultores, creadores de cursos y mentores, negocios con citas, agencias y pequeñas empresas.</div>
-  <div class="note"><b>Mezcla recomendada:</b> 70% contigo real o tu voz real y 30% avatar de HeyGen como máximo. El avatar va muy bien para explicaciones y listas, pero tu cara es lo que construye la marca personal. Cada vídeo con avatar lleva la etiqueta de IA de la plataforma y "Vídeo con avatar de IA" en la descripción (obligatorio en la UE desde el 2 de agosto de 2026).</div>
 </section>
 
-<!-- ═════════ SISTEMA ═════════ -->
-<section id="sistema">
-  <h2>2 · Cómo hacer un vídeo de 45 s con clips de 10 s que encajen</h2>
-  <p>Los generadores de vídeo con IA hacen clips cortos. Para que cinco clips parezcan un solo vídeo, todos comparten el mismo estilo, el mismo fondo y la misma voz, y cada clip <b>empieza donde terminó el anterior</b>.</p>
+<section id="ganchos">
+  <h2>1 · Cómo funciona un gancho de curiosidad</h2>
+  <p>La persona decide en menos de 3 segundos si se queda. Un gancho de curiosidad <b>abre una pregunta en su cabeza que solo se cierra si ve el vídeo hasta el final</b>. Eso alarga el tiempo de visualización, una de las señales que más pesan en Instagram y TikTok.</p>
+  <h3>Las 3 capas de los primeros 3 segundos</h3>
+  <div class="grid3">
+    <div class="box3"><h4>1 · Lo que dices</h4><p class="muted" style="margin-top:0;font-size:13.5px">Máximo 12-14 palabras. Sin "hola, soy Luis". Empieza directamente en la tensión y nombra a quién le hablas.</p></div>
+    <div class="box3"><h4>2 · Lo que se lee</h4><p class="muted" style="margin-top:0;font-size:13.5px">Texto en pantalla de 3 a 6 palabras que refuerza el gancho (mucha gente ve sin sonido). No repite la frase entera.</p></div>
+    <div class="box3"><h4>3 · Lo que se ve</h4><p class="muted" style="margin-top:0;font-size:13.5px">En el segundo 0 algo ya se mueve: un gesto, un acercamiento, el celular levantado. Nada de arrancar quieto.</p></div>
+  </div>
+  <h3>Las 3 fórmulas que vas a usar</h3>
+  <div class="grid3">
+    <div class="box3"><h4>Secreto revelado</h4><p class="muted" style="margin-top:0;font-size:13.5px">"Hay algo que [cliente con el resultado] hace y casi nadie ve."</p><div class="ex">"Los coaches con la agenda llena tienen un secreto. Y no es saber programar."</div></div>
+    <div class="box3"><h4>Contradicción</h4><p class="muted" style="margin-top:0;font-size:13.5px">"[Lo que todos creen] no es lo que parece. Es justo lo contrario."</p><div class="ex">"Si contestas tú cada mensaje de tu negocio, no eres cercano: estás perdiendo citas."</div></div>
+    <div class="box3"><h4>Historia cortada</h4><p class="muted" style="margin-top:0;font-size:13.5px">"[Hora o escena]. [Tensión]. [Pregunta sin responder]."</p><div class="ex">"22:14. Un cliente quiere cita para mañana. Nadie contesta. ¿Adivinas qué hace?"</div></div>
+  </div>
+  <h3>El bucle: gancho y cierre van en pareja</h3>
+  <p>Cada gancho trae su <b>cierre</b>: la frase del último clip que responde exactamente la pregunta que abrió el gancho. Si el gancho promete un secreto, el cierre lo cuenta. Si empieza una historia, el cierre dice qué pasó. Por eso, al cambiar de gancho, cambia también el último clip.</p>
+  <div class="note amber"><b>Lo que no se hace:</b> prometer en el gancho algo que el vídeo no cumple. Retiene en el segundo 3, pero la gente se va en el 10 y deja de confiar en ti. Tampoco cifras inventadas: tu web dice "no te doy cifras antes de conocer tu negocio", y el contenido tiene que sonar igual.</div>
+  <h3>En HeyGen, para el clip del gancho</h3>
+  <ul>
+    <li>Primer plano (cámara cerca), aunque el resto del vídeo vaya en plano medio.</li>
+    <li>Energía alta en la primera frase y una pausa de medio segundo justo después del gancho.</li>
+    <li>El gesto del segundo 0 viene en cada prompt ("Primer fotograma").</li>
+    <li>Activa la etiqueta de IA en Instagram y TikTok y escribe "Vídeo con avatar de IA" en la descripción (ya viene en cada texto). Aunque sea tu cara, en la UE es obligatorio desde el 2 de agosto de 2026.</li>
+  </ul>
+</section>
+
+<section id="produccion">
+  <h2>2 · Producción: clips de 10 s que encajan</h2>
   <ol class="steps" style="display:grid;gap:8px;margin-top:14px">
-    <li><b>Primero la voz completa.</b> Genera en HeyGen (con tu voz clonada) o graba con el celular el texto entero del vídeo, de una sola vez. Así la voz no cambia entre clips. Luego la cortas en los tiempos de cada clip.</li>
-    <li><b>Clips de avatar:</b> usa siempre el mismo avatar, el mismo fondo (abajo tienes el prompt del fondo fijo) y el mismo encuadre. Para disimular el corte entre dos clips de avatar, alterna plano medio y primer plano.</li>
-    <li><b>Clips de recurso (B-roll) con IA:</b> pega primero el "estilo fijo" y después el clip. Si tu herramienta permite imagen de inicio (imagen a vídeo), usa el <b>último fotograma del clip anterior</b> como imagen inicial: así encadenan.</li>
-    <li><b>Clips de pantalla:</b> grábalos tú (celular o laptop), unos 15-20 s, y recórtalos al tiempo exacto.</li>
-    <li><b>Montaje en CapCut:</b> une los clips sobre la voz completa, añade el texto en pantalla (Montserrat Bold blanco y la palabra clave en azul #1D78FF), subtítulos y música a un volumen muy bajo. Exporta en 1080×1920.</li>
-    <li><b>Nunca pidas texto dentro del vídeo generado:</b> la IA lo escribe mal. Todo el texto se pone en la edición.</li>
+    <li><b>Prepara una vez:</b> genera el fondo fijo de tu oficina (prompt abajo) y ponlo como fondo de tu avatar en HeyGen. Completa el corchete del estilo fijo con cómo eres tú.</li>
+    <li><b>Clips del medio (comunes):</b> genera o graba una sola vez los recursos visuales (B-roll) y las grabaciones de pantalla de cada vídeo. Sirven para las tres versiones.</li>
+    <li><b>Voz en off de los clips del medio:</b> genera en HeyGen, con tu voz clonada, el texto de esos clips (viene en cada clip) y colócala debajo.</li>
+    <li><b>Ganchos y cierres:</b> para cada versión (A, B y C) genera solo dos clips con tu avatar: el clip 1 (gancho) y el último (cierre). Están en la pestaña de cada gancho.</li>
+    <li><b>Montaje en CapCut:</b> clip 1 de la versión + clips comunes + cierre de la misma versión. Texto en pantalla en Montserrat Bold blanco con la palabra clave en azul #1D78FF, subtítulos y música muy baja. Exporta en 1080×1920.</li>
+    <li><b>Nunca pidas texto dentro del vídeo generado con IA:</b> sale mal escrito. Todo el texto se pone en la edición.</li>
   </ol>
-  <h3>Estilo fijo de tu marca (pégalo al inicio de cada prompt de B-roll)</h3>
+  <h3>Estilo fijo (pégalo al inicio de cada prompt de B-roll)</h3>
   <div class="box"><button class="copy" data-copy="bibliaTxt">Copiar</button><pre id="bibliaTxt"></pre></div>
-  <h3>Fondo fijo para el avatar de HeyGen (se genera una vez y se usa en todos)</h3>
+  <h3>Fondo fijo para tu avatar de HeyGen</h3>
   <div class="box"><button class="copy" data-copy="fondoTxt">Copiar</button><pre id="fondoTxt"></pre></div>
-  <div class="note amber">Rellena una sola vez el corchete del estilo fijo con cómo eres tú (edad aproximada, pelo, barba, complexión) para que el personaje del B-roll se parezca a tu avatar. Si prefieres no arriesgar, los clips de B-roll están pensados para enseñar manos, espaldas o el escritorio, nunca la cara de frente.</div>
+  <div class="note">Los clips de B-roll muestran manos, espalda o el escritorio, nunca tu cara de frente: así no compiten con tu avatar y todo parece la misma persona.</div>
 </section>
 
-<!-- ═════════ VÍDEOS ═════════ -->
 <section id="videos">
-  <h2>3 · Ocho vídeos para Reels y TikTok</h2>
-  <div class="legend"><span><i class="k-avatar"></i>Avatar HeyGen (o tú a cámara)</span><span><i class="k-broll"></i>B-roll generado con IA</span><span><i class="k-pantalla"></i>Grabación de pantalla tuya</span></div>
+  <h2>3 · Ocho vídeos con tres ganchos cada uno</h2>
+  <div class="legend"><span><i class="k-hook"></i>Gancho (cambia según la versión)</span><span><i class="k-avatar"></i>Avatar común</span><span><i class="k-broll"></i>B-roll IA</span><span><i class="k-pantalla"></i>Pantalla tuya</span><span><i class="k-cierre"></i>Cierre (cambia según la versión)</span></div>
   <div id="videoList"></div>
 </section>
 
-<!-- ═════════ CARRUSELES ═════════ -->
+<section id="prueba">
+  <h2>4 · Cómo saber qué gancho funciona</h2>
+  <ol class="steps" style="display:grid;gap:8px;margin-top:14px">
+    <li><b>Instagram:</b> publica la versión A como reel normal y la B y la C como <b>reels de prueba</b> (Trial Reels: se enseñan primero a gente que no te sigue).</li>
+    <li><b>A las 48 horas</b>, compara en las estadísticas de cada reel cuánta gente sigue viendo después de los 3 segundos y el tiempo medio de visualización. Gana la que retiene más, no la que tiene más "me gusta".</li>
+    <li><b>TikTok:</b> publica la versión ganadora de Instagram. Si otra versión quedó muy cerca, súbela una semana después en otro horario.</li>
+    <li><b>Apunta qué tipo de gancho gana</b> (secreto, contradicción o historia). En tres semanas sabrás cuál le funciona a tu público y escribirás más de ese tipo.</li>
+  </ol>
+</section>
+
 <section id="carruseles">
-  <h2>4 · Cuatro carruseles para Instagram <small>1080×1350</small></h2>
-  <p class="muted">Todas las láminas usan la misma plantilla. Genera la portada con su prompt y el resto con el prompt de lámina interior, cambiando solo el número y el elemento visual. El texto, mejor ponerlo en Canva sobre la imagen.</p>
+  <h2>5 · Cuatro carruseles para Instagram <small>1080×1350</small></h2>
+  <p class="muted">La portada también es un gancho de curiosidad: siempre deja algo pendiente ("la 5", "el último"). Genera la portada con su prompt y las demás láminas con el de lámina interior; el texto se pone en Canva.</p>
   <div id="carouselList"></div>
 </section>
 
-<!-- ═════════ LINKEDIN ═════════ -->
 <section id="linkedin">
-  <h2>5 · Tres publicaciones para LinkedIn</h2>
-  <p class="muted">Sin hashtags, sin enlaces y sin "comenta X". Responde a todos los comentarios en la primera hora.</p>
+  <h2>6 · Tres publicaciones para LinkedIn</h2>
+  <p class="muted">Sin hashtags, sin enlaces y sin "comenta X". La primera línea es el gancho: tiene que hacer que pulsen "ver más".</p>
   <div id="liList"></div>
 </section>
 
-<!-- ═════════ HISTORIAS ═════════ -->
 <section id="historias">
-  <h2>6 · Secuencia de historias <small>para cualquier día de la semana</small></h2>
+  <h2>7 · Secuencia de historias</h2>
   <div id="storyList"></div>
 </section>
 
-<!-- ═════════ RECURSO ═════════ -->
-<section id="recurso">
-  <h2>7 · Recurso para quien te escriba "PROMPTS"</h2>
-  <p class="muted">Los vídeos y carruseles piden escribirte PROMPTS por mensaje directo. Esto es lo que envías: cópialo en una nota o en un PDF.</p>
+<section id="recursos">
+  <h2>8 · Lo que envías por mensaje directo</h2>
+  <p class="muted">Dos vídeos piden escribirte una palabra clave. Esto es lo que respondes (guárdalo como respuesta rápida en Instagram).</p>
+  <h3>Palabra clave: PROMPTS</h3>
   <div class="cap" id="promptsPack"><button class="copy" data-copy="promptsPack">Copiar</button></div>
+  <h3>Palabra clave: MAPA</h3>
+  <div class="cap" id="mapaPack"><button class="copy" data-copy="mapaPack">Copiar</button></div>
 </section>
 
-<!-- ═════════ CALENDARIO ═════════ -->
 <section id="calendario">
-  <h2>8 · Calendario de dos semanas <small>hora peninsular española</small></h2>
+  <h2>9 · Calendario de dos semanas <small>hora peninsular española</small></h2>
   <div class="tablewrap"><table id="calTable"><tr><th>Día</th><th>Qué publicar</th><th>Red y hora</th></tr></table></div>
-  <div class="note">Instagram rinde mejor de 20:00 a 21:00, TikTok de 19:00 a 22:00 y LinkedIn de martes a jueves de 8:30 a 10:00. A las tres semanas, ajusta según las horas activas que te dé la analítica de cada red. Publica el mismo vídeo en Reels y en TikTok, siempre sin marca de agua.</div>
-  <div class="note amber"><b>Enlace en la bio:</b> pon soyluisflores.es con seguimiento, por ejemplo <code>soyluisflores.es/?utm_source=instagram&amp;utm_medium=bio</code> (y <code>utm_source=tiktok</code> en TikTok), para saber de qué red llegan las llamadas. Bio sugerida: "Automatizo lo que hoy haces a mano: mensajes, citas y seguimiento · Pymes de Latinoamérica y España · Llamada gratis de 30 min 👇".</div>
-  <div class="note amber"><b>Revisa tu usuario de Instagram:</b> la web enlaza a instagram.com/soyluisfloresoficial, pero en otros materiales aparecía @soyluisflores_. Usa uno solo en la web, la bio y el contenido.</div>
+  <div class="note">Instagram rinde mejor de 20:00 a 21:00, TikTok de 19:00 a 22:00 y LinkedIn de martes a jueves de 8:30 a 10:00. A las tres semanas, ajusta con las horas activas de tu propia analítica.</div>
+  <div class="note amber"><b>Bio y enlace:</b> "Automatizo lo que hoy haces a mano: mensajes, citas y seguimiento · Pymes de Latinoamérica y España · Llamada gratis de 30 min 👇", con el enlace <code>soyluisflores.es/?utm_source=instagram&amp;utm_medium=bio</code> (<code>utm_source=tiktok</code> en TikTok). Usa un solo usuario de Instagram en todo: tu web enlaza a @soyluisfloresoficial.</div>
 </section>
 
 <footer>
-  <p>Fuentes de lo que funciona: <a href="https://metricool.com/press-release-instagram-study-2026/">Metricool, estudio de Instagram 2026</a> · <a href="https://metricool.com/best-time-post-tiktok/">Metricool, horas en TikTok</a> · <a href="https://buffer.com/resources/instagram-algorithms/">Buffer, algoritmo de Instagram 2026</a> · <a href="https://www.socialpilot.co/blog/linkedin-algorithm">SocialPilot, algoritmo de LinkedIn</a> · <a href="https://www.darkroomagency.com/observatory/tiktok-seo">Darkroom, búsqueda en TikTok</a> · <a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations">Comisión Europea, etiquetado de contenido IA</a>.</p>
+  <p>Fuentes: <a href="https://metricool.com/press-release-instagram-study-2026/">Metricool, estudio de Instagram 2026</a> · <a href="https://metricool.com/best-time-post-tiktok/">Metricool, horas en TikTok</a> · <a href="https://buffer.com/resources/instagram-algorithms/">Buffer, algoritmo de Instagram 2026</a> · <a href="https://www.socialpilot.co/blog/linkedin-algorithm">SocialPilot, algoritmo de LinkedIn</a> · <a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations">Comisión Europea, etiquetado de contenido IA</a>.</p>
 </footer>
 </div>
 
 <script>
-/* ===================== ESTILO FIJO ===================== */
-const BIBLIA = `ESTILO FIJO (marca personal Luis Flores): vídeo vertical 9:16, 1080x1920, 24 fps, aspecto cinematográfico realista, grano de película muy sutil. Escenario: oficina en casa con pared gris carbón, escritorio de madera oscura, laptop plateada, una planta pequeña a la izquierda y una tira LED azul eléctrico (#1D78FF) encendida suave en la pared del fondo. Luz principal cálida que entra por una ventana a la izquierda y contraluz azul tenue. Paleta: negros profundos, grises y un único acento azul eléctrico. Cámara estable o con movimiento muy lento. Personaje cuando aparece: hombre [tu edad aproximada, pelo, barba y complexión], camiseta negra lisa de cuello redondo y reloj negro. Sin texto, letras, logotipos ni subtítulos dentro de la imagen.`;
-const FONDO = `Imagen fija vertical 9:16 (1080x1920), fotorrealista, para usar como fondo de un avatar en HeyGen. Despacho en casa con pared gris carbón, escritorio de madera oscura desenfocado en primer término, laptop plateada cerrada, una planta pequeña a la izquierda y una tira LED azul eléctrico (#1D78FF) encendida suave detrás. Luz cálida de ventana desde la izquierda. Profundidad de campo corta: fondo ligeramente desenfocado, como grabado con una cámara a f/2. Deja el centro libre (sin objetos) a la altura del pecho y la cabeza, donde irá el avatar. Sin personas, sin texto y sin logotipos.`;
+const BIBLIA = `ESTILO FIJO (marca personal Luis Flores): vídeo vertical 9:16, 1080x1920, 24 fps, aspecto cinematográfico realista, grano de película muy sutil. Escenario: oficina en casa con pared gris carbón, escritorio de madera oscura, laptop plateada, una planta pequeña a la izquierda y una tira LED azul eléctrico (#1D78FF) encendida suave en la pared del fondo. Luz principal cálida que entra por una ventana a la izquierda y contraluz azul tenue. Paleta: negros profundos, grises y un único acento azul eléctrico. Cámara estable o con movimiento muy lento. Personaje cuando aparece (siempre de espaldas, de perfil lejano o solo manos): hombre [tu edad aproximada, pelo, barba y complexión], camiseta negra lisa de cuello redondo y reloj negro. Sin texto, letras, logotipos ni subtítulos dentro de la imagen.`;
+const FONDO = `Imagen fija vertical 9:16 (1080x1920), fotorrealista, para usar como fondo de un avatar en HeyGen. Oficina en casa con pared gris carbón, escritorio de madera oscura desenfocado en primer término, laptop plateada cerrada, una planta pequeña a la izquierda y una tira LED azul eléctrico (#1D78FF) encendida suave detrás. Luz cálida de ventana desde la izquierda. Profundidad de campo corta: fondo ligeramente desenfocado, como grabado a f/2. Deja libre el centro, a la altura del pecho y la cabeza, donde irá el avatar. Sin personas, sin texto y sin logotipos.`;
 
-/* ===================== VÍDEOS ===================== */
-/* tipo: avatar | broll | pantalla */
+/* Cada vídeo: clip 1 = gancho (variante) + puente (común) · clips del medio comunes · último clip = cierre (variante) + llamada a la acción (común) */
 const VIDEOS = [
-{id:'v1', titulo:'Mito: necesitas saber programar para usar IA', formato:'Mito vs realidad', objetivo:'Alcance y comentarios', redes:'Reels + TikTok',
- hook:'"Te dijeron que para usar IA en tu negocio tenías que saber programar. Es mentira."',
- why:'El mito más extendido entre emprendedores. Lo rompes en el segundo 1 y lo demuestras con tu pantalla: credibilidad inmediata y comentarios pidiendo más mitos.',
- segs:[
-  {t:'0-10',tipo:'avatar',voz:'Te dijeron que para usar inteligencia artificial en tu negocio tenías que saber programar. Es mentira, y te lo demuestro en menos de un minuto.',texto:'MITO: necesitas saber programar ❌',encuadre:'Plano medio, mirando a cámara.',gesto:'Seguro y directo; en "es mentira" niega con la cabeza. Al terminar, señala con la mano hacia su laptop, abajo a la derecha.',final:'Termina señalando la laptop: el siguiente clip arranca en ese laptop.'},
-  {t:'10-20',tipo:'broll',voz:'Lo que sí necesitas es saber qué tarea repites todos los días. Esa es tu primera automatización, no el código.',texto:'REALIDAD: necesitas saber QUÉ automatizar',inicio:'Plano picado del escritorio desde el hombro derecho del personaje; la laptop abierta en el centro, justo donde apuntaba la mano.',accion:'Las manos teclean con calma y luego se detienen. La pantalla emite un brillo azul suave sobre las manos.',final:'El brillo azul de la pantalla ocupa casi todo el encuadre (fundido natural hacia la grabación de pantalla).',camara:'Dolly in lento hacia la pantalla.'},
-  {t:'20-30',tipo:'pantalla',voz:'Ejemplo: diez de la noche, entra un mensaje. El agente contesta, agenda la cita y avisa a tu equipo. Cero líneas de código.',texto:'22:14 · responde + agenda + avisa · 0 código',accion:'Tu herramienta de automatización (Make, n8n o Zapier) con un flujo real de tres pasos: mensaje de WhatsApp → agente que responde y agenda → aviso al equipo. Pasa el cursor por cada paso mientras lo nombras. Usa datos de prueba, nunca de clientes.'},
-  {t:'30-40',tipo:'avatar',voz:'El límite no es técnico. Es que nadie se sienta diez minutos a escribir su proceso en un papel. Empieza por ahí.',texto:'Escribe tu proceso en 1 página',encuadre:'Primer plano (más cerrado que el clip 1).',gesto:'Tono cercano, como un consejo; en "empieza por ahí" asiente.',final:'Mantiene la mirada a cámara.'},
-  {t:'40-45',tipo:'avatar',voz:'¿Qué mito de la IA quieres que desmonte ahora? Te leo en comentarios.',texto:'¿Siguiente mito? 👇',encuadre:'Plano medio (vuelve al del clip 1).',gesto:'Sonrisa ligera; señala hacia abajo (a los comentarios).',final:'Fin del vídeo.'}],
- capIG:`Te dijeron que para usar IA en tu negocio tenías que saber programar. No es verdad.
+{id:'v1', titulo:'No necesitas programar para usar IA', cliente:'Coaches y consultores', objetivo:'Ganar seguidores', formato:'Mito vs realidad',
+ bucle:'¿Qué necesitas de verdad para automatizar si no sabes programar?',
+ why:'Rompe el miedo más común de un coach o consultor ante la IA y lo demuestra con tu pantalla. Genera comentarios pidiendo más mitos.',
+ puente:'En menos de un minuto te enseño lo que de verdad hace falta. Mira.',
+ clip1:{final:'Termina señalando con la mano hacia la laptop, abajo a la derecha: el clip 2 arranca en esa laptop.'},
+ hooks:[
+  {tipo:'Secreto revelado',voz:'Los coaches con la agenda llena tienen un secreto. Y no es saber programar.',texto:'Su secreto no es el código',visual:'Ya inclinado hacia la cámara, como quien cuenta algo en confianza; baja un poco la voz en "secreto".',cierre:'El secreto: saben qué tarea repiten cada día y la escriben en una página.'},
+  {tipo:'Contradicción',voz:'Coach: deja de pensar que tienes que aprender a programar para usar IA.',texto:'NO necesitas programar ❌',visual:'Arranca negando con la cabeza y con la palma de la mano abierta hacia la cámara, como diciendo "para".',cierre:'No necesitas código. Necesitas saber qué tarea repites y escribirla en una página.'},
+  {tipo:'Historia cortada',voz:'Siempre me dicen lo mismo: "Luis, yo no sé programar". Y les enseño esto.',texto:'"Yo no sé programar"',visual:'Arranca levantando el celular hacia la cámara, como enseñando un mensaje que acaba de recibir.',cierre:'Por eso les digo: no aprendas a programar. Escribe qué tarea repites, en una página.'}],
+ middle:[
+  {d:10,tipo:'broll',voz:'Diez de la noche. Entra un mensaje de un cliente. Nadie del equipo está conectado.',texto:'22:00 · nadie conectado',inicio:'Plano picado de la laptop abierta sobre el escritorio, justo donde apuntaba la mano; la oficina ya está de noche, solo con la luz azul del LED.',accion:'Un celular sobre la mesa se ilumina con una notificación (sin texto legible); nadie lo toca. La silla está vacía.',final:'La pantalla de la laptop se enciende sola con un brillo azul que ocupa casi todo el encuadre.',camara:'Dolly in lento hacia la laptop.'},
+  {d:10,tipo:'pantalla',voz:'Y aun así se contesta, se agenda la cita y te llega el aviso. Sin una sola línea de código.',texto:'Responde + agenda + avisa · 0 código',accion:'Tu herramienta de automatización (Make, n8n o Zapier) con un flujo de tres pasos: mensaje de WhatsApp → agente que responde y agenda → aviso al equipo. Pasa el cursor por cada paso mientras lo nombras. Usa datos de prueba, nunca de clientes.'}],
+ last:{encuadre:'Plano medio (más abierto que el gancho).',gesto:'Tono tranquilo, de consejo; en la llamada a la acción sonríe y señala hacia arriba (al botón de seguir).',texto:'Sígueme: 1 mito de la IA por semana'},
+ cta:'Sígueme: cada semana desmonto un mito de la IA.',
+ capIG:`No necesitas aprender a programar para usar IA en tu negocio.
 
-Lo que necesitas es saber qué tarea repites todos los días. Esa es tu primera automatización.
+Lo que necesitas es saber qué tarea repites cada día y escribirla en una página. Esa es tu primera automatización.
 
-El ejemplo del vídeo: entra un mensaje a las 22:14, el agente contesta, agenda y avisa al equipo. Cero código.
+En el vídeo: entra un mensaje a las 22:00 y, sin nadie conectado, se contesta, se agenda la cita y te llega el aviso. Cero código.
 
-Si quieres que revise qué automatizar primero en tu negocio, la llamada de 30 minutos es gratis (enlace en mi perfil).
+¿Qué mito de la IA desmonto la semana que viene? 👇
 
-¿Qué mito de la IA desmonto en el próximo vídeo? Te leo 👇
+Vídeo con avatar de IA.
 
-#inteligenciaartificial #automatizacion #emprendimiento #negociosdigitales #iaparanegocios`,
- capTT:`Mito: necesitas saber programar para usar inteligencia artificial en tu negocio. Realidad: necesitas saber qué automatizar. Automatización sin código explicada en 45 segundos. #inteligenciaartificial #automatizacion #emprendedores #nocode`,
- cta:'Pregunta en comentarios: abre la serie "Mitos de la IA"'},
+#inteligenciaartificial #automatizacion #coaching #consultoria #emprendimiento`,
+ capTT:`Coach o consultor: no necesitas saber programar para usar inteligencia artificial en tu negocio. Automatización sin código explicada en 40 segundos. Vídeo con avatar de IA. #inteligenciaartificial #automatizacion #coach #nocode`},
 
-{id:'v2', titulo:'3 tareas que la IA debería hacer por ti', formato:'Lista útil', objetivo:'Guardados', redes:'Reels + TikTok',
- hook:'"Si tienes un negocio, hay tres tareas que ya no deberías hacer tú."',
- why:'Lista concreta y aplicable hoy: es el contenido que la gente guarda y reenvía a su socio o a su equipo.',
- segs:[
-  {t:'0-10',tipo:'avatar',voz:'Si tienes un negocio, hay tres tareas que ya no deberías hacer tú. La tercera te va a devolver horas cada semana.',texto:'3 tareas que la IA hace por ti',encuadre:'Plano medio.',gesto:'Levanta tres dedos en "tres tareas". Al final baja la mirada hacia el celular que tiene en la mano.',final:'Mira el celular en su mano: el siguiente clip es ese celular en detalle.'},
-  {t:'10-20',tipo:'broll',voz:'Uno: responder las mismas preguntas de siempre. Deja respuestas preparadas y que la IA las adapte a cada persona.',texto:'1. Responder lo repetido',inicio:'Primer plano de una mano sosteniendo un celular sobre el escritorio, la misma camiseta negra visible en el borde del encuadre.',accion:'Llegan varias notificaciones (destellos suaves en pantalla, sin texto legible); el pulgar las desliza con calma.',final:'La mano deja el celular boca abajo sobre la mesa junto a una libreta.',camara:'Fija, ligero movimiento de cámara en mano.'},
-  {t:'20-30',tipo:'broll',voz:'Dos: resumir reuniones y sacar las tareas. Tres: preparar los borradores de tu contenido de la semana en una sola sesión.',texto:'2. Resumir reuniones · 3. Borradores de contenido',inicio:'Continúa desde el celular boca abajo: la cámara se desliza hacia la libreta y la laptop.',accion:'Una mano pasa la página de la libreta y la otra pulsa una tecla de la laptop; la pantalla se ilumina en azul.',final:'Plano general del escritorio ordenado con la luz LED azul de fondo.',camara:'Travelling lateral lento de izquierda a derecha.'},
-  {t:'30-35',tipo:'avatar',voz:'Guárdalo y empieza por la primera esta semana.',texto:'Guárdalo 🔖',encuadre:'Primer plano.',gesto:'Sonríe y señala hacia la esquina inferior derecha (el botón de guardar).',final:'Fin del vídeo.'}],
- capIG:`3 tareas que ya no deberías hacer tú si tienes un negocio:
+{id:'v2', titulo:'3 tareas que tu negocio con citas no debería hacer a mano', cliente:'Negocios con citas', objetivo:'Llamada gratis', formato:'Lista útil',
+ bucle:'¿Cuáles son las tres tareas, y qué le pasa al cliente que nadie atiende?',
+ why:'Habla del dolor diario de un negocio que vive de su agenda y termina con una oferta concreta: revisar su caso en la llamada gratis.',
+ puente:'Hay tres tareas que tu negocio ya no debería hacer a mano. Van en orden.',
+ clip1:{final:'Al terminar, baja la mirada hacia el celular que tiene en la mano: el clip 2 es ese celular en detalle.'},
+ hooks:[
+  {tipo:'Secreto revelado',voz:'Los negocios con citas que no paran de crecer dejaron de hacer tres cosas.',texto:'Dejaron de hacer 3 cosas',visual:'Arranca levantando tres dedos frente a la cámara.',cierre:'Esas tres cosas: contestar lo repetido, confirmar citas y pasar datos a mano.'},
+  {tipo:'Contradicción',voz:'Si contestas tú cada mensaje de tu negocio, no eres cercano: estás perdiendo citas.',texto:'Contestar tú = perder citas',visual:'Arranca tecleando con prisa en el celular y levanta la vista de golpe hacia la cámara.',cierre:'Cercano es responder al momento. Y eso hoy lo hace un agente, no tú.'},
+  {tipo:'Historia cortada',voz:'22:14. Un cliente quiere cita para mañana. Nadie contesta. ¿Adivinas qué hace?',texto:'22:14 · nadie contesta',visual:'Arranca mirando el reloj de su muñeca y luego a la cámara, con las cejas levantadas.',cierre:'¿El cliente de las 22:14? Le escribió a otro. Con esto, esa cita era tuya.'}],
+ middle:[
+  {d:10,tipo:'broll',voz:'Uno: contestar las mismas preguntas. Horarios, precios y disponibilidad. Un agente lo hace al momento, a cualquier hora.',texto:'1. Contestar lo repetido',inicio:'Primer plano de una mano sosteniendo un celular sobre el escritorio; la manga de la camiseta negra entra por el borde.',accion:'Llegan varias notificaciones seguidas (destellos suaves, sin texto legible) y se van respondiendo solas mientras la mano no toca la pantalla.',final:'La mano deja el celular boca abajo junto a una agenda de papel.',camara:'Fija, ligero movimiento de cámara en mano.'},
+  {d:10,tipo:'broll',voz:'Dos: confirmar citas y mandar recordatorios. Tres: pasar cada cliente a tu agenda y a tu CRM sin copiar nada.',texto:'2. Confirmar citas · 3. Datos sin copiar',inicio:'Continúa desde el celular boca abajo: la cámara se desliza hacia la agenda de papel y la laptop.',accion:'Una mano cierra la agenda de papel y la aparta; en la laptop, la pantalla se ilumina en azul.',final:'Plano general del escritorio ordenado con el LED azul de fondo.',camara:'Travelling lateral lento de izquierda a derecha.'}],
+ last:{encuadre:'Plano medio.',gesto:'Cercano; en la llamada a la acción señala hacia abajo (al enlace del perfil).',texto:'Llamada gratis de 30 min · enlace en el perfil'},
+ cta:'Te digo cuál automatizar primero en una llamada gratis. Enlace en mi perfil.',
+ capIG:`Si tu negocio trabaja con citas, hay tres tareas que ya no deberías hacer a mano:
 
-1. Responder las mismas preguntas de siempre.
-2. Resumir reuniones y sacar las tareas.
-3. Preparar los borradores de tu contenido semanal.
+1. Contestar las mismas preguntas (horarios, precios, disponibilidad)
+2. Confirmar citas y mandar recordatorios
+3. Pasar cada cliente a tu agenda y a tu CRM
 
-La IA hace el primer 80%. Tú revisas y decides.
+Cada mensaje que contestas tarde es una cita que se va a otro negocio.
 
-Guárdalo y empieza por la primera esta semana 🔖
+¿No sabes por cuál empezar? Te lo digo en una llamada gratis de 30 minutos. Enlace en mi perfil.
 
-#inteligenciaartificial #productividad #emprendimiento #automatizacion #negociosdigitales`,
- capTT:`3 tareas que la inteligencia artificial puede hacer por ti en tu negocio: responder preguntas frecuentes, resumir reuniones y preparar contenido. Productividad con IA para emprendedores. #inteligenciaartificial #productividad #emprendedores #ia`,
- cta:'Guardar'},
+Vídeo con avatar de IA.
 
-{id:'v3', titulo:'La IA no te va a hacer rico', formato:'Opinión contraria', objetivo:'Debate y autoridad', redes:'Reels + TikTok',
- hook:'"La inteligencia artificial no te va a hacer rico. Te va a hacer más rápido."',
- why:'Va contra la promesa vacía que vende medio Internet. Te posiciona como alguien con criterio y genera debate en comentarios.',
- segs:[
-  {t:'0-10',tipo:'avatar',voz:'La inteligencia artificial no te va a hacer rico. Te va a hacer más rápido. Y si vas en la dirección equivocada, llegas antes al mismo sitio.',texto:'La IA no te hace rico',encuadre:'Primer plano, serio.',gesto:'Pausa breve después de "rico". Al terminar, baja la mirada hacia una libreta abierta.',final:'Mira la libreta: el siguiente clip es la libreta en detalle.'},
-  {t:'10-20',tipo:'broll',voz:'Por eso primero va la dirección: a quién ayudas, con qué y por qué te deberían elegir a ti. Después, la velocidad.',texto:'Primero dirección. Después velocidad.',inicio:'Plano cenital de una libreta abierta sobre el escritorio de madera oscura, bolígrafo negro en la mano.',accion:'La mano dibuja una flecha y tres puntos con el bolígrafo (trazos sin texto legible). La luz cálida de la ventana se desplaza levemente.',final:'La mano cierra la libreta y la deja junto a la laptop.',camara:'Cenital fija con un leve acercamiento.'},
-  {t:'20-25',tipo:'avatar',voz:'¿Tú estás corriendo o estás avanzando? Te leo.',texto:'¿Corres o avanzas?',encuadre:'Plano medio.',gesto:'Inclina un poco la cabeza, pregunta de verdad.',final:'Fin del vídeo.'}],
+#negocioslocales #citas #automatizacion #whatsapp #inteligenciaartificial`,
+ capTT:`3 tareas que un negocio con citas debería automatizar: preguntas frecuentes por WhatsApp, confirmación de citas y recordatorios, y datos de clientes en el CRM. Vídeo con avatar de IA. #automatizacion #whatsappbusiness #citas #inteligenciaartificial`},
+
+{id:'v3', titulo:'La IA no te va a hacer rico', cliente:'Creadores de cursos y mentores', objetivo:'Ganar seguidores', formato:'Opinión contraria',
+ bucle:'¿Qué hay que hacer antes de acelerar con IA?',
+ why:'Va contra la promesa vacía que se les vende a los creadores de cursos y te posiciona como alguien con criterio. Genera debate.',
+ puente:'Esto les pasa a muchos creadores de cursos y mentores. Y tiene arreglo.',
+ clip1:{final:'Al terminar, baja la mirada hacia una libreta abierta sobre el escritorio.'},
+ hooks:[
+  {tipo:'Secreto revelado',voz:'Los creadores de cursos que venden hacen algo antes de tocar la IA.',texto:'Lo que hacen ANTES de la IA',visual:'Arranca con el dedo índice levantado, como diciendo "espera".',cierre:'Lo que hacen antes: saben a quién ayudan y por qué los eligen. Después aceleran.'},
+  {tipo:'Contradicción',voz:'La inteligencia artificial no te va a hacer rico. Te va a hacer más rápido.',texto:'La IA no te hace rico',visual:'Arranca serio, con una pausa mínima antes de hablar, mirando fijo a la cámara.',cierre:'Por eso primero dirección y después velocidad. Si no, llegas antes al mismo sitio.'},
+  {tipo:'Historia cortada',voz:'Imagina automatizar todo tu embudo… y que seis meses después nada haya cambiado.',texto:'6 meses después… nada',visual:'Arranca abriendo las manos, como mostrando algo que se cae.',cierre:'¿Por qué no cambió nada? Porque aceleró en la dirección equivocada.'}],
+ middle:[
+  {d:10,tipo:'broll',voz:'Antes de automatizar nada, responde tres preguntas: a quién ayudas, con qué, y por qué deberían elegirte a ti.',texto:'¿A quién? ¿Con qué? ¿Por qué tú?',inicio:'Plano cenital de una libreta abierta sobre el escritorio de madera oscura; una mano con bolígrafo negro.',accion:'La mano dibuja una flecha y tres puntos (trazos sin texto legible). La luz cálida de la ventana se desplaza levemente.',final:'La mano cierra la libreta y la deja junto a la laptop.',camara:'Cenital fija con un leve acercamiento.'}],
+ last:{encuadre:'Primer plano.',gesto:'Seguro; al final inclina un poco la cabeza, invitando a seguirle.',texto:'Primero dirección. Después velocidad.'},
+ cta:'Sígueme si quieres crecer con dirección, no solo con prisa.',
  capIG:`La IA no te va a hacer rico. Te va a hacer más rápido.
 
 Y si vas en la dirección equivocada, solo llegas antes al mismo sitio.
 
-Primero: a quién ayudas, con qué y por qué te deberían elegir.
-Después: velocidad.
+Antes de automatizar tu embudo, responde tres preguntas:
+· ¿A quién ayudas?
+· ¿Con qué?
+· ¿Por qué deberían elegirte a ti?
 
 ¿Tú estás corriendo o avanzando? 👇
 
-Si quieres ordenar la dirección antes de acelerar, tengo una llamada gratis de 30 minutos (enlace en mi perfil).
+Vídeo con avatar de IA.
 
-#inteligenciaartificial #emprendimiento #mentalidad #negocios #emprendedores`,
- capTT:`La inteligencia artificial no te hace rico, te hace más rápido. Por qué la dirección va antes que la velocidad al emprender. #inteligenciaartificial #emprendimiento #emprendedores #negocios`,
- cta:'Pregunta abierta en comentarios'},
+#cursosonline #mentoria #infoproductos #inteligenciaartificial #emprendimiento`,
+ capTT:`Creador de cursos o mentor: la inteligencia artificial no te hace rico, te hace más rápido. Qué definir antes de automatizar tu embudo. Vídeo con avatar de IA. #cursosonline #mentoria #inteligenciaartificial #embudodeventas`},
 
-{id:'v4', titulo:'Un día real construyendo con IA', formato:'Detrás de cámaras', objetivo:'Conexión y seguidores', redes:'TikTok + Reels',
- hook:'"Siete de la mañana. Antes de abrir el correo, una cosa."',
- why:'El detrás de cámaras crudo es lo que más vínculo crea en marca personal. Enseña tu sistema y tus valores sin decir "sígueme".',
- segs:[
-  {t:'0-10',tipo:'broll',voz:'Siete de la mañana. Antes de abrir el correo, una cosa: oración y tres prioridades escritas. Lo demás puede esperar.',texto:'07:00 · Prioridades',inicio:'Despacho todavía en penumbra, luz azulada de amanecer por la ventana de la izquierda.',accion:'Una mano deja una taza de café humeante junto a la libreta cerrada; el personaje (de espaldas o solo manos) inclina la cabeza un instante en silencio.',final:'La mano abre la libreta.',camara:'Plano medio desde atrás, fijo.'},
-  {t:'10-20',tipo:'broll',voz:'Primera hora: trabajo profundo y sin notificaciones. Aquí es donde se construye lo que de verdad importa.',texto:'Trabajo profundo · sin celular',inicio:'Continúa con la libreta abierta: ahora entra luz cálida de mañana.',accion:'La mano pone el celular boca abajo y lo aparta; luego escribe en la libreta. El vapor del café sigue visible.',final:'La mano deja el bolígrafo y abre la laptop.',camara:'Primer plano lateral, enfoque que pasa del celular a la libreta.'},
-  {t:'20-30',tipo:'pantalla',voz:'A media mañana dejo que la IA haga lo repetitivo: resúmenes, borradores y respuestas que reviso antes de enviar.',texto:'IA: lo repetitivo · Yo: lo que pide criterio',accion:'Graba tu pantalla mientras pides a la IA un resumen o un borrador real (sin datos privados) y lo editas antes de usarlo.'},
-  {t:'30-40',tipo:'broll',voz:'Por la tarde, conversaciones con personas. Eso no se automatiza, y no quiero que se automatice.',texto:'Las personas no se automatizan',inicio:'El mismo oficina por la tarde: luz más baja y la tira LED azul ya protagoniza el fondo.',accion:'El personaje, de espaldas y con auriculares, conversa en una videollamada (pantalla desenfocada) y asiente.',final:'Se quita los auriculares y se gira levemente hacia cámara.',camara:'Plano medio desde atrás con dolly in lento.'},
-  {t:'40-45',tipo:'avatar',voz:'Fe primero. Lo demás se ordena después.',texto:'Fe primero 🙏',encuadre:'Primer plano, luz de tarde.',gesto:'Sereno, una media sonrisa.',final:'Fin del vídeo.'}],
+{id:'v4', titulo:'Un día real construyendo con IA', cliente:'Todos', objetivo:'Ganar seguidores', formato:'Detrás de cámaras',
+ bucle:'¿Qué es lo primero que hago cada mañana?',
+ why:'El detrás de cámaras crea vínculo. El gancho esconde lo primero que haces y lo revela al final, así ven el día completo.',
+ puente:'Te enseño un día real, sin filtro, y al final te digo qué es.',
+ clip1:{final:'Al terminar, gira la cabeza hacia la ventana de su izquierda: el clip 2 es la oficina por la mañana.'},
+ hooks:[
+  {tipo:'Secreto revelado',voz:'Lo primero que hago cada mañana no tiene nada que ver con la IA.',texto:'Lo primero de mi día…',visual:'Arranca con una taza de café en la mano, dando un sorbo, y la baja para hablar.',cierre:'Lo primero de cada mañana: oración y tres prioridades escritas. Fe primero.'},
+  {tipo:'Contradicción',voz:'Uso IA todo el día. Pero lo más importante de mi día no la usa.',texto:'Lo más importante NO usa IA',visual:'Arranca cerrando la laptop con una mano mientras mira a la cámara.',cierre:'Lo que no automatizo: orar y escribir tres prioridades. Fe primero.'},
+  {tipo:'Historia cortada',voz:'Siete de la mañana. Antes de abrir el correo, hago una cosa. Siempre.',texto:'07:00 · antes del correo…',visual:'Arranca mirando el reloj de su muñeca y luego a la cámara.',cierre:'¿Esa cosa? Orar y escribir tres prioridades. Lo demás se ordena después.'}],
+ middle:[
+  {d:10,tipo:'broll',voz:'Primera hora: trabajo profundo. Celular boca abajo y cero notificaciones.',texto:'Trabajo profundo · sin celular',inicio:'La oficina con luz de mañana entrando por la ventana de la izquierda; café humeante junto a la libreta.',accion:'Una mano pone el celular boca abajo y lo aparta; luego escribe en la libreta.',final:'La mano deja el bolígrafo y abre la laptop.',camara:'Primer plano lateral; el enfoque pasa del celular a la libreta.'},
+  {d:10,tipo:'pantalla',voz:'A media mañana, la IA hace lo repetitivo: resúmenes y borradores que reviso antes de enviar.',texto:'IA: lo repetitivo · Yo: el criterio',accion:'Graba tu pantalla mientras pides a la IA un resumen o un borrador (sin datos privados) y lo editas antes de usarlo.'},
+  {d:10,tipo:'broll',voz:'Por la tarde, personas. Llamadas y clientes. Eso no se automatiza.',texto:'Las personas no se automatizan',inicio:'La misma oficina por la tarde: luz más baja y el LED azul protagoniza el fondo.',accion:'El personaje, de espaldas y con auriculares, conversa en una videollamada (pantalla desenfocada) y asiente.',final:'Se quita los auriculares y deja la mano sobre el escritorio.',camara:'Plano medio desde atrás con dolly in lento.'}],
+ last:{encuadre:'Primer plano, luz de tarde.',gesto:'Sereno, media sonrisa.',texto:'Fe primero 🙏'},
+ cta:'Sígueme para ver cómo lo construyo.',
  capIG:`Un día real construyendo con IA, sin filtro.
 
-07:00 · oración y tres prioridades escritas
+07:00 · lo primero (lo cuento al final del vídeo)
 09:00 · trabajo profundo, sin celular
 11:00 · la IA hace lo repetitivo, yo reviso
-17:00 · conversaciones con personas
+17:00 · personas: llamadas y clientes
 
 Fe primero. Lo demás se ordena después 🙏
 
 ¿Cuál es el primer hábito de tu día? 👇
 
-#emprendimiento #rutina #productividad #inteligenciaartificial #fe`,
- capTT:`Un día real de emprendedor usando inteligencia artificial: rutina de mañana, trabajo profundo y automatización de tareas repetitivas. #rutina #emprendedor #productividad #inteligenciaartificial`,
- cta:'Pregunta: ¿cuál es el primer hábito de tu día?'},
+Vídeo con avatar de IA.
 
-{id:'v5', titulo:'¿Para qué lo haces?', formato:'Reflexión corta (domingo)', objetivo:'Conexión y valores', redes:'Reels + TikTok',
- hook:'"Puedes tener el mejor sistema del mundo y aun así sentirte vacío."',
- why:'Quince segundos, una sola idea. Los domingos funcionan bien los contenidos de reflexión; aquí la fe aparece de forma natural, sin sermón.',
- segs:[
-  {t:'0-10',tipo:'avatar',voz:'Puedes tener el mejor sistema del mundo y aun así sentirte vacío si no sabes para qué lo haces.',texto:'¿Para qué lo haces?',encuadre:'Primer plano, luz suave de mañana.',gesto:'Tono calmado. Al final gira la mirada hacia la ventana, a su izquierda.',final:'Mira hacia la ventana: el siguiente clip es esa ventana.'},
-  {t:'10-15',tipo:'broll',voz:'Para mí, la respuesta empieza aquí. Fe primero.',texto:'Fe primero',inicio:'La ventana de la izquierda de la oficina, con luz de mañana entrando.',accion:'La cámara baja despacio hasta el escritorio: una Biblia cerrada junto a la libreta y la taza de café, iluminadas por la luz de la ventana.',final:'Plano detalle quieto de la Biblia y la libreta.',camara:'Tilt down lento.'}],
+#emprendimiento #rutina #productividad #inteligenciaartificial #fe`,
+ capTT:`Un día real de emprendedor usando inteligencia artificial: rutina de mañana, trabajo profundo y automatización de tareas repetitivas. Vídeo con avatar de IA. #rutina #emprendedor #productividad #inteligenciaartificial`},
+
+{id:'v5', titulo:'¿Para qué lo haces?', cliente:'Todos', objetivo:'Ganar seguidores', formato:'Reflexión corta (domingo)',
+ bucle:'¿Cuál es la pregunta que ningún sistema responde?',
+ why:'Veinte segundos, una sola idea. La fe aparece de forma natural en el cierre, sin sermón.',
+ puente:'Por eso cada domingo, antes de mirar la agenda, hago una pausa.',
+ clip1:{final:'Al terminar, gira la mirada hacia la ventana de su izquierda: el clip 2 es esa ventana.'},
+ hooks:[
+  {tipo:'Secreto revelado',voz:'Hay una pregunta que ningún sistema de productividad te va a responder.',texto:'La pregunta que nadie responde',visual:'Arranca en silencio medio segundo, mirando a la cámara, y empieza a hablar despacio.',cierre:'¿Para qué haces lo que haces? Para mí, la respuesta empieza aquí. Fe primero.'},
+  {tipo:'Contradicción',voz:'Puedes tener el sistema perfecto y aun así sentirte vacío.',texto:'Sistema perfecto. Vacío.',visual:'Arranca dejando una libreta sobre la mesa con un gesto lento.',cierre:'El sistema te da velocidad. La fe te da dirección. Fe primero.'},
+  {tipo:'Historia cortada',voz:'Domingo, siete de la mañana. Antes de planificar la semana, me hago una pregunta.',texto:'Domingo · 07:00',visual:'Arranca con una taza en la mano, junto a la ventana, y se gira hacia la cámara.',cierre:'La pregunta: ¿para qué lo hago? Y la respuesta empieza aquí. Fe primero.'}],
+ middle:[],
+ last:{tipo:'broll',texto:'Fe primero',inicio:'La ventana de la izquierda de la oficina, con luz de mañana entrando.',accion:'La cámara baja despacio hasta el escritorio: una Biblia cerrada junto a la libreta y la taza de café, iluminadas por la luz de la ventana.',final:'Plano detalle quieto de la Biblia y la libreta.',camara:'Tilt down lento.'},
+ cta:'',
  capIG:`Puedes tener el mejor sistema del mundo y aun así sentirte vacío si no sabes para qué lo haces.
 
-Para mí, la respuesta empieza en la fe. Lo demás se ordena después.
+El sistema te da velocidad. La fe te da dirección.
 
 ¿Para qué haces lo que haces? 👇
 
-#fe #emprendimiento #proposito #domingo #emprendedores`,
- capTT:`Reflexión de domingo para emprendedores: el sistema no sirve si no sabes para qué lo haces. Fe primero. #fe #emprendimiento #proposito #reflexion`,
- cta:'Pregunta abierta'},
+Vídeo con avatar de IA.
 
-{id:'v6', titulo:'El prompt para planificar tu semana en 5 minutos', formato:'Tutorial con pantalla', objetivo:'Mensajes directos (DM)', redes:'Reels + TikTok',
- hook:'"Este es el prompt con el que planifico mi semana en cinco minutos."',
- why:'Valor concreto y copiable. Es el formato ideal para pedir una palabra clave por mensaje directo y empezar conversaciones.',
- segs:[
-  {t:'0-10',tipo:'avatar',voz:'Este es el prompt con el que planifico mi semana en cinco minutos. Quédate, que te digo cómo conseguirlo.',texto:'Planifica tu semana en 5 min',encuadre:'Plano medio.',gesto:'Señala hacia la laptop a su derecha al terminar.',final:'Señala la laptop: corte a la pantalla.'},
-  {t:'10-20',tipo:'pantalla',voz:'Le paso mis tareas sueltas, mis reuniones y mis tres prioridades. Y le pido que lo ordene por impacto, no por urgencia.',texto:'Tareas + reuniones + 3 prioridades',accion:'Pega el prompt de planificación (está en la sección 7, el número 1) en tu asistente de IA y rellena la lista de tareas.'},
-  {t:'20-30',tipo:'pantalla',voz:'Y le pido una cosa más: que me diga qué debería eliminar o delegar. Esa línea es la que más tiempo me ahorra.',texto:'La clave: ¿qué elimino o delego?',accion:'Desplázate por la respuesta de la IA y resalta con el cursor la parte de "eliminar o delegar".'},
-  {t:'30-35',tipo:'avatar',voz:'Escríbeme PROMPTS por mensaje y te paso este y nueve más.',texto:'DM: PROMPTS',encuadre:'Primer plano.',gesto:'Sonríe y señala hacia abajo.',final:'Fin del vídeo.'}],
+#fe #proposito #emprendimiento #domingo #emprendedores`,
+ capTT:`Reflexión de domingo para emprendedores: el sistema no sirve si no sabes para qué lo haces. Fe primero. Vídeo con avatar de IA. #fe #emprendimiento #proposito #reflexion`},
+
+{id:'v6', titulo:'El prompt para planificar tu semana en 5 minutos', cliente:'Coaches y consultores', objetivo:'DM: PROMPTS', formato:'Tutorial con pantalla',
+ bucle:'¿Cuál es la línea del prompt que más tiempo ahorra?',
+ why:'Valor concreto y copiable para quien vende su tiempo. La línea clave se revela al final y la palabra clave abre conversaciones por mensaje directo.',
+ puente:'Te enseño el prompt completo con el que planifico la semana en cinco minutos.',
+ clip1:{final:'Al terminar, señala hacia la laptop a su derecha: corte a la pantalla.'},
+ hooks:[
+  {tipo:'Secreto revelado',voz:'Una sola línea de este prompt me ahorra más horas que todo lo demás.',texto:'1 línea = horas ahorradas',visual:'Arranca levantando un dedo, con media sonrisa de "te lo voy a contar".',cierre:'Esa línea: "dime qué debería eliminar o delegar". Es la que me devuelve horas.'},
+  {tipo:'Contradicción',voz:'Coach: planificar tu semana por urgencias es la forma más rápida de no avanzar.',texto:'Urgente ≠ importante',visual:'Arranca tachando el aire con el dedo, como borrando una lista.',cierre:'Por eso la línea clave es "dime qué eliminar o delegar". Ahí está el tiempo.'},
+  {tipo:'Historia cortada',voz:'Domingo por la noche. Cuarenta tareas sueltas. Cinco minutos después, la semana estaba lista.',texto:'40 tareas → 5 minutos',visual:'Arranca con la laptop delante, girándola un poco hacia la cámara.',cierre:'¿Cómo? Con una línea clave: "dime qué debería eliminar o delegar".'}],
+ middle:[
+  {d:10,tipo:'pantalla',voz:'Le paso mis tareas sueltas, mis reuniones y mis tres prioridades. Y le pido ordenarlo por impacto, no por urgencia.',texto:'Tareas + reuniones + 3 prioridades',accion:'Pega el prompt de planificación (es el número 1 del recurso PROMPTS, sección 8) en tu asistente de IA y rellena la lista de tareas.'},
+  {d:10,tipo:'pantalla',voz:'Luego le pido una última cosa, y ese es el truco. Fíjate en esta línea.',texto:'Fíjate en esta línea 👀',accion:'Haz zoom (120-150%) sobre la última línea del prompt, sin que se lea del todo todavía, y deja el cursor parpadeando ahí.'}],
+ last:{encuadre:'Primer plano.',gesto:'Sonríe; en la llamada a la acción señala hacia abajo.',texto:'Escríbeme PROMPTS 📩'},
+ cta:'Escríbeme PROMPTS por mensaje y te paso este y nueve más.',
  capIG:`El prompt con el que planifico mi semana en 5 minutos.
 
-Le doy mis tareas, mis reuniones y mis tres prioridades, y le pido dos cosas:
+Le paso mis tareas, mis reuniones y mis tres prioridades, y le pido dos cosas:
 1. Ordenarlo por impacto, no por urgencia.
-2. Decirme qué eliminar o delegar.
+2. La línea clave (está al final del vídeo).
 
 Escríbeme PROMPTS por mensaje directo y te paso este y nueve más 📩
 
-#inteligenciaartificial #productividad #prompts #emprendimiento #chatgpt`,
- capTT:`Prompt para planificar tu semana con inteligencia artificial en 5 minutos: prioridades por impacto y qué delegar. Escríbeme PROMPTS y te paso 10. #prompts #productividad #inteligenciaartificial #chatgpt`,
- cta:'DM con la palabra PROMPTS (envía el recurso de la sección 7)'},
+Vídeo con avatar de IA.
 
-{id:'v7', titulo:'Antes vs ahora', formato:'Antes y después', objetivo:'Retención y alcance', redes:'Reels + TikTok',
- hook:'"Antes: todo en la cabeza y el celular sonando cada dos minutos."',
- why:'El contraste visual con el mismo encuadre (corte en espejo) retiene hasta el final y se entiende sin sonido.',
- segs:[
-  {t:'0-10',tipo:'broll',voz:'Antes: todo en la cabeza, el celular sonando cada dos minutos y la sensación de no avanzar aunque trabajara doce horas.',texto:'ANTES',inicio:'Plano general frontal del escritorio desde la altura de los ojos.',accion:'El escritorio está desordenado: papeles, varias tazas, el celular vibrando y encendiéndose. Luz fría y plana, sin la luz azul del fondo. Una mano se frota la frente.',final:'El celular se apaga; el plano queda quieto exactamente en el mismo encuadre.',camara:'Fija, mismo encuadre que el clip 2 (corte en espejo).'},
-  {t:'10-20',tipo:'broll',voz:'Ahora: un solo lugar para las tareas, la IA haciendo lo repetitivo y bloques de tiempo protegidos.',texto:'AHORA',inicio:'Exactamente el mismo encuadre que el clip anterior.',accion:'El mismo escritorio ahora ordenado: una libreta, la laptop y la taza. Luz cálida de ventana y la tira LED azul encendida. El personaje se sienta con calma (de espaldas o solo torso).',final:'El personaje abre la laptop; la pantalla ilumina en azul.',camara:'Fija, mismo encuadre.'},
-  {t:'20-25',tipo:'avatar',voz:'No trabajo menos. Trabajo en lo que importa.',texto:'Trabaja en lo que importa',encuadre:'Primer plano.',gesto:'Seguro, tranquilo.',final:'Fin del vídeo.'}],
+#prompts #productividad #coaching #consultoria #inteligenciaartificial`,
+ capTT:`Prompt para planificar tu semana con inteligencia artificial en 5 minutos: prioridades por impacto y qué delegar. Para coaches y consultores. Escríbeme PROMPTS. Vídeo con avatar de IA. #prompts #productividad #coach #inteligenciaartificial`},
+
+{id:'v7', titulo:'Sin sistema vs con sistema', cliente:'Pymes y agencias', objetivo:'Llamada gratis', formato:'Antes y después',
+ bucle:'¿Qué es lo que de verdad cambia entre el antes y el después?',
+ why:'El contraste visual con el mismo encuadre retiene hasta el final y se entiende sin sonido. Cierra con la llamada gratis para la pyme que se reconoce en el "antes".',
+ puente:'Mira la diferencia entre trabajar sin sistema y con sistema.',
+ clip1:{final:'Al terminar, baja la mirada hacia el escritorio: corte al escritorio "antes", con el mismo ángulo.'},
+ hooks:[
+  {tipo:'Secreto revelado',voz:'Si tu pyme se ahoga, el problema no es tu equipo.',texto:'No es el equipo…',visual:'Arranca cruzando los brazos y los descruza al hablar.',cierre:'No era el equipo. Era tener un sistema: un lugar para todo y la IA con lo repetido.'},
+  {tipo:'Contradicción',voz:'Trabajar doce horas en tu negocio no es compromiso. Es una señal de alarma.',texto:'12 horas = alarma 🚨',visual:'Arranca mirando el reloj de la muñeca con gesto de cansancio y levanta la vista.',cierre:'Las doce horas eran la alarma. La solución fue un sistema, no más horas.'},
+  {tipo:'Historia cortada',voz:'Mi escritorio antes y ahora. Y lo que cambió no fue el escritorio.',texto:'Antes vs ahora',visual:'Arranca señalando hacia abajo, al escritorio, con la otra mano abierta.',cierre:'Lo que cambió fue el sistema: un solo lugar para todo y la IA con lo repetitivo.'}],
+ middle:[
+  {d:10,tipo:'broll',voz:'Antes: todo en la cabeza, el celular sonando cada dos minutos y doce horas sin avanzar.',texto:'ANTES',inicio:'Plano general frontal del escritorio a la altura de los ojos.',accion:'El escritorio está desordenado: papeles, varias tazas, el celular vibrando y encendiéndose. Luz fría y plana, sin el LED azul. Una mano se frota la frente.',final:'El celular se apaga; el plano queda quieto en exactamente el mismo encuadre.',camara:'Fija, mismo encuadre que el clip siguiente (corte en espejo).'},
+  {d:10,tipo:'broll',voz:'Ahora: un solo lugar para las tareas, la IA con lo repetitivo y bloques de tiempo protegidos.',texto:'AHORA',inicio:'Exactamente el mismo encuadre que el clip anterior.',accion:'El mismo escritorio, ordenado: una libreta, la laptop y una taza. Luz cálida de ventana y el LED azul encendido. El personaje se sienta con calma (de espaldas).',final:'El personaje abre la laptop; la pantalla ilumina en azul.',camara:'Fija, mismo encuadre.'}],
+ last:{encuadre:'Plano medio.',gesto:'Seguro; en la llamada a la acción señala hacia abajo.',texto:'Llamada gratis · enlace en el perfil'},
+ cta:'Llamada gratis para tu caso: enlace en mi perfil.',
  capIG:`Antes: todo en la cabeza, el celular sonando y doce horas sin avanzar.
 
 Ahora: un solo lugar para las tareas, la IA con lo repetitivo y bloques de tiempo protegidos.
 
-No trabajo menos. Trabajo en lo que importa.
+Si tu pyme o tu agencia está en el "antes", te digo por dónde empezar en una llamada gratis de 30 minutos. Enlace en mi perfil.
 
-¿En qué etapa estás tú? 👇
+Vídeo con avatar de IA.
 
-#productividad #emprendimiento #inteligenciaartificial #organizacion #emprendedores`,
- capTT:`Antes y después de organizar mi trabajo con inteligencia artificial y bloques de tiempo. Productividad real para emprendedores. #antesydespues #productividad #emprendedores #ia`,
- cta:'Pregunta: ¿en qué etapa estás?'},
+#pymes #agencias #productividad #automatizacion #inteligenciaartificial`,
+ capTT:`Antes y después de organizar una pyme con un sistema y automatización con inteligencia artificial. Productividad real para pymes y agencias. Vídeo con avatar de IA. #pymes #productividad #automatizacion #ia`},
 
-{id:'v8', titulo:'Si empezara de cero hoy con IA', formato:'Lista con autoridad', objetivo:'Guardados y seguidores', redes:'Reels + TikTok',
- hook:'"Si hoy empezara de cero un negocio con IA, haría exactamente estas cuatro cosas."',
- why:'"Si empezara de cero" es un gancho con mucha retención: promete un atajo concreto y el orden importa, así que la gente se queda hasta el final.',
- segs:[
-  {t:'0-10',tipo:'avatar',voz:'Si hoy empezara de cero un negocio con inteligencia artificial, haría exactamente estas cuatro cosas. En este orden.',texto:'Si empezara de cero hoy…',encuadre:'Plano medio.',gesto:'Levanta cuatro dedos en "cuatro cosas".',final:'Sigue mirando a cámara (el clip 2 es otro plano del avatar).'},
-  {t:'10-20',tipo:'avatar',voz:'Primero: elegir un solo problema de un solo tipo de cliente. No diez. Uno que pueda explicar en una frase.',texto:'1. Un problema · un tipo de cliente',encuadre:'Primer plano (cambio de plano respecto al clip 1).',gesto:'Levanta un dedo; en "no diez" niega.',final:'Baja la mirada hacia el escritorio.'},
-  {t:'20-30',tipo:'broll',voz:'Segundo: resolverlo a mano con cinco clientes antes de automatizar nada. Así sé qué funciona de verdad.',texto:'2. A mano primero (5 clientes)',inicio:'Plano detalle del escritorio: libreta abierta y laptop con una videollamada desenfocada.',accion:'El personaje, de espaldas, toma notas durante la videollamada y asiente.',final:'Pasa la página de la libreta y gira la laptop hacia él.',camara:'Plano medio desde atrás, ligero movimiento de cámara en mano.'},
-  {t:'30-40',tipo:'pantalla',voz:'Tercero: automatizar solo lo que repito. Y cuarto: contar el proceso en público, cada semana.',texto:'3. Automatiza lo repetido · 4. Cuéntalo en público',accion:'Muestra un flujo sencillo en tu herramienta de automatización y después tu perfil de Instagram o TikTok con las últimas publicaciones.'},
-  {t:'40-45',tipo:'avatar',voz:'Guárdalo para cuando empieces.',texto:'Guárdalo 🔖',encuadre:'Plano medio.',gesto:'Sonríe y señala el botón de guardar.',final:'Fin del vídeo.'}],
+{id:'v8', titulo:'Si empezara de cero hoy con IA', cliente:'Creadores de cursos y mentores', objetivo:'DM: MAPA', formato:'Lista con autoridad',
+ bucle:'¿Cuál es el paso que casi nadie da?',
+ why:'"Si empezara de cero" retiene porque promete un atajo y el orden importa. El paso que casi nadie da se revela al final, y la palabra MAPA abre conversaciones.',
+ puente:'Son cuatro pasos y el orden importa más que las herramientas.',
+ clip1:{final:'Sigue mirando a la cámara (el clip 2 es otro plano de tu avatar).'},
+ hooks:[
+  {tipo:'Secreto revelado',voz:'Casi nadie da este paso antes de automatizar. Y es el que más importa.',texto:'El paso que nadie da',visual:'Arranca acercándose un poco a la cámara, como para contar algo en voz baja.',cierre:'El paso que casi nadie da: resolverlo a mano con cinco clientes antes de automatizar.'},
+  {tipo:'Contradicción',voz:'Si empiezas tu negocio automatizándolo todo, vas a tardar más en vender.',texto:'Automatizar todo = vender tarde',visual:'Arranca negando con la cabeza y con la palma abierta.',cierre:'Por eso primero a mano y después automatizar: así automatizas lo que sí funciona.'},
+  {tipo:'Historia cortada',voz:'Si hoy empezara de cero con IA, haría esto. En este orden.',texto:'Empezar de cero hoy…',visual:'Arranca cerrando la laptop y apartándola, como quien empieza desde cero.',cierre:'Ese es el orden. Y el paso dos es el que casi nadie respeta.'}],
+ middle:[
+  {d:10,tipo:'avatar',voz:'Uno: elegir un solo problema de un solo tipo de cliente. Uno que puedas explicar en una frase.',texto:'1. Un problema · un tipo de cliente',encuadre:'Plano medio (cambio de plano respecto al gancho).',gesto:'Levanta un dedo; en "un solo" lo marca con la mano.',final:'Baja la mirada hacia el escritorio.'},
+  {d:10,tipo:'broll',voz:'Dos: resolverlo a mano con cinco clientes antes de automatizar nada.',texto:'2. A mano primero (5 clientes)',inicio:'Plano del escritorio: libreta abierta y laptop con una videollamada desenfocada.',accion:'El personaje, de espaldas, toma notas durante la videollamada y asiente.',final:'Pasa la página de la libreta y gira la laptop hacia él.',camara:'Plano medio desde atrás, ligero movimiento de cámara en mano.'},
+  {d:10,tipo:'pantalla',voz:'Tres: automatizar solo lo que repites. Y cuatro: contar el proceso en público, cada semana.',texto:'3. Automatiza lo repetido · 4. Cuéntalo en público',accion:'Muestra un flujo sencillo en tu herramienta de automatización y después tu perfil de Instagram o TikTok con las últimas publicaciones.'}],
+ last:{encuadre:'Primer plano.',gesto:'Sonríe y señala hacia abajo en la llamada a la acción.',texto:'Escríbeme MAPA 📩'},
+ cta:'Escríbeme MAPA y te paso la lista de qué automatizar primero.',
  capIG:`Si hoy empezara de cero un negocio con IA, haría esto, en este orden:
 
-1. Un solo problema de un solo tipo de cliente.
-2. Resolverlo a mano con 5 clientes.
-3. Automatizar solo lo que repito.
-4. Contar el proceso en público cada semana.
+1. Un solo problema de un solo tipo de cliente
+2. Resolverlo a mano con 5 clientes
+3. Automatizar solo lo que repito
+4. Contar el proceso en público cada semana
 
-Guárdalo para cuando empieces 🔖
+El paso 2 es el que casi nadie respeta.
 
-Y si ya tienes negocio y no sabes qué automatizar primero, te lo digo en una llamada gratis de 30 minutos (enlace en mi perfil).
+Escríbeme MAPA por mensaje directo y te paso la lista de qué automatizar primero 📩
 
-#emprendimiento #inteligenciaartificial #negocios #emprendedores #automatizacion`,
- capTT:`Cómo empezar un negocio con inteligencia artificial desde cero: 4 pasos en orden. Emprender con IA paso a paso. #emprendimiento #inteligenciaartificial #emprendedores #negociosonline`,
- cta:'Guardar'}
+Vídeo con avatar de IA.
+
+#cursosonline #mentoria #emprendimiento #inteligenciaartificial #automatizacion`,
+ capTT:`Cómo empezar un negocio con inteligencia artificial desde cero: 4 pasos en orden. Para creadores de cursos y mentores. Escríbeme MAPA. Vídeo con avatar de IA. #emprendimiento #cursosonline #inteligenciaartificial #mentoria`}
 ];
 
-/* ===================== CARRUSELES ===================== */
-const CAR_PORTADA = n => `Imagen vertical 4:5 (1080x1350 px), portada de carrusel de Instagram para la marca personal "Luis Flores" (IA aplicada a negocios). Fondo negro azulado #0A0A0F con textura de ruido muy sutil y un resplandor azul eléctrico (#1D78FF) difuminado en la esquina superior derecha. Composición editorial minimalista con mucho espacio libre en la mitad superior para un titular (el texto se añadirá después en Canva: no escribas ningún texto). Elemento visual: ${n}. Iconografía de línea fina blanca, un solo acento azul. Sin texto, sin logotipos, sin degradados morados, sin robots ni cerebros brillantes.`;
+const CAR_PORTADA = n => `Imagen vertical 4:5 (1080x1350 px), portada de carrusel de Instagram para la marca personal "Luis Flores" (IA aplicada a negocios). Fondo negro azulado #0A0A0F con textura de ruido muy sutil y un resplandor azul eléctrico (#1D78FF) difuminado en la esquina superior derecha. Composición editorial minimalista con mucho espacio libre en la mitad superior para un titular (el texto se añade después en Canva: no escribas ningún texto). Elemento visual: ${n}. Iconografía de línea fina blanca y un solo acento azul. Sin texto, sin logotipos, sin degradados morados, sin robots ni cerebros brillantes.`;
 const CAR_INTERIOR = n => `Imagen vertical 4:5 (1080x1350 px), lámina interior de carrusel con el mismo estilo que la portada: fondo negro azulado #0A0A0F con ruido muy sutil, sin resplandor. Pequeño icono de línea fina blanca en la esquina superior izquierda: ${n}. El resto de la lámina queda vacío para el texto (se añade en Canva: no escribas ningún texto). Sin logotipos, sin degradados morados.`;
 const CARRUSELES = [
-{id:'c1', titulo:'7 tareas que puedes darle a la IA hoy', objetivo:'Guardados', portada:'un reloj de línea fina con siete marcas resaltadas en azul eléctrico',
- slides:[['Portada','7 tareas que puedes darle a la IA hoy (y recuperar horas cada semana)','reloj'],['1','Responder preguntas frecuentes','burbuja de chat'],['2','Resumir reuniones y sacar tareas','micrófono'],['3','Primer borrador de emails','sobre'],['4','Ideas y guiones de contenido','bombilla'],['5','Ordenar tu semana por impacto','calendario'],['6','Revisar textos antes de enviarlos','lupa'],['7','Preparar propuestas a partir de una plantilla','documento'],['Cierre','Guárdalo y elige UNA para esta semana. Escríbeme PROMPTS y te paso cómo pedírselo.','marcador de guardar']],
- cap:`7 tareas que puedes darle a la IA hoy:
+{id:'c1', titulo:'7 tareas que puedes darle a la IA hoy (la 5 te devuelve horas)', cliente:'Todos', objetivo:'Guardados', portada:'un reloj de línea fina con siete marcas, la quinta resaltada en azul eléctrico',
+ slides:[['Portada','7 tareas que puedes darle a la IA hoy (la 5 te devuelve horas cada semana)','reloj'],['1','Responder preguntas frecuentes','burbuja de chat'],['2','Resumir reuniones y sacar tareas','micrófono'],['3','Primer borrador de emails','sobre'],['4','Ideas y guiones de contenido','bombilla'],['5','Ordenar tu semana por impacto, no por urgencia','calendario'],['6','Revisar textos antes de enviarlos','lupa'],['7','Preparar propuestas a partir de una plantilla','documento'],['Cierre','Guárdalo y elige UNA para esta semana. ¿Quieres los prompts? Escríbeme PROMPTS.','marcador de guardar']],
+ cap:`7 tareas que puedes darle a la IA hoy. La 5 es la que más horas me devuelve.
 
 1. Responder preguntas frecuentes
 2. Resumir reuniones
 3. Primer borrador de emails
 4. Ideas y guiones de contenido
-5. Ordenar tu semana
+5. Ordenar tu semana por impacto
 6. Revisar textos
 7. Preparar propuestas
-
-La IA hace el borrador. Tú decides.
 
 Guárdalo y elige solo una para esta semana 🔖
 
 #inteligenciaartificial #productividad #emprendimiento #automatizacion #negociosdigitales`},
-{id:'c2', titulo:'Mi semana en 5 bloques', objetivo:'Guardados y conexión', portada:'una semana dibujada como cinco bloques verticales de línea fina, uno de ellos en azul eléctrico',
- slides:[['Portada','Mi semana en 5 bloques: el sistema que me devolvió el control','bloques'],['1','Lunes: planificar. 30 minutos con la IA para ordenar por impacto.','calendario'],['2','Mañanas: trabajo profundo. Sin celular y sin reuniones.','auriculares'],['3','Media mañana: la IA hace lo repetitivo. Yo reviso.','engranaje'],['4','Tardes: personas. Llamadas, clientes y equipo.','dos personas'],['5','Domingo: revisión y oración. Qué funcionó y qué suelto.','vela'],['Cierre','No es un sistema perfecto. Es el que me deja avanzar sin vivir pegado al celular. ¿Cuál es tu bloque fijo?','marcador de guardar']],
- cap:`Mi semana en 5 bloques:
+{id:'c2', titulo:'Mi semana en 5 bloques (el último no tiene nada que ver con la IA)', cliente:'Coaches y consultores', objetivo:'Guardados', portada:'una semana dibujada como cinco bloques verticales de línea fina, el último en azul eléctrico',
+ slides:[['Portada','Mi semana en 5 bloques (el último no tiene nada que ver con la IA)','bloques'],['1','Lunes: planificar. 30 minutos con la IA para ordenar por impacto.','calendario'],['2','Mañanas: trabajo profundo. Sin celular y sin reuniones.','auriculares'],['3','Media mañana: la IA hace lo repetitivo. Yo reviso.','engranaje'],['4','Tardes: personas. Llamadas, clientes y equipo.','dos personas'],['5','Domingo: revisión y oración. Qué funcionó y qué suelto.','vela'],['Cierre','No es un sistema perfecto. Es el que me deja avanzar sin vivir pegado al celular. ¿Cuál es tu bloque fijo?','marcador de guardar']],
+ cap:`Mi semana en 5 bloques. El último no tiene nada que ver con la IA.
 
 Lunes · planificar por impacto
 Mañanas · trabajo profundo
@@ -394,14 +482,12 @@ Media mañana · la IA con lo repetitivo
 Tardes · personas
 Domingo · revisión y oración
 
-No es perfecto. Es el que me deja avanzar sin vivir pegado al celular.
-
 ¿Cuál es tu bloque fijo de la semana? 👇
 
-#productividad #emprendimiento #organizacion #fe #inteligenciaartificial`},
-{id:'c3', titulo:'5 errores al empezar con IA en tu negocio', objetivo:'Guardados y comentarios', portada:'una señal de advertencia triangular de línea fina con el borde en azul eléctrico',
- slides:[['Portada','5 errores al empezar con IA en tu negocio (el 2 es el más caro)','advertencia'],['Error 1','Empezar por la herramienta y no por el problema.','caja de herramientas'],['Error 2','Automatizar un proceso que ni a mano funciona. Ahora falla más rápido.','engranaje roto'],['Error 3','Copiar prompts sin darle contexto de tu negocio.','portapapeles'],['Error 4','Publicar textos de IA sin revisarlos. Se nota, y resta confianza.','ojo'],['Error 5','No medir cuánto tiempo te ahorra. Si no lo mides, no sabes si funciona.','cronómetro'],['Cierre','¿Cuál de los cinco has cometido? Yo, más de uno.','marcador de guardar']],
- cap:`5 errores al empezar con IA en tu negocio:
+#productividad #coaching #consultoria #fe #inteligenciaartificial`},
+{id:'c3', titulo:'5 errores al empezar con IA en tu negocio (el 2 es el más caro)', cliente:'Pymes y agencias', objetivo:'Llamada gratis', portada:'una señal de advertencia triangular de línea fina con el borde en azul eléctrico',
+ slides:[['Portada','5 errores al empezar con IA en tu negocio (el 2 es el más caro)','advertencia'],['Error 1','Empezar por la herramienta y no por el problema.','caja de herramientas'],['Error 2','Automatizar un proceso que ni a mano funciona. Ahora falla más rápido.','engranaje roto'],['Error 3','Copiar prompts sin darle contexto de tu negocio.','portapapeles'],['Error 4','Publicar textos de IA sin revisarlos. Se nota, y resta confianza.','ojo'],['Error 5','No medir cuánto tiempo te ahorra. Si no lo mides, no sabes si funciona.','cronómetro'],['Cierre','¿Cuál de los cinco has cometido? Si quieres que revise tu caso, la llamada es gratis (enlace en el perfil).','marcador de guardar']],
+ cap:`5 errores al empezar con IA en tu negocio. El 2 es el más caro.
 
 1. Empezar por la herramienta
 2. Automatizar un proceso que no funciona
@@ -409,26 +495,25 @@ No es perfecto. Es el que me deja avanzar sin vivir pegado al celular.
 4. Publicar sin revisar
 5. No medir el tiempo ahorrado
 
-El 2 es el más caro: automatizar el caos solo lo acelera.
-
 ¿Cuál has cometido tú? 👇
 
-#inteligenciaartificial #emprendimiento #errores #automatizacion #negocios`},
-{id:'c4', titulo:'4 prompts que uso cada semana', objetivo:'DM y guardados', portada:'una tarjeta de línea fina con el símbolo de copiar, resaltado en azul eléctrico',
- slides:[['Portada','4 prompts que uso cada semana (cópialos)','copiar'],['Prompt 1 · Planificar','"Estas son mis tareas, reuniones y 3 prioridades: [pega]. Ordénalo por impacto, no por urgencia, y dime qué eliminar o delegar."','calendario'],['Prompt 2 · Reuniones','"Resume esta reunión en 5 puntos, con decisiones, tareas, responsable y fecha: [pega las notas]."','micrófono'],['Prompt 3 · Contenido','"Estas son 3 frases mías reales: [pega]. Con ese tono, dame 5 ganchos para un vídeo sobre [tema]."','bombilla'],['Prompt 4 · Revisar','"Revisa este texto: quita frases de relleno, que suene a persona y no a IA, y no cambies mis ideas: [pega]."','lupa'],['Cierre','Escríbeme PROMPTS por mensaje y te paso estos y 6 más.','sobre']],
- cap:`4 prompts que uso cada semana. Cópialos:
+Si quieres que revise tu caso, la llamada de 30 minutos es gratis. Enlace en mi perfil.
+
+#pymes #agencias #inteligenciaartificial #automatizacion #negocios`},
+{id:'c4', titulo:'4 prompts que uso cada semana (el 4 hace que no suene a IA)', cliente:'Creadores de cursos y mentores', objetivo:'DM: PROMPTS', portada:'una tarjeta de línea fina con el símbolo de copiar, resaltado en azul eléctrico',
+ slides:[['Portada','4 prompts que uso cada semana (el 4 hace que tus textos no suenen a IA)','copiar'],['Prompt 1 · Planificar','"Estas son mis tareas, reuniones y 3 prioridades: [pega]. Ordénalo por impacto, no por urgencia, y dime qué eliminar o delegar."','calendario'],['Prompt 2 · Reuniones','"Resume esta reunión en 5 puntos, con decisiones, tareas, responsable y fecha: [pega las notas]."','micrófono'],['Prompt 3 · Contenido','"Estas son 3 frases mías reales: [pega]. Con ese tono, dame 5 ganchos para un vídeo sobre [tema]."','bombilla'],['Prompt 4 · Revisar','"Revisa este texto: quita frases de relleno, que suene a persona y no a IA, y no cambies mis ideas: [pega]."','lupa'],['Cierre','Escríbeme PROMPTS por mensaje y te paso estos y 6 más.','sobre']],
+ cap:`4 prompts que uso cada semana. El 4 hace que tus textos no suenen a IA.
 
 1. Planificar por impacto
 2. Resumir reuniones
-3. Ganchos con mi propio tono
-4. Revisar para que no suene a IA
+3. Ganchos con tu propio tono
+4. Revisar para que suene a persona
 
 Escríbeme PROMPTS por mensaje directo y te paso estos y 6 más 📩
 
-#prompts #inteligenciaartificial #productividad #chatgpt #emprendimiento`}
+#prompts #cursosonline #mentoria #productividad #inteligenciaartificial`}
 ];
 
-/* ===================== LINKEDIN ===================== */
 const LINKEDIN = [
 {id:'l1', titulo:'Opinión contraria', hora:'Martes 8:30', texto:`La inteligencia artificial no te va a hacer rico.
 
@@ -446,7 +531,7 @@ Antes de sumar otra suscripción de IA, me haría tres preguntas:
 Con esas tres respuestas, la IA multiplica. Sin ellas, distrae.
 
 ¿Qué pregunta añadirías tú antes de invertir en una herramienta nueva?`},
-{id:'l2', titulo:'Marco de trabajo', hora:'Jueves 8:30', texto:`Antes de automatizar cualquier cosa, me hago cuatro preguntas.
+{id:'l2', titulo:'Marco de trabajo', hora:'Jueves 8:30', texto:`Hay cuatro preguntas que me hago antes de automatizar cualquier cosa. La cuarta es la que casi todos se saltan.
 
 1. ¿Este proceso funciona bien a mano?
 Si no, automatizarlo solo hace que falle más rápido.
@@ -465,30 +550,28 @@ Si las cuatro respuestas son claras, automatizo. Si dudo en alguna, todavía no.
 Es menos espectacular que hablar de agentes autónomos. Pero es lo que hace que una automatización siga funcionando en marzo.
 
 ¿Cuál de las cuatro te saltas con más frecuencia?`},
-{id:'l3', titulo:'Reflexión: fe y negocio', hora:'Martes 8:30 (semana 2)', texto:`Medimos todo: alcance, conversiones, horas ahorradas.
+{id:'l3', titulo:'Reflexión: fe y negocio', hora:'Martes 8:30 (semana 2)', texto:`Ningún panel de métricas me ha dado lo único que de verdad necesito para decidir.
 
-Y está bien. Lo que no se mide no se mejora.
+Medimos todo: alcance, conversiones, horas ahorradas. Y está bien. Lo que no se mide no se mejora.
 
-Pero hay algo que ningún panel de métricas me ha dado: saber para qué hago lo que hago.
+Pero ninguna métrica me dice para qué hago lo que hago.
 
-Mis semanas empiezan igual desde hace tiempo. Oración, tres prioridades escritas y después abro la laptop. No lo cuento para convencer a nadie. Lo cuento porque es lo que me permite tomar decisiones de negocio con calma cuando los números no acompañan.
+Mis semanas empiezan igual desde hace tiempo. Oración, tres prioridades escritas y después la laptop. No lo cuento para convencer a nadie. Lo cuento porque es lo que me permite tomar decisiones de negocio con calma cuando los números no acompañan.
 
 La tecnología me da velocidad. La fe me da dirección.
 
 ¿Qué es lo que a ti te da dirección cuando las métricas no salen?`}
 ];
 
-/* ===================== HISTORIAS ===================== */
 const STORIES = [
- ['1 · Gancho','Foto o vídeo de tu escritorio por la mañana. Texto: "¿Cuántas horas a la semana pierdes en tareas repetidas?"','Encuesta: "0-2 h" / "3-5 h" / "Más de 5 h"'],
- ['2 · Resultado','Comparte los resultados de la encuesta (al día siguiente o por la tarde). Texto: "La mayoría, más de 3 horas. Te enseño cómo recupero las mías."','Ninguna'],
+ ['1 · Gancho','Foto o vídeo de tu escritorio por la mañana. Texto: "¿Cuántas horas a la semana se te van en tareas repetidas?"','Encuesta: "0-2 h" / "3-5 h" / "Más de 5 h"'],
+ ['2 · Resultado','Comparte los resultados de la encuesta (por la tarde o al día siguiente). Texto: "La mayoría, más de 3 horas. Te enseño cómo recupero las mías."','Ninguna'],
  ['3 · Prueba','Grabación de pantalla de 10 s pegando el prompt de planificación (vídeo 6).','Texto: "Este es el prompt"'],
  ['4 · Pregunta','Texto: "¿Qué tarea te gustaría quitarte de encima?"','Caja de preguntas'],
  ['5 · Llamada a la acción','Texto: "Escríbeme PROMPTS y te paso los 10 que uso cada semana."','Ninguna (que te escriban por mensaje directo)']
 ];
 
-/* ===================== RECURSO DM ===================== */
-const PACK = `10 prompts que uso cada semana · Luis Flores
+const PACK = `¡Hola! Aquí tienes los 10 prompts que uso cada semana. Cópialos y cambia lo que va entre corchetes.
 
 1. Planificar la semana
 "Estas son mis tareas, reuniones y mis 3 prioridades: [pega]. Ordénalo por impacto, no por urgencia, repártelo en bloques de mañana y tarde, y dime qué debería eliminar o delegar."
@@ -518,126 +601,205 @@ const PACK = `10 prompts que uso cada semana · Luis Flores
 "Tengo que decirle a [persona] que [situación]. Ayúdame a prepararlo: qué decir primero, qué preguntas hacer y cómo cerrar con un acuerdo."
 
 10. Revisión del domingo
-"Esto es lo que hice esta semana: [pega]. Dime qué funcionó, qué debería dejar de hacer y cuál es la prioridad número uno para la próxima semana."`;
+"Esto es lo que hice esta semana: [pega]. Dime qué funcionó, qué debería dejar de hacer y cuál es la prioridad número uno para la próxima semana."
 
-/* ===================== CALENDARIO ===================== */
+Si quieres que veamos juntos qué automatizar primero en tu negocio, la llamada de 30 minutos es gratis: soyluisflores.es`;
+
+const MAPA = `¡Hola! Aquí tienes el mapa para saber qué automatizar primero.
+
+PASO 1 · Marca las tareas que haces al menos una vez por semana:
+☐ Contestar preguntas frecuentes (horarios, precios, disponibilidad)
+☐ Agendar citas o llamadas
+☐ Confirmar citas y mandar recordatorios
+☐ Hacer seguimiento a quien no respondió
+☐ Pasar datos de clientes a una hoja o a un CRM
+☐ Enviar presupuestos o propuestas
+☐ Pedir reseñas después del servicio
+☐ Mandar facturas o recordatorios de pago
+☐ Resumir reuniones y repartir tareas
+☐ Preparar informes o métricas
+
+PASO 2 · A cada tarea marcada ponle tres notas del 1 al 3:
+· ¿Cuántas veces la repites? (1 = poco, 3 = cada día)
+· ¿Cuánto tiempo te quita? (1 = minutos, 3 = horas)
+· ¿Toca a un cliente que puede irse si tardas? (1 = no, 3 = sí)
+
+PASO 3 · Suma las tres notas. La tarea con más puntos es la primera que automatizas. Solo una: cuando funcione, pasas a la siguiente.
+
+Antes de automatizarla, asegúrate de que a mano funciona bien. Automatizar un proceso que falla solo hace que falle más rápido.
+
+Si quieres que lo revisemos juntos, la llamada de 30 minutos es gratis: soyluisflores.es`;
+
 const CAL = [
- ['Semana 1 · Lunes','Vídeo 1 · Mito: necesitas programar','Reels 20:30 · TikTok 21:00'],
+ ['Semana 1 · Lunes','Vídeo 1 · No necesitas programar (versión A normal; B y C como reels de prueba)','Reels 20:30'],
  ['Semana 1 · Martes','LinkedIn 1 · La IA no te va a hacer rico + Carrusel 1 · 7 tareas','LinkedIn 8:30 · Instagram 20:00'],
- ['Semana 1 · Miércoles','Vídeo 2 · 3 tareas para la IA + historias (secuencia)','Reels 20:30 · TikTok 21:00'],
- ['Semana 1 · Jueves','LinkedIn 2 · Las 4 preguntas + Vídeo 3 · La IA no te hace rico','LinkedIn 8:30 · TikTok 21:00 · Reels 20:30'],
- ['Semana 1 · Viernes','Carrusel 3 · 5 errores','Instagram 20:00'],
- ['Semana 1 · Sábado','Vídeo 4 · Un día real','TikTok 12:00 · Reels 19:00'],
- ['Semana 1 · Domingo','Vídeo 5 · ¿Para qué lo haces?','Reels 19:00 · TikTok 20:00'],
- ['Semana 2 · Lunes','Vídeo 6 · Prompt para planificar (pide PROMPTS)','Reels 20:30 · TikTok 21:00'],
- ['Semana 2 · Martes','LinkedIn 3 · Fe y negocio + Carrusel 2 · Mi semana en 5 bloques','LinkedIn 8:30 · Instagram 20:00'],
- ['Semana 2 · Miércoles','Vídeo 7 · Antes vs ahora + historias','Reels 20:30 · TikTok 21:00'],
- ['Semana 2 · Jueves','Carrusel 4 · 4 prompts (pide PROMPTS)','Instagram 20:00'],
- ['Semana 2 · Viernes','Vídeo 8 · Si empezara de cero','Reels 20:30 · TikTok 21:00'],
- ['Semana 2 · Sábado','Vídeo libre: responde en vídeo al mejor comentario de la semana','TikTok 12:00'],
- ['Semana 2 · Domingo','Revisión: qué 2 piezas tuvieron más envíos y guardados → haz otra versión con otro gancho','Sin publicación fija']
+ ['Semana 1 · Miércoles','Vídeo 2 · 3 tareas para negocios con citas (A normal; B y C de prueba) + historias','Reels 20:30 · TikTok 21:00 (gancho ganador del vídeo 1)'],
+ ['Semana 1 · Jueves','LinkedIn 2 · Las 4 preguntas + Vídeo 3 · La IA no te hace rico (A; B y C de prueba)','LinkedIn 8:30 · Reels 20:30'],
+ ['Semana 1 · Viernes','Carrusel 3 · 5 errores','Instagram 20:00 · TikTok 21:00 (gancho ganador del vídeo 2)'],
+ ['Semana 1 · Sábado','Vídeo 4 · Un día real (A; B y C de prueba)','Reels 19:00 · TikTok 12:00 (gancho ganador del vídeo 3)'],
+ ['Semana 1 · Domingo','Vídeo 5 · ¿Para qué lo haces? (A; B y C de prueba)','Reels 19:00'],
+ ['Semana 2 · Lunes','Vídeo 6 · Prompt para planificar, pide PROMPTS (A; B y C de prueba)','Reels 20:30 · TikTok 21:00 (gancho ganador del vídeo 4)'],
+ ['Semana 2 · Martes','LinkedIn 3 · Fe y negocio + Carrusel 2 · Mi semana en 5 bloques','LinkedIn 8:30 · Instagram 20:00 · TikTok 21:00 (gancho ganador del vídeo 5)'],
+ ['Semana 2 · Miércoles','Vídeo 7 · Sin sistema vs con sistema (A; B y C de prueba) + historias','Reels 20:30 · TikTok 21:00 (gancho ganador del vídeo 6)'],
+ ['Semana 2 · Jueves','Carrusel 4 · 4 prompts, pide PROMPTS','Instagram 20:00'],
+ ['Semana 2 · Viernes','Vídeo 8 · Si empezara de cero, pide MAPA (A; B y C de prueba)','Reels 20:30 · TikTok 21:00 (gancho ganador del vídeo 7)'],
+ ['Semana 2 · Sábado','Vídeo libre: responde en vídeo al mejor comentario de la semana','TikTok 12:00 (gancho ganador del vídeo 8)'],
+ ['Semana 2 · Domingo','Revisión: qué tipo de gancho ganó más veces (secreto, contradicción o historia). Escribe los próximos vídeos con ese tipo.','Sin publicación fija']
 ];
 
-/* ===================== RENDER ===================== */
 const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const dur = t => { const [a,b] = t.split('-').map(Number); return b - a; };
-const KIND = {avatar:['Avatar HeyGen','k-avatar'], broll:['B-roll IA','k-broll'], pantalla:['Pantalla','k-pantalla']};
+const LET = ['A','B','C'];
+const KIND = {avatar:['Avatar','k-avatar'], broll:['B-roll IA','k-broll'], pantalla:['Pantalla','k-pantalla']};
 
-function segPrompt(v, s, i){
-  const n = v.segs.length, d = dur(s.t);
-  if (s.tipo === 'broll') return `${BIBLIA}
+function brollPrompt(v, s, n, total){
+  return `${BIBLIA}
 
-CLIP ${i+1} de ${n} · ${d} segundos · vídeo "${v.titulo}"
+CLIP ${n} de ${total} · ${s.d || 10} segundos · vídeo "${v.titulo}"
 INICIO: ${s.inicio}
 ACCIÓN: ${s.accion}
 FINAL DEL CLIP: ${s.final}
 CÁMARA: ${s.camara}
 SONIDO: solo ambiente suave, sin música ni voz (se añaden en la edición).`;
-  if (s.tipo === 'avatar') return `HEYGEN · CLIP ${i+1} de ${n} · ${d} segundos · vídeo "${v.titulo}"
-Avatar: tu avatar personal (el mismo en todos los clips).
-Fondo: la imagen del "Fondo fijo para el avatar".
+}
+function avatarPrompt(v, s, n, total){
+  return `HEYGEN · CLIP ${n} de ${total} · ${s.d} segundos · vídeo "${v.titulo}"
+Avatar: tu gemelo digital (tu cara y tu voz clonada), el mismo en todos los clips.
+Fondo: el fondo fijo de tu oficina.
 Encuadre: ${s.encuadre}
 Emoción y gestos: ${s.gesto}
 Texto exacto que dice el avatar:
 "${s.voz}"
+Texto en pantalla (en la edición): ${s.texto}
 Cómo termina el clip: ${s.final}`;
-  return `GRABACIÓN DE PANTALLA · CLIP ${i+1} de ${n} · ${d} segundos · vídeo "${v.titulo}"
+}
+function pantallaPrompt(v, s, n, total){
+  return `GRABACIÓN DE PANTALLA · CLIP ${n} de ${total} · ${s.d} segundos · vídeo "${v.titulo}"
 Qué grabar: ${s.accion}
-Voz en off (sale del audio completo): "${s.voz}"
-Consejo: graba 15-20 segundos y recorta a ${d}; amplía al 120% la zona importante de la pantalla.`;
+Voz en off (tu voz clonada en HeyGen): "${s.voz}"
+Texto en pantalla (en la edición): ${s.texto}
+Consejo: graba 15-20 segundos y recorta a ${s.d}; amplía al 120% la zona importante.`;
+}
+function hookPrompt(v, h, i, total){
+  return `HEYGEN · CLIP 1 de ${total} · 10 segundos · GANCHO ${LET[i]} (${h.tipo}) · vídeo "${v.titulo}"
+Avatar: tu gemelo digital (tu cara y tu voz clonada).
+Fondo: el fondo fijo de tu oficina.
+Encuadre: primer plano, cámara cerca. Los 3 primeros segundos deciden si la persona se queda.
+Primer fotograma (segundo 0): ${h.visual}
+Energía: alta en la primera frase, sin saludar. Pausa de medio segundo justo después del gancho, luego tono normal.
+Texto exacto que dice el avatar:
+"${h.voz} ${v.puente}"
+Texto en pantalla (en la edición, segundos 0-3): ${h.texto}
+Cómo termina el clip: ${v.clip1.final}`;
+}
+function closePrompt(v, h, i, total){
+  const L = v.last;
+  if (L.tipo === 'broll') return `${BIBLIA}
+
+CLIP ${total} de ${total} · 10 segundos · CIERRE ${LET[i]} · vídeo "${v.titulo}"
+INICIO: ${L.inicio}
+ACCIÓN: ${L.accion}
+FINAL DEL CLIP: ${L.final}
+CÁMARA: ${L.camara}
+SONIDO: solo ambiente suave (la voz va en la edición).
+
+VOZ EN OFF DE ESTE CLIP (tu voz clonada en HeyGen, versión ${LET[i]}): "${h.cierre}"`;
+  return `HEYGEN · CLIP ${total} de ${total} · 10 segundos · CIERRE ${LET[i]} (responde al gancho ${LET[i]}) · vídeo "${v.titulo}"
+Avatar: tu gemelo digital (tu cara y tu voz clonada).
+Fondo: el fondo fijo de tu oficina.
+Encuadre: ${L.encuadre}
+Emoción y gestos: ${L.gesto}
+Texto exacto que dice el avatar:
+"${h.cierre}${v.cta ? ' ' + v.cta : ''}"
+Texto en pantalla (en la edición): ${L.texto}
+Fin del vídeo.`;
 }
 
 function renderVideos(){
   const el = document.getElementById('videoList');
-  el.innerHTML = VIDEOS.map((v,vi) => {
-    const total = dur(v.segs[v.segs.length-1].t.replace(/^\d+/, '0'));
-    const tl = v.segs.map(s => `<div class="${KIND[s.tipo][1]}" style="flex:${dur(s.t)}">${dur(s.t)}s</div>`).join('');
-    const full = v.segs.map(s => s.voz).join(' ');
-    const segs = v.segs.map((s,i) => {
-      const pid = `${v.id}-p${i}`, next = v.segs[i+1];
-      return `<div class="seg">
-        <div class="sh"><b>Clip ${i+1} · ${s.t} s</b><span class="badge ${KIND[s.tipo][1]}">${KIND[s.tipo][0]}</span></div>
-        <div class="row"><span>Voz</span>"${esc(s.voz)}"</div>
-        <div class="row"><span>Texto en pantalla</span>${esc(s.texto)}</div>
-        <div class="box"><button class="copy" data-copy="${pid}">Copiar prompt</button><pre id="${pid}">${esc(segPrompt(v,s,i))}</pre></div>
-        ${next ? `<div class="chain">↳ Enlace con el clip ${i+2}: ${esc(s.final)}</div>` : ''}
+  el.innerHTML = VIDEOS.map((v, vi) => {
+    const total = 2 + v.middle.length;
+    const secs = 20 + v.middle.reduce((a, s) => a + s.d, 0);
+    const tl = `<div class="k-hook" style="flex:10">Gancho</div>` + v.middle.map(s => `<div class="${KIND[s.tipo][1]}" style="flex:${s.d}">${s.d}s</div>`).join('') + `<div class="k-cierre" style="flex:10">Cierre</div>`;
+    const tabs = v.hooks.map((h, i) => `<button class="tab ${i === 0 ? 'on' : ''}" data-v="${v.id}" data-i="${i}">Gancho ${LET[i]} · ${esc(h.tipo)}</button>`).join('');
+    const variants = v.hooks.map((h, i) => {
+      const full = [h.voz, v.puente, ...v.middle.map(s => s.voz), h.cierre, v.cta].filter(Boolean).join(' ');
+      return `<div class="variant ${i === 0 ? 'on' : ''}" data-v="${v.id}" data-i="${i}">
+        <div class="hookline">"${esc(h.voz)}"</div>
+        <div class="kv"><span>Texto en pantalla (0-3 s)</span>${esc(h.texto)}</div>
+        <div class="kv"><span>Primer fotograma</span>${esc(h.visual)}</div>
+        <div class="kv"><span>Cierre que responde a este gancho</span>"${esc(h.cierre)}"</div>
+        <div class="kv"><span>Prompt HeyGen · clip 1 (gancho ${LET[i]})</span><div class="box"><button class="copy" data-copy="${v.id}-h${i}">Copiar prompt</button><pre id="${v.id}-h${i}">${esc(hookPrompt(v, h, i, total))}</pre></div></div>
+        <div class="kv"><span>Prompt · clip ${total} (cierre ${LET[i]})</span><div class="box"><button class="copy" data-copy="${v.id}-c${i}">Copiar prompt</button><pre id="${v.id}-c${i}">${esc(closePrompt(v, h, i, total))}</pre></div></div>
+        <div class="kv"><span>Guion completo de la versión ${LET[i]}</span><div class="cap" id="${v.id}-g${i}"><button class="copy" data-copy="${v.id}-g${i}">Copiar</button>${esc(full)}</div></div>
       </div>`;
     }).join('');
+    const mids = v.middle.map((s, j) => {
+      const n = j + 2, pid = `${v.id}-m${j}`;
+      const prompt = s.tipo === 'broll' ? brollPrompt(v, s, n, total) : s.tipo === 'avatar' ? avatarPrompt(v, s, n, total) : pantallaPrompt(v, s, n, total);
+      return `<div class="seg"><div class="sh"><b>Clip ${n} · ${s.d} s</b><span class="badge ${KIND[s.tipo][1]}">${KIND[s.tipo][0]}</span><span class="muted">común a las tres versiones</span></div>
+        <div class="row"><span>Voz</span>"${esc(s.voz)}"</div>
+        <div class="row"><span>Texto en pantalla</span>${esc(s.texto)}</div>
+        <div class="box"><button class="copy" data-copy="${pid}">Copiar prompt</button><pre id="${pid}">${esc(prompt)}</pre></div>
+        ${s.final ? `<div class="chain">↳ Enlace con el clip ${n + 1}: ${esc(s.final)}</div>` : ''}</div>`;
+    }).join('');
     return `<div class="card" id="${v.id}">
-      <div class="chead"><span class="pill ig">Reels</span><span class="pill tt">TikTok</span><span class="pill">${esc(v.formato)}</span><span>${total} s · ${v.segs.length} clips · objetivo: ${esc(v.objetivo)}</span></div>
-      <div class="hook">Vídeo ${vi+1} · ${esc(v.hook)}</div>
+      <div class="chead"><span class="pill ig">Reels</span><span class="pill tt">TikTok</span><span class="pill cli">${esc(v.cliente)}</span><span class="pill obj">${esc(v.objetivo)}</span><span>${secs} s · ${total} clips · ${esc(v.formato)}</span></div>
+      <div class="hook">Vídeo ${vi + 1} · ${esc(v.titulo)}</div>
       <div class="why"><b>Por qué funciona:</b> ${esc(v.why)}</div>
-      <details ${vi===0?'open':''}><summary>Guion, clips con prompts y textos</summary><div class="cbody">
-        <div class="sec"><h4>Línea de tiempo</h4><div class="timeline">${tl}</div></div>
-        <div class="sec"><h4>Guion completo (para generar la voz de una sola vez)</h4><div class="cap" id="${v.id}-full"><button class="copy" data-copy="${v.id}-full">Copiar</button>${esc(full)}</div></div>
-        <div class="sec"><h4>Clips</h4><div style="display:grid;gap:10px">${segs}</div></div>
-        <div class="sec"><h4>Descripción para Instagram</h4><div class="cap" id="${v.id}-ig"><button class="copy" data-copy="${v.id}-ig">Copiar</button>${esc(v.capIG)}</div></div>
-        <div class="sec"><h4>Descripción para TikTok (palabras clave al principio)</h4><div class="cap" id="${v.id}-tt"><button class="copy" data-copy="${v.id}-tt">Copiar</button>${esc(v.capTT)}</div></div>
-        <div class="sec"><h4>Llamada a la acción</h4><p>${esc(v.cta)}</p></div>
+      <details ${vi === 0 ? 'open' : ''}><summary>Ganchos, clips con prompts y textos</summary><div class="cbody">
+        <div class="loop"><b>Pregunta que abre el gancho:</b> ${esc(v.bucle)} <span class="muted">· Se responde en el último clip.</span></div>
+        <div class="sec"><h4>Línea de tiempo</h4><div class="timeline">${tl}</div><p class="muted" style="font-size:12.5px;margin-top:6px">Enlace del clip 1 con el 2: ${esc(v.clip1.final)}</p></div>
+        <div class="sec"><h4>1 · Elige el gancho (cambia el clip 1 y el último)</h4><div class="tabs">${tabs}</div>${variants}</div>
+        ${v.middle.length ? `<div class="sec"><h4>2 · Clips del medio (se producen una vez)</h4><div style="display:grid;gap:10px">${mids}</div></div>` : ''}
+        <div class="sec"><h4>3 · Descripción para Instagram</h4><div class="cap" id="${v.id}-ig"><button class="copy" data-copy="${v.id}-ig">Copiar</button>${esc(v.capIG)}</div></div>
+        <div class="sec"><h4>4 · Descripción para TikTok (palabras clave al principio)</h4><div class="cap" id="${v.id}-tt"><button class="copy" data-copy="${v.id}-tt">Copiar</button>${esc(v.capTT)}</div></div>
       </div></details></div>`;
   }).join('');
+  el.addEventListener('click', e => {
+    const t = e.target.closest('.tab'); if (!t) return;
+    el.querySelectorAll(`.tab[data-v="${t.dataset.v}"]`).forEach(x => x.classList.toggle('on', x === t));
+    el.querySelectorAll(`.variant[data-v="${t.dataset.v}"]`).forEach(x => x.classList.toggle('on', x.dataset.i === t.dataset.i));
+  });
 }
 
 function renderCarousels(){
-  document.getElementById('carouselList').innerHTML = CARRUSELES.map((c,ci) => {
-    const slides = c.slides.map((s,i) => {
-      const pid = `${c.id}-s${i}`, prompt = i===0 ? CAR_PORTADA(c.portada) : CAR_INTERIOR(s[2]);
-      return `<div class="slide"><b>Lámina ${i+1} · ${esc(s[0])}</b><p style="margin-top:4px">${esc(s[1])}</p>
+  document.getElementById('carouselList').innerHTML = CARRUSELES.map((c, ci) => {
+    const slides = c.slides.map((s, i) => {
+      const pid = `${c.id}-s${i}`, prompt = i === 0 ? CAR_PORTADA(c.portada) : CAR_INTERIOR(s[2]);
+      return `<div class="slide"><b>Lámina ${i + 1} · ${esc(s[0])}</b><p style="margin-top:4px">${esc(s[1])}</p>
         <div class="box"><button class="copy" data-copy="${pid}">Copiar prompt</button><pre id="${pid}">${esc(prompt)}</pre></div></div>`;
     }).join('');
-    return `<div class="card"><div class="chead"><span class="pill ig">Instagram</span><span class="pill">Carrusel · ${c.slides.length} láminas</span><span>objetivo: ${esc(c.objetivo)}</span></div>
-      <div class="hook">Carrusel ${ci+1} · ${esc(c.titulo)}</div>
+    return `<div class="card"><div class="chead"><span class="pill ig">Instagram</span><span class="pill">Carrusel · ${c.slides.length} láminas</span><span class="pill cli">${esc(c.cliente)}</span><span class="pill obj">${esc(c.objetivo)}</span></div>
+      <div class="hook">Carrusel ${ci + 1} · ${esc(c.titulo)}</div>
       <details><summary>Láminas con texto y prompts, y descripción</summary><div class="cbody">
-        <div class="sec"><h4>Texto en Canva</h4><p class="muted" style="margin-top:0">Titular en Montserrat ExtraBold blanco y la palabra clave en azul #1D78FF; texto de apoyo en gris claro. "soyluisflores.es" pequeño abajo a la izquierda en todas las láminas.</p></div>
+        <div class="sec"><h4>Texto en Canva</h4><p class="muted" style="margin-top:0">Titular en Montserrat ExtraBold blanco con la palabra clave en azul #1D78FF; texto de apoyo en gris claro. "soyluisflores.es" pequeño abajo a la izquierda en todas las láminas.</p></div>
         <div class="slides">${slides}</div>
         <div class="sec"><h4>Descripción</h4><div class="cap" id="${c.id}-cap"><button class="copy" data-copy="${c.id}-cap">Copiar</button>${esc(c.cap)}</div></div>
       </div></details></div>`;
   }).join('');
 }
-
 function renderLinkedIn(){
-  document.getElementById('liList').innerHTML = LINKEDIN.map((l,i) => `<div class="card">
+  document.getElementById('liList').innerHTML = LINKEDIN.map(l => `<div class="card">
     <div class="chead"><span class="pill li">LinkedIn</span><span class="pill">${esc(l.titulo)}</span><span>${esc(l.hora)}</span></div>
     <div class="hook">${esc(l.texto.split('\n')[0])}</div>
     <details><summary>Texto completo</summary><div class="cbody"><div class="cap" id="${l.id}"><button class="copy" data-copy="${l.id}">Copiar</button>${esc(l.texto)}</div></div></details></div>`).join('');
 }
-
 function renderStories(){
-  document.getElementById('storyList').innerHTML = `<div class="tablewrap"><table><tr><th>Historia</th><th>Qué mostrar y qué escribir</th><th>Pegatina</th></tr>${STORIES.map(s=>`<tr><td><b>${esc(s[0])}</b></td><td>${esc(s[1])}</td><td>${esc(s[2])}</td></tr>`).join('')}</table></div>`;
+  document.getElementById('storyList').innerHTML = `<div class="tablewrap"><table><tr><th>Historia</th><th>Qué mostrar y qué escribir</th><th>Pegatina</th></tr>${STORIES.map(s => `<tr><td><b>${esc(s[0])}</b></td><td>${esc(s[1])}</td><td>${esc(s[2])}</td></tr>`).join('')}</table></div>`;
 }
-
 function renderCal(){
-  document.getElementById('calTable').insertAdjacentHTML('beforeend', CAL.map(c=>`<tr><td><b>${esc(c[0])}</b></td><td>${esc(c[1])}</td><td>${esc(c[2])}</td></tr>`).join(''));
+  document.getElementById('calTable').insertAdjacentHTML('beforeend', CAL.map(c => `<tr><td><b>${esc(c[0])}</b></td><td>${esc(c[1])}</td><td>${esc(c[2])}</td></tr>`).join(''));
 }
 
 document.getElementById('bibliaTxt').textContent = BIBLIA;
 document.getElementById('fondoTxt').textContent = FONDO;
 document.getElementById('promptsPack').insertAdjacentText('beforeend', PACK);
+document.getElementById('mapaPack').insertAdjacentText('beforeend', MAPA);
 renderVideos(); renderCarousels(); renderLinkedIn(); renderStories(); renderCal();
 
 document.querySelectorAll('table').forEach(t => {
   const heads = [...t.querySelectorAll('tr:first-child th')].map(th => th.textContent.trim());
-  t.querySelectorAll('tr').forEach((tr,i) => { if (i) [...tr.children].forEach((td,j) => heads[j] && td.setAttribute('data-label', heads[j])); });
+  t.querySelectorAll('tr').forEach((tr, i) => { if (i) [...tr.children].forEach((td, j) => heads[j] && td.setAttribute('data-label', heads[j])); });
 });
 
 document.body.addEventListener('click', e => {
